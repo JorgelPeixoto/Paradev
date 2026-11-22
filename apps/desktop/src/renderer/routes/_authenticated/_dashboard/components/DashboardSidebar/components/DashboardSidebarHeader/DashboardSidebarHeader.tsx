@@ -37,7 +37,7 @@ import {
 } from "renderer/routes/_authenticated/_dashboard/components/WindowChrome";
 import { useDashboardNavigation } from "renderer/routes/_authenticated/_dashboard/hooks/useDashboardNavigation";
 import { useFailedAutomations } from "renderer/routes/_authenticated/_dashboard/hooks/useFailedAutomations";
-import { useOpenNewWorkspaceInViewedProject } from "renderer/routes/_authenticated/_dashboard/hooks/useOpenNewWorkspaceInViewedProject";
+import { useOpenNewSession } from "renderer/hooks/useOpenNewWorkspace";
 import { STROKE_WIDTH_THICK } from "renderer/screens/main/components/WorkspaceSidebar/constants";
 import { COLLAPSED_WORKSPACE_SIDEBAR_WIDTH } from "renderer/stores/workspace-sidebar-state";
 import { useCommandPaletteToggle } from "../../hooks/useCommandPaletteToggle";
@@ -53,7 +53,7 @@ export function DashboardSidebarHeader({
 }: DashboardSidebarHeaderProps) {
 	const { t } = useLingui();
 	const navigation = useDashboardNavigation();
-	const openNewWorkspace = useOpenNewWorkspaceInViewedProject();
+	const openNewWorkspace = useOpenNewSession();
 	const paletteToggle = useCommandPaletteToggle();
 	const shortcutText = useHotkeyDisplay("NEW_WORKSPACE").text;
 	const searchShortcutText = useHotkeyDisplay("OPEN_COMMAND_PALETTE").text;
@@ -111,7 +111,7 @@ export function DashboardSidebarHeader({
 							</button>
 						</TooltipTrigger>
 						<TooltipContent side="right">
-							<Trans>New Workspace ({shortcutText})</Trans>
+							<Trans>New chat</Trans> ({shortcutText})
 						</TooltipContent>
 					</Tooltip>
 

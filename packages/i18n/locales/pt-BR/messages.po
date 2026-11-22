@@ -15175,7 +15175,7 @@ msgid "Pink"
 msgstr "Rosa"
 
 msgid "Pinned"
-msgstr "Fixadas"
+msgstr "Fixados"
 
 msgid "PK"
 msgstr "PK"

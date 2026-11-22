@@ -49,7 +49,7 @@ export function DashboardSidebarSectionHeader({
 					toggle(section);
 				}
 			}}
-			className="group flex h-7 w-full shrink-0 items-center gap-1.5 pl-4 pr-2 text-[10px] font-semibold uppercase tracking-[0.075em] text-muted-foreground transition-colors"
+			className="group flex h-7 w-full shrink-0 items-center gap-1.5 pl-4 pr-2 text-[13px] font-normal tracking-normal text-muted-foreground transition-colors"
 		>
 			{!labelHidden && (
 				<>

@@ -12,7 +12,7 @@ import {
 	useRef,
 } from "react";
 import { HiCheck, HiMiniXMark } from "react-icons/hi2";
-import { LuArchive } from "react-icons/lu";
+import { LuArchive, LuLoaderCircle } from "react-icons/lu";
 import { WorkspaceNameMarquee } from "renderer/components/WorkspaceNameMarquee";
 import { useFocusVisible } from "renderer/hooks/useFocusVisible";
 import { HotkeyLabel } from "renderer/hotkeys";
@@ -71,7 +71,7 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 	(
 		{
 			workspace,
-			pinnedContext: _pinnedContext,
+			pinnedContext,
 			isActive,
 			isRenaming,
 			renameValue,
@@ -151,7 +151,9 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 				: sandboxStatus === "provisioning"
 					? t({ message: "Creating the sandbox" })
 					: null;
-		const leadIndicator = (
+		const leadIndicator = pinnedContext && workspaceStatus === "working" ? (
+			<LuLoaderCircle className="size-3.5 animate-spin motion-reduce:animate-none text-muted-foreground" />
+		) : (
 			<DashboardSidebarWorkspaceLeadIndicator
 				workspaceStatus={workspaceStatus}
 				isCreatePending={isPending}
@@ -169,6 +171,7 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 				}}
 				className={cn(
 					"relative mx-2 rounded-md text-left text-sm transition-colors",
+					pinnedContext && "rounded-xl",
 					isActive && "bg-fill-selected",
 					isSelected && "bg-fill-selected",
 					onClick &&
@@ -200,7 +203,8 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 					onFocus={handleRowFocus}
 					onBlur={handleRowBlur}
 					className={cn(
-						"group relative flex h-7 w-full items-center pr-2",
+						"group relative flex w-full items-center pr-2",
+						pinnedContext ? "h-8" : "h-7",
 						resolvedIndentation === "top-level"
 							? "pl-2"
 							: resolvedIndentation === "grouped"
@@ -209,6 +213,9 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 						onClick && "cursor-pointer",
 					)}
 				>
+					{(!pinnedContext || isSelected || showsPullRequest || workspaceStatus || isPending || sandboxLabel) && (
+						<div className={cn(pinnedContext ? "order-last ml-2 flex items-center [&_.mr-2]:mr-0" : "contents")}>
+
 					{isSelected ? (
 						<span className="mr-2 flex size-4 shrink-0 items-center justify-center text-foreground">
 							<HiCheck className="size-3.5" />
@@ -267,6 +274,9 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 						</span>
 					)}
 
+						</div>
+					)}
+
 					<div className="grid min-w-0 flex-1 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-1.5">
 						{isRenaming ? (
 							<RenameInput
@@ -284,7 +294,8 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 									name={name || branch}
 									forceActive={isFocused}
 									className={cn(
-										"min-w-0 text-[13px] leading-tight transition-colors",
+										"min-w-0 leading-tight transition-colors",
+										pinnedContext ? "text-[14px]" : "text-[13px]",
 										isActive || isSelected
 											? "text-foreground"
 											: "text-foreground/80",
