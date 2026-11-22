@@ -1,5 +1,5 @@
 import { useLingui } from "@lingui/react/macro";
-import { TbSmartHome } from "react-icons/tb";
+import { PeixotoMark } from "renderer/components/PeixotoMark";
 import { UpdatesPill } from "renderer/components/UpdatesPill";
 import { ParadevAnywhereButton } from "renderer/routes/_authenticated/_dashboard/components/ParadevAnywhereButton";
 import { RailButton } from "renderer/routes/_authenticated/_dashboard/components/RailButton";
@@ -26,7 +26,7 @@ export function NavigationRail() {
 		>
 			<RailButton
 				label={t({ message: "Home" })}
-				icon={TbSmartHome}
+				icon={PeixotoMark}
 				isActive={navigation.isHomeOpen}
 				onClick={navigation.openHome}
 			/>

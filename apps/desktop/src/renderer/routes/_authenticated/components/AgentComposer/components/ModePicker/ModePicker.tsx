@@ -57,7 +57,8 @@ export function ModePicker({
 	if (offeredModes.length < 2) return null;
 
 	const copyFor = (mode: SessionMode): ModeCopy => {
-		const known = KNOWN_MODES[mode.id];
+		const known =
+			KNOWN_MODES[mode.id === "accept-edits" ? "acceptEdits" : mode.id];
 		return {
 			...(known
 				? {

@@ -1,0 +1,1 @@
+export { PeixotoBrand } from "./PeixotoBrand";

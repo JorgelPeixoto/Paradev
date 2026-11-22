@@ -10,6 +10,7 @@ describe("acpHarnessForPreset", () => {
 	test("maps the agents that run as chats", () => {
 		expect(acpHarnessForPreset("claude")).toBe("claude-acp");
 		expect(acpHarnessForPreset("codex")).toBe("codex-acp");
+		expect(acpHarnessForPreset("agy")).toBe("agy-acp");
 		expect(acpHarnessForPreset("opencode")).toBe("opencode-acp");
 		expect(acpHarnessForPreset("pi")).toBe("pi-acp");
 		expect(acpHarnessForPreset("pdev")).toBe("pdev-acp");

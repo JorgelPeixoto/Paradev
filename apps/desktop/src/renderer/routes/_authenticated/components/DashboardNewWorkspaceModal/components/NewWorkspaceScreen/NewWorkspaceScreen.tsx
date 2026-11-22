@@ -24,7 +24,7 @@ import { useFeatureFlagEnabled } from "posthog-js/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { LuGitPullRequest } from "react-icons/lu";
 import type { AgentSelectAgent } from "renderer/components/AgentSelect";
-import { GitHubStarPill } from "renderer/components/GitHubStarPill";
+import { PeixotoBrand } from "renderer/components/PeixotoBrand";
 import { env } from "renderer/env.renderer";
 import { useHostProjects } from "renderer/hooks/host-projects/useHostProjects";
 import { resolveHostUrl } from "renderer/hooks/host-service/useHostTargetUrl";
@@ -1208,10 +1208,8 @@ export function NewWorkspaceScreen({
 					<h1 className="sr-only">
 						<Trans>What should we build next?</Trans>
 					</h1>
-					<GitHubStarPill
-						surface="new_workspace"
+					<PeixotoBrand
 						className="mb-6"
-						reserveSpace
 					/>
 					<div className="relative flex w-full max-w-[592px] flex-col gap-2.5">
 						{/* Out of flow, below the block: the composer is centred on
@@ -1307,10 +1305,8 @@ export function NewWorkspaceScreen({
 				<h1 className="text-center text-3xl font-medium text-foreground/90">
 					<Trans>What should we build next?</Trans>
 				</h1>
-				<GitHubStarPill
-					surface="new_workspace"
+				<PeixotoBrand
 					className="pointer-events-auto"
-					reserveSpace
 				/>
 			</div>
 			<div className="flex w-full flex-1 flex-col items-center justify-end px-6 pb-8">

@@ -11,7 +11,6 @@ import {
 	LuGitBranch,
 	LuLayoutTemplate,
 } from "react-icons/lu";
-import { showStarNagOnboardingToast } from "renderer/components/StarNagToast";
 import { useOpenNewWorkspaceForLocalProject } from "renderer/hooks/useOpenNewWorkspace";
 import { track } from "renderer/lib/analytics";
 import { apiTrpcClient } from "renderer/lib/api-trpc-client";
@@ -180,7 +179,6 @@ function OnboardingProjectPage() {
 		}
 		// Fires at most once, and only if the user isn't already muted/in
 		// cooldown — see useStarNagStore.isEligible().
-		showStarNagOnboardingToast();
 		// Straight to the route: a hop through /workspaces lets that page's
 		// own mount navigation cancel this one.
 		openNewWorkspace(projectId);

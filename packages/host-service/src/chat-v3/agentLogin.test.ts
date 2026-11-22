@@ -2,6 +2,7 @@ import { expect, test } from "bun:test";
 import { agentLoginCommand } from "./agentLogin";
 
 test("signs in the profile the agent launched with", () => {
+	expect(agentLoginCommand("agy", {})).toBe("agy acp --login");
 	expect(agentLoginCommand("claude", {})).toBe("claude auth login");
 	expect(
 		agentLoginCommand("claude", { CLAUDE_CONFIG_DIR: "/Users/a/.claude-work" }),

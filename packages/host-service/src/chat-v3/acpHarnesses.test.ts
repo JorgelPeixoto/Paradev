@@ -9,6 +9,15 @@ import {
 const entries = Object.entries(ACP_HARNESSES);
 
 describe("ACP_HARNESSES", () => {
+	it("runs Antigravity through its native ACP server without skipping approvals", () => {
+		expect(acpHarnessForPreset("agy")).toBe("agy-acp");
+		expect(ACP_HARNESSES["agy-acp"]).toMatchObject({
+			binary: "agy",
+			args: ["acp"],
+		});
+		expect(ACP_HARNESSES["agy-acp"]?.adapter).toBeUndefined();
+		expect(ACP_HARNESSES["agy-acp"]?.fullAccessModeId).toBeUndefined();
+	});
 	it("serves every harness the product maps to", () => {
 		const ids = entries.map(([id]) => id);
 		expect(ids).toContain("claude-acp");

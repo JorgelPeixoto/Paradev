@@ -5,6 +5,8 @@ import { cn } from "@superset/ui/utils";
 import { useState } from "react";
 import { LuZap } from "react-icons/lu";
 
+import { agentOptionLabel } from "../../../../utils/configOptionLabels";
+
 const SNAP_MOTION_CLASS =
 	"transition-[left,right,width] duration-150 ease-[cubic-bezier(0.22,1.1,0.36,1)] motion-reduce:transition-none";
 
@@ -59,7 +61,7 @@ export function EffortSliderCard({
 					<span aria-hidden="true" className="size-6" />
 				)}
 				<span className="truncate text-center text-[13px] font-medium text-highlight">
-					{levels[index]?.label ?? effort.label}
+					{agentOptionLabel(levels[index]?.label ?? effort.label)}
 				</span>
 				{fast ? (
 					<span aria-hidden="true" className={cn(FAST_PILL_CLASS, "invisible")}>

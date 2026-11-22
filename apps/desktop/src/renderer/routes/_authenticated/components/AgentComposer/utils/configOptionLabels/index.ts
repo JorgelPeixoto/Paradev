@@ -1,1 +1,5 @@
-export { configOptionLabels, currentLabel } from "./configOptionLabels";
+export {
+	agentOptionLabel,
+	configOptionLabels,
+	currentLabel,
+} from "./configOptionLabels";

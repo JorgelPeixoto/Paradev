@@ -24,7 +24,7 @@ import {
 	PILL_TRIGGER_CLASS,
 } from "../../constants";
 import { useOptimisticSelections } from "../../hooks/useOptimisticSelections";
-import { currentLabel } from "../../utils/configOptionLabels";
+import { agentOptionLabel, currentLabel } from "../../utils/configOptionLabels";
 import { fastOption } from "../../utils/toggleOption";
 import { EffortSliderCard } from "./components/EffortSliderCard";
 import { ModelPanel } from "./components/ModelPanel";
@@ -234,7 +234,7 @@ export function ModelPicker({
 							<DropdownMenuSub key={option.id}>
 								<DropdownMenuSubTrigger className={TRAIT_ROW_CLASS}>
 									<span className="min-w-0 flex-1 truncate">
-										{option.label}
+										{agentOptionLabel(option.label)}
 									</span>
 									<span className="max-w-28 truncate text-muted-foreground">
 										{currentLabel(option)}
@@ -253,7 +253,7 @@ export function ModelPicker({
 												title={entry.description}
 											>
 												<span className="min-w-0 flex-1 truncate">
-													{entry.label}
+													{agentOptionLabel(entry.label)}
 												</span>
 												{entry.id === option.currentValue ? (
 													<LuCheck className="size-3.5 shrink-0" />

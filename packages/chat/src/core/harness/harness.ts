@@ -10,6 +10,7 @@
 const ACP_HARNESS_BY_PRESET: Record<string, string> = {
 	claude: "claude-acp",
 	codex: "codex-acp",
+	agy: "agy-acp",
 	opencode: "opencode-acp",
 	pi: "pi-acp",
 	pdev: "pdev-acp",

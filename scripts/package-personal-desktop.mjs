@@ -32,8 +32,33 @@ asar.extractAll(resolve(original, "Contents/Resources/app.asar"), extracted);
 cpSync(dist, resolve(extracted, "dist"), { recursive: true });
 const pkg = resolve(extracted, "package.json");
 const metadata = JSON.parse(readFileSync(pkg, "utf8"));
-metadata.version = "2.0.11-peixoto.2";
+metadata.version = "2.0.11-peixoto.4";
 writeFileSync(pkg, JSON.stringify(metadata, null, 2));
+const mark = resolve(root, "apps/desktop/src/renderer/assets/peixoto-mark.png");
+for (const name of ["icon.png", "icon-dev.png", "icon-canary.png"])
+	cpSync(mark, resolve(extracted, "resources/build/icons", name));
+const iconSet = resolve(output, "Peixoto.iconset");
+mkdirSync(iconSet);
+for (const size of [16, 32, 128, 256, 512]) {
+	for (const scale of [1, 2]) {
+		const suffix = scale === 2 ? "@2x" : "";
+		execFileSync("sips", [
+			"-z",
+			String(size * scale),
+			String(size * scale),
+			mark,
+			"--out",
+			resolve(iconSet, `icon_${size}x${size}${suffix}.png`),
+		]);
+	}
+}
+execFileSync("iconutil", [
+	"-c",
+	"icns",
+	iconSet,
+	"-o",
+	resolve(application, "Contents/Resources/peixoto.icns"),
+]);
 const archive = resolve(application, "Contents/Resources/app.asar");
 await asar.createPackageWithOptions(extracted, archive, {
 	unpackDir: "node_modules",
@@ -46,8 +71,9 @@ const plist = resolve(application, "Contents/Info.plist");
 const edit = (command) =>
 	execFileSync("/usr/libexec/PlistBuddy", ["-c", command, plist]);
 edit("Set :CFBundleDisplayName Peixoto IA");
+edit("Set :CFBundleIconFile peixoto.icns");
 edit("Set :CFBundleIdentifier com.peixoto.paradev.personal");
-edit("Set :CFBundleShortVersionString 2.0.11-peixoto.2");
+edit("Set :CFBundleShortVersionString 2.0.11-peixoto.4");
 edit(`Set :ElectronAsarIntegrity:Resources/app.asar:hash ${hash}`);
 edit("Add :LSEnvironment:DISABLE_UPDATE_CHECK string 1");
 execFileSync("codesign", ["--force", "--deep", "--sign", "-", application], {

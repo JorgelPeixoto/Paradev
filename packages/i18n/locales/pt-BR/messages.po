@@ -640,7 +640,7 @@ msgstr "{0}: dispositivo offline"
 
 #. placeholder {0}: error.message.replace(/[.\s]+$/, "")
 msgid "{0}. Try the Paradev tray menu > Host Service > Restart."
-msgstr "{0}. Tente pelo menu da bandeja do Paradev > Serviço do host > Reiniciar."
+msgstr "{0}. Tente pelo menu da bandeja do Peixoto IA > Serviço do host > Reiniciar."
 
 #. placeholder {0}: String(met)
 #. placeholder {1}: String(gaps.length)
@@ -945,7 +945,7 @@ msgid "{count, plural, one {Resume # chat?} other {Resume # chats?}}"
 msgstr "{count, plural, one {Retomar # chat?} other {Retomar # chats?}}"
 
 msgid "{count, plural, one {This chat hadn't finished when Paradev closed} other {These chats hadn't finished when Paradev closed}}"
-msgstr "{count, plural, one {Este chat não tinha terminado quando o Paradev foi fechado} other {Estes chats não tinham terminado quando o Paradev foi fechado}}"
+msgstr "{count, plural, one {Este chat não tinha terminado quando o Peixoto IA foi fechado} other {Estes chats não tinham terminado quando o Peixoto IA foi fechado}}"
 
 msgid "{count, plural, one {Used # source} other {Used # sources}}"
 msgstr "{count, plural, one {Usou # fonte} other {Usou # fontes}}"
@@ -1607,10 +1607,10 @@ msgstr "+{hiddenCount} anteriores"
 
 #. placeholder {0}: remoteHost.name
 msgid "<0>{0}</0> isn't connected to the Paradev relay, so its runs will be skipped. Check its <1>host settings</1>, and make sure relay access is on in Settings > Remote Access on that device."
-msgstr "<0>{0}</0> não está conectado ao relay do Paradev, então suas execuções serão ignoradas. Verifique as <1>configurações do host</1> e confirme que o acesso ao relay está ligado em Configurações > Acesso remoto nesse dispositivo."
+msgstr "<0>{0}</0> não está conectado ao relay do Peixoto IA, então suas execuções serão ignoradas. Verifique as <1>configurações do host</1> e confirme que o acesso ao relay está ligado em Configurações > Acesso remoto nesse dispositivo."
 
 msgid "<0>{displayName}</0> is requesting access to your Paradev account"
-msgstr "<0>{displayName}</0> está pedindo acesso à sua conta do Paradev"
+msgstr "<0>{displayName}</0> está pedindo acesso à sua conta do Peixoto IA"
 
 msgid "<0>{primaryFont}</0> is not installed on this system. Falling back to the next available font."
 msgstr "<0>{primaryFont}</0> não está instalada neste sistema. Usando a próxima fonte disponível."
@@ -1857,16 +1857,16 @@ msgid "A majority of production changes merge without any human reading the diff
 msgstr "A maioria das mudanças em produção é mesclada sem ninguém ler o diff."
 
 msgid "A manifest and a few skill files. Paradev puts it where every agent looks."
-msgstr "Um manifesto e alguns arquivos de skills. O Paradev o coloca onde cada agente procura."
+msgstr "Um manifesto e alguns arquivos de skills. O Peixoto IA o coloca onde cada agente procura."
 
 msgid "a message from {authorName}"
 msgstr "uma mensagem de {authorName}"
 
 msgid "A new version of Paradev is out. Reload to continue."
-msgstr "Há uma nova versão do Paradev. Recarregue para continuar."
+msgstr "Há uma nova versão do Peixoto IA. Recarregue para continuar."
 
 msgid "A new version of Paradev is required to continue. Please update to the latest version."
-msgstr "É necessária uma nova versão do Paradev para continuar. Atualize para a versão mais recente."
+msgstr "É necessária uma nova versão do Peixoto IA para continuar. Atualize para a versão mais recente."
 
 msgid "A new workspace off this branch, with the conversation handed to a fresh agent"
 msgstr "Um novo workspace a partir desta branch, com a conversa entregue a um novo agente"
@@ -1943,13 +1943,13 @@ msgid "About {displayName}"
 msgstr "Sobre o {displayName}"
 
 msgid "About Paradev"
-msgstr "Sobre o Paradev"
+msgstr "Sobre o Peixoto IA"
 
 msgid "About three weeks from first call to offer, ending with a paid work trial. Every step is with a founder, and you hear back within 48 hours."
 msgstr "Cerca de três semanas da primeira conversa até a oferta, terminando com um teste prático remunerado. Cada etapa é com um fundador, e você recebe retorno em até 48 horas."
 
 msgid "Absolutely. Paradev doesn't proxy any API calls. You use your own API keys directly with whatever AI providers you choose. This means you have full control over costs and usage."
-msgstr "Com certeza. O Paradev não faz proxy de nenhuma chamada de API. Você usa suas próprias chaves de API direto com os provedores de IA que escolher. Ou seja, você tem controle total sobre custo e uso."
+msgstr "Com certeza. O Peixoto IA não faz proxy de nenhuma chamada de API. Você usa suas próprias chaves de API direto com os provedores de IA que escolher. Ou seja, você tem controle total sobre custo e uso."
 
 msgid "Accent"
 msgstr "Destaque"
@@ -2485,7 +2485,7 @@ msgid "Agents running at once"
 msgstr "Agentes rodando ao mesmo tempo"
 
 msgid "Agents see a placeholder. Paradev adds your sign-in to outgoing requests."
-msgstr "Os agentes veem só um marcador. O Paradev adiciona seu login às requisições de saída."
+msgstr "Os agentes veem só um marcador. O Peixoto IA adiciona seu login às requisições de saída."
 
 msgid "Agents that run while you're away"
 msgstr "Agentes que trabalham enquanto você está fora"
@@ -2497,7 +2497,7 @@ msgid "Agents use this account when they call Linear tools."
 msgstr "Os agentes usam esta conta quando chamam as ferramentas do Linear."
 
 msgid "Aggregate agent usage across every developer on the Paradev leaderboard — tokens, cost, cache behaviour and which models people actually reach for."
-msgstr "Uso agregado de agentes por todos os desenvolvedores do ranking do Paradev — tokens, custo, comportamento de cache e quais modelos as pessoas realmente usam."
+msgstr "Uso agregado de agentes por todos os desenvolvedores do ranking do Peixoto IA — tokens, custo, comportamento de cache e quais modelos as pessoas realmente usam."
 
 msgid "AI · Agent activity"
 msgstr "IA · Atividade do agente"
@@ -2896,7 +2896,7 @@ msgid "any account"
 msgstr "qualquer conta"
 
 msgid "Any agent you've set up in Paradev, such as Claude Code or Codex."
-msgstr "Qualquer agente que você configurou no Paradev, como Claude Code ou Codex."
+msgstr "Qualquer agente que você configurou no Peixoto IA, como Claude Code ou Codex."
 
 msgid "Any channel"
 msgstr "Qualquer canal"
@@ -3384,10 +3384,10 @@ msgid "Authorize {displayName}"
 msgstr "Autorizar {displayName}"
 
 msgid "Authorize Paradev so your plugins, automations and triggers can act on your behalf."
-msgstr "Autorize o Paradev para que seus plugins, automações e gatilhos possam agir em seu nome."
+msgstr "Autorize o Peixoto IA para que seus plugins, automações e gatilhos possam agir em seu nome."
 
 msgid "Authorize Paradev to act on your behalf."
-msgstr "Autorize o Paradev a agir em seu nome."
+msgstr "Autorize o Peixoto IA a agir em seu nome."
 
 msgid "Authorizing..."
 msgstr "Autorizando..."
@@ -3822,13 +3822,13 @@ msgid "Browse for directory"
 msgstr "Procurar diretório"
 
 msgid "Browse Paradev plugins, shared themes, and future agent configs."
-msgstr "Explore os plugins do Paradev, temas compartilhados e futuras configurações de agentes."
+msgstr "Explore os plugins do Peixoto IA, temas compartilhados e futuras configurações de agentes."
 
 msgid "Browse Paradev theme files shared by the community, including GitHub Dark Colorblind, Catppuccin, Ember, and One Dark Pro."
-msgstr "Explore arquivos de tema do Paradev compartilhados pela comunidade, incluindo GitHub Dark Colorblind, Catppuccin, Ember e One Dark Pro."
+msgstr "Explore arquivos de tema do Peixoto IA compartilhados pela comunidade, incluindo GitHub Dark Colorblind, Catppuccin, Ember e One Dark Pro."
 
 msgid "Browse the plugins every Paradev agent can use, and submit your own."
-msgstr "Explore os plugins que qualquer agente do Paradev pode usar e envie o seu."
+msgstr "Explore os plugins que qualquer agente do Peixoto IA pode usar e envie o seu."
 
 msgid "Browse the repo ↗"
 msgstr "Explorar o repositório ↗"
@@ -3876,7 +3876,7 @@ msgid "Built a plugin? Submit it here."
 msgstr "Criou um plugin? Envie aqui."
 
 msgid "Built in Paradev"
-msgstr "Construído no Paradev"
+msgstr "Construído no Peixoto IA"
 
 msgid "builtin"
 msgstr "integrado"
@@ -3892,10 +3892,10 @@ msgid "bundled {0}"
 msgstr "incluída {0}"
 
 msgid "Bundled with the Paradev app on this device."
-msgstr "Incluído no app Paradev neste dispositivo."
+msgstr "Incluído no app Peixoto IA neste dispositivo."
 
 msgid "Bundled with the Paradev app on this device. Updates with the app."
-msgstr "Incluído no app Paradev neste dispositivo. Atualiza junto com o app."
+msgstr "Incluído no app Peixoto IA neste dispositivo. Atualiza junto com o app."
 
 msgid "Business plan"
 msgstr "Plano Business"
@@ -4496,7 +4496,7 @@ msgid "Choose what to clear from the in-app browser."
 msgstr "Escolha o que limpar do navegador do app."
 
 msgid "Choose when Paradev pings you."
-msgstr "Escolha quando o Paradev te avisa."
+msgstr "Escolha quando o Peixoto IA te avisa."
 
 msgid "Choose where agents started from comments, design mode, and Pages open."
 msgstr "Escolha onde abrir os agentes iniciados em comentários, no modo de design e no Pages."
@@ -4517,7 +4517,7 @@ msgid "Claude Code sessions, with claude --resume"
 msgstr "Sessões do Claude Code, com claude --resume"
 
 msgid "Claude Code, Codex, and OpenCode are the agents; Paradev is where you run many of them at once. Each task gets its own Git worktree and branch, so ten agents can work on ten branches simultaneously while you monitor, review, and merge from one place."
-msgstr "Claude Code, Codex e OpenCode são os agentes; o Paradev é onde você executa vários deles ao mesmo tempo. Cada tarefa tem seu próprio worktree Git e sua própria branch, então dez agentes podem trabalhar em dez branches ao mesmo tempo enquanto você monitora, revisa e faz merge em um só lugar."
+msgstr "Claude Code, Codex e OpenCode são os agentes; o Peixoto IA é onde você executa vários deles ao mesmo tempo. Cada tarefa tem seu próprio worktree Git e sua própria branch, então dez agentes podem trabalhar em dez branches ao mesmo tempo enquanto você monitora, revisa e faz merge em um só lugar."
 
 msgid "Claude Code, Codex, Cursor Agent, OpenCode, Gemini, Amp, any CLI"
 msgstr "Claude Code, Codex, Cursor Agent, OpenCode, Gemini, Amp, qualquer CLI"
@@ -4937,7 +4937,7 @@ msgid "Cloud workspaces need the Team or Ultra plan. Upgrade in Settings, Billin
 msgstr "Workspaces na nuvem precisam do plano Team ou Ultra. Faça upgrade em Configurações, Cobrança para iniciar um."
 
 msgid "Cloud workspaces open on it, and its Paradev config runs setup. The others are checked out beside it."
-msgstr "As áreas de trabalho na nuvem abrem nele, e a configuração do Paradev nesse repositório executa a preparação. Os outros são obtidos ao lado."
+msgstr "As áreas de trabalho na nuvem abrem nele, e a configuração do Peixoto IA nesse repositório executa a preparação. Os outros são obtidos ao lado."
 
 msgid "Cloud workspaces will stop running {agentLabel} with it."
 msgstr "Os workspaces na nuvem deixarão de executar o {agentLabel} com ela."
@@ -5132,10 +5132,10 @@ msgid "Compare"
 msgstr "Comparar"
 
 msgid "Compare Paradev | AI Coding Comparisons and Guides"
-msgstr "Comparar o Paradev | Comparações e guias de programação com IA"
+msgstr "Comparar o Peixoto IA | Comparações e guias de programação com IA"
 
 msgid "Compare Paradev with Cursor, Claude Code, Codex, Windsurf, Devin, GitHub Copilot, and more. Browse side-by-side comparisons, roundups, and workflow guides."
-msgstr "Compare o Paradev com Cursor, Claude Code, Codex, Windsurf, Devin, GitHub Copilot e mais. Veja comparações lado a lado, listas e guias de fluxo de trabalho."
+msgstr "Compare o Peixoto IA com Cursor, Claude Code, Codex, Windsurf, Devin, GitHub Copilot e mais. Veja comparações lado a lado, listas e guias de fluxo de trabalho."
 
 msgid "Compare plans"
 msgstr "Comparar planos"
@@ -5205,7 +5205,7 @@ msgid "Configure GitHub App…"
 msgstr "Configurar GitHub App…"
 
 msgid "Configure how tasks sync between Paradev and Linear."
-msgstr "Configure como as tarefas sincronizam entre o Paradev e o Linear."
+msgstr "Configure como as tarefas sincronizam entre o Peixoto IA e o Linear."
 
 msgid "Configure terminal behavior and reusable terminal scripts"
 msgstr "Configure o comportamento do terminal e os scripts de terminal reutilizáveis"
@@ -5340,7 +5340,7 @@ msgid "Connect your Linear account before tracking tasks in Linear."
 msgstr "Conecte sua conta do Linear antes de acompanhar tarefas no Linear."
 
 msgid "Connect your Linear account to browse, update and start work on Linear issues from Paradev."
-msgstr "Conecte sua conta do Linear para navegar, atualizar e começar a trabalhar em issues do Linear no Paradev."
+msgstr "Conecte sua conta do Linear para navegar, atualizar e começar a trabalhar em issues do Linear no Peixoto IA."
 
 msgid "Connect your Linear account to use Linear here."
 msgstr "Conecte sua conta do Linear para usar o Linear aqui."
@@ -5615,7 +5615,7 @@ msgid "Copy Branch Name"
 msgstr "Copiar nome da branch"
 
 msgid "Copy browsing history and logins from Chrome, Brave, Arc, or another Chromium browser into Paradev."
-msgstr "Copie o histórico de navegação e os logins do Chrome, Brave, Arc ou outro navegador Chromium para o Paradev."
+msgstr "Copie o histórico de navegação e os logins do Chrome, Brave, Arc ou outro navegador Chromium para o Peixoto IA."
 
 msgid "Copy code"
 msgstr "Copiar código"
@@ -5751,7 +5751,7 @@ msgid "Copy Workspace ID"
 msgstr "Copiar ID da área de trabalho"
 
 msgid "Copy your browsing history and logins from another browser into Paradev. Your original browser isn't changed."
-msgstr "Copie seu histórico de navegação e seus logins de outro navegador para o Paradev. O navegador de origem não é alterado."
+msgstr "Copie seu histórico de navegação e seus logins de outro navegador para o Peixoto IA. O navegador de origem não é alterado."
 
 msgid "Copy your key now. You won't be able to see it again."
 msgstr "Copie sua chave agora. Você não vai poder vê-la de novo."
@@ -6845,7 +6845,7 @@ msgid "Customize {devName}"
 msgstr "Personalizar {devName}"
 
 msgid "Customize how Paradev looks on your device"
-msgstr "Personalize a aparência do Paradev no seu dispositivo"
+msgstr "Personalize a aparência do Peixoto IA no seu dispositivo"
 
 #. placeholder {0}: showHotkeysKeys.map((key) => ( <Kbd key={key}>{key}</Kbd> ))
 msgid "Customize keyboard shortcuts for your workflow. Press <0>{0}</0> to open this page anytime."
@@ -7260,7 +7260,7 @@ msgid "Describe the work to your agent"
 msgstr "Descreva o trabalho para seu agente"
 
 msgid "Describe what you need. Paradev creates a workspace with its own worktree and branch for the task."
-msgstr "Descreva o que você precisa. O Paradev cria para a tarefa um workspace com seu próprio worktree e sua própria branch."
+msgstr "Descreva o que você precisa. O Peixoto IA cria para a tarefa um workspace com seu próprio worktree e sua própria branch."
 
 msgid "Describe what you'd like to see built…"
 msgstr "Descreva o que você gostaria de ver construído…"
@@ -7576,7 +7576,7 @@ msgid "Do anything"
 msgstr "Faça qualquer coisa"
 
 msgid "Do anything in Paradev"
-msgstr "Faça qualquer coisa no Paradev"
+msgstr "Faça qualquer coisa no Peixoto IA"
 
 msgid "Do I need my own coding agent subscriptions?"
 msgstr "Preciso ter minhas próprias assinaturas de agentes de código?"
@@ -7695,10 +7695,10 @@ msgid "Download Manually"
 msgstr "Baixar manualmente"
 
 msgid "Download our logos, product images, and founder photos for use in coverage of Paradev."
-msgstr "Baixe nossos logotipos, imagens do produto e fotos dos fundadores para usar na cobertura sobre o Paradev."
+msgstr "Baixe nossos logotipos, imagens do produto e fotos dos fundadores para usar na cobertura sobre o Peixoto IA."
 
 msgid "Download Paradev"
-msgstr "Baixar o Paradev"
+msgstr "Baixar o Peixoto IA"
 
 msgid "Download starter"
 msgstr "Baixar modelo inicial"
@@ -7745,7 +7745,7 @@ msgid "drafted 3 support replies"
 msgstr "escreveu 3 respostas de suporte"
 
 msgid "Drag <0>Paradev</0> into your <1>Applications</1> folder"
-msgstr "Arraste o <0>Paradev</0> para a pasta <1>Aplicativos</1>"
+msgstr "Arraste o <0>Peixoto IA</0> para a pasta <1>Aplicativos</1>"
 
 msgid "Drag to reorder"
 msgstr "Arraste para reordenar"
@@ -8028,7 +8028,7 @@ msgid "Enable remote access"
 msgstr "Ative o acesso remoto"
 
 msgid "Enable Remote Access and keep this computer awake with Paradev running."
-msgstr "Ative o acesso remoto e mantenha este computador ativo com o Paradev em execução."
+msgstr "Ative o acesso remoto e mantenha este computador ativo com o Peixoto IA em execução."
 
 msgid "Enable skill"
 msgstr "Ativar skill"
@@ -8181,7 +8181,7 @@ msgid "Every open pull request through #{prNumber} joins the merge queue for {ba
 msgstr "Todo pull request aberto até #{prNumber} entra em ordem na fila de merge de {base}. O GitHub faz o merge quando chega a vez deles e as verificações passam."
 
 msgid "Every paid plan includes Paradev Mobile, automations, and priority support. Plans with cloud workspaces give your team one shared pool of GB-hours."
-msgstr "Todo plano pago inclui o Paradev Mobile, automações e suporte prioritário. Planos com workspaces na nuvem dão à sua equipe um conjunto compartilhado de GB-horas."
+msgstr "Todo plano pago inclui o Peixoto IA Mobile, automações e suporte prioritário. Planos com workspaces na nuvem dão à sua equipe um conjunto compartilhado de GB-horas."
 
 msgid "Every publish is a version"
 msgstr "Cada publicação é uma versão"
@@ -8238,7 +8238,7 @@ msgid "Everything moved."
 msgstr "Tudo foi movido."
 
 msgid "Everything we built on top of the primitives — Paradev originals, the"
-msgstr "Tudo o que construímos em cima dos primitivos — os originais do Paradev, a suíte"
+msgstr "Tudo o que construímos em cima dos primitivos — os originais do Peixoto IA, a suíte"
 
 msgid "Everything you need to write about {productName} (formerly {formerName}): our company description, latest news, logos, product images, and who to contact."
 msgstr "Tudo o que você precisa para escrever sobre o {productName} (antigo {formerName}): descrição da empresa, últimas notícias, logotipos, imagens do produto e com quem falar."
@@ -8388,7 +8388,7 @@ msgid "Factory 2026"
 msgstr "Factory 2026"
 
 msgid "Factory 2026 | Paradev"
-msgstr "Factory 2026 | Paradev"
+msgstr "Factory 2026 | Peixoto IA"
 
 msgid "Factory tier {tier}"
 msgstr "Nível de fábrica {tier}"
@@ -9515,16 +9515,16 @@ msgid "Get key"
 msgstr "Obter chave"
 
 msgid "Get more out of Paradev"
-msgstr "Aproveitar mais o Paradev"
+msgstr "Aproveitar mais o Peixoto IA"
 
 msgid "Get notified when Paradev is available on Windows."
-msgstr "Receba um aviso quando o Paradev estiver disponível para Windows."
+msgstr "Receba um aviso quando o Peixoto IA estiver disponível para Windows."
 
 msgid "Get Paradev on your Mac"
-msgstr "Instale o Paradev no seu Mac"
+msgstr "Instale o Peixoto IA no seu Mac"
 
 msgid "Get Paradev Pro"
-msgstr "Assinar o Paradev Pro"
+msgstr "Assinar o Peixoto IA Pro"
 
 msgid "Get started"
 msgstr "Começar"
@@ -9614,7 +9614,7 @@ msgid "GitHub refused the merge"
 msgstr "O GitHub recusou o merge"
 
 msgid "GitHub repositories with a plugin marketplace file. Paradev syncs their plugins into your organization."
-msgstr "Repositórios do GitHub com um arquivo de marketplace de plugins. O Paradev sincroniza os plugins deles na sua organização."
+msgstr "Repositórios do GitHub com um arquivo de marketplace de plugins. O Peixoto IA sincroniza os plugins deles na sua organização."
 
 msgid "GitHub sign-in needed"
 msgstr "Login no GitHub necessário"
@@ -9692,7 +9692,7 @@ msgid "Go to next page"
 msgstr "Ir para a próxima página"
 
 msgid "Go to Paradev"
-msgstr "Ir para o Paradev"
+msgstr "Ir para o Peixoto IA"
 
 msgid "Go to previous page"
 msgstr "Ir para a página anterior"
@@ -9707,7 +9707,7 @@ msgid "Go to workspace"
 msgstr "Ir para a área de trabalho"
 
 msgid "Google did not grant lasting access. Remove Paradev from your Google account's third-party access and try again."
-msgstr "O Google não concedeu acesso duradouro. Remova o Paradev dos acessos de terceiros da sua conta Google e tente de novo."
+msgstr "O Google não concedeu acesso duradouro. Remova o Peixoto IA dos acessos de terceiros da sua conta Google e tente de novo."
 
 msgid "Google or another search engine"
 msgstr "Google ou outro buscador"
@@ -9716,7 +9716,7 @@ msgid "Got it"
 msgstr "Entendi"
 
 msgid "Grant the OS permissions Paradev needs."
-msgstr "Conceda as permissões do sistema de que o Paradev precisa."
+msgstr "Conceda as permissões do sistema de que o Peixoto IA precisa."
 
 msgid "Granted"
 msgstr "Concedida"
@@ -10035,7 +10035,7 @@ msgid "How can we help?"
 msgstr "Como podemos ajudar?"
 
 msgid "How did you hear about Paradev?"
-msgstr "Como você conheceu o Paradev?"
+msgstr "Como você conheceu o Peixoto IA?"
 
 msgid "How do cloud hours work?"
 msgstr "Como funcionam as horas na nuvem?"
@@ -10059,7 +10059,7 @@ msgid "How grouped commands open."
 msgstr "Como os comandos agrupados abrem."
 
 msgid "How is Paradev different from just running Claude Code in a terminal?"
-msgstr "Qual a diferença entre o Paradev e simplesmente rodar o Claude Code no terminal?"
+msgstr "Qual a diferença entre o Peixoto IA e simplesmente rodar o Claude Code no terminal?"
 
 msgid "How it should work and what to avoid"
 msgstr "Como ele deve trabalhar e o que evitar"
@@ -10092,10 +10092,10 @@ msgid "How tiers work →"
 msgstr "Como funcionam os níveis →"
 
 msgid "How to install {name} in Paradev"
-msgstr "Como instalar {name} no Paradev"
+msgstr "Como instalar {name} no Peixoto IA"
 
 msgid "How to install Paradev"
-msgstr "Como instalar o Paradev"
+msgstr "Como instalar o Peixoto IA"
 
 msgid "How we build it, in long form."
 msgstr "Como construímos, em detalhes."
@@ -10140,7 +10140,7 @@ msgid "Humans write every line. Tools compile, lint, and complain. The keyboard 
 msgstr "As pessoas escrevem cada linha. As ferramentas compilam, verificam o estilo e reclamam. O teclado é a fábrica."
 
 msgid "I already use an IDE like Cursor, is this for me?"
-msgstr "Já uso uma IDE como o Cursor. O Paradev é para mim?"
+msgstr "Já uso uma IDE como o Cursor. O Peixoto IA é para mim?"
 
 msgid "I also love being able to spin up a local worktree environment on my Mac directly from my phone."
 msgstr "Também adoro poder iniciar um ambiente local com uma árvore de trabalho no meu Mac diretamente do celular."
@@ -10189,7 +10189,7 @@ msgid "If you choose to move, save your branches and export the data you want to
 msgstr "Se decidir migrar, salve suas branches e exporte os dados que deseja manter. As exportações não importam conversas do Conductor para o {companyName}."
 
 msgid "If you're enjoying Paradev so far, a GitHub star helps other developers discover it."
-msgstr "Se você está curtindo o Paradev até aqui, uma estrela no GitHub ajuda outras pessoas a descobri-lo."
+msgstr "Se você está curtindo o Peixoto IA até aqui, uma estrela no GitHub ajuda outras pessoas a descobri-lo."
 
 msgid "Ignore @channel and @here"
 msgstr "Ignorar @channel e @here"
@@ -10348,13 +10348,13 @@ msgid "In Apple's window, click Install. It takes a few minutes, and this page u
 msgstr "Na janela da Apple, clique em Instalar. Leva alguns minutos, e esta página atualiza quando terminar."
 
 msgid "In just a few months, <0>tens of thousands of engineers</0> run Paradev as their primary IDE, at companies like Wix, DoorDash, and Netflix."
-msgstr "Em poucos meses, <0>dezenas de milhares de pessoas de engenharia</0> passaram a usar o Paradev como IDE principal, em empresas como Wix, DoorDash e Netflix."
+msgstr "Em poucos meses, <0>dezenas de milhares de pessoas de engenharia</0> passaram a usar o Peixoto IA como IDE principal, em empresas como Wix, DoorDash e Netflix."
 
 msgid "In local workspaces, your code and agent sessions stay on your machine. Cloud workspaces run in a sandbox."
 msgstr "Nas áreas de trabalho locais, seu código e as sessões de agentes ficam na sua máquina. Áreas de trabalho na nuvem rodam em um sandbox."
 
 msgid "In manual mode, Paradev doesn't sign this agent in. Have your script sign it in again and continue, or turn off manual mode in agent settings."
-msgstr "No modo manual, o Paradev não faz login neste agente. Faça seu script entrar de novo e continue, ou desative o modo manual nas configurações de agentes."
+msgstr "No modo manual, o Peixoto IA não faz login neste agente. Faça seu script entrar de novo e continue, ou desative o modo manual nas configurações de agentes."
 
 msgid "In person in San Francisco, five days a week. You work directly with the founders."
 msgstr "Presencial em San Francisco, cinco dias por semana. Você trabalha diretamente com os fundadores."
@@ -10385,7 +10385,7 @@ msgid "In the merge queue. GitHub merges it when its turn comes."
 msgstr "Na fila de merge. O GitHub faz o merge quando chegar a vez dele."
 
 msgid "In the Paradev desktop app, open <0>Settings → Appearance → Theme</0>."
-msgstr "No app de desktop do Paradev, abra <0>Configurações → Aparência → Tema</0>."
+msgstr "No app de desktop do Peixoto IA, abra <0>Configurações → Aparência → Tema</0>."
 
 msgid "in this period"
 msgstr "neste período"
@@ -10424,7 +10424,7 @@ msgid "Included with the plan"
 msgstr "Incluído no plano"
 
 msgid "Includes the Paradev-specific box variant"
-msgstr "Inclui a variante box específica do Paradev"
+msgstr "Inclui a variante box específica do Peixoto IA"
 
 msgid "Incognito Operator"
 msgstr "Operador Incógnito"
@@ -10475,7 +10475,7 @@ msgid "Inputs"
 msgstr "Entradas"
 
 msgid "Insights from the Paradev team about parallel coding agents and developer productivity."
-msgstr "O que o time do Paradev tem a dizer sobre agentes de código em paralelo e produtividade de quem desenvolve."
+msgstr "O que o time do Peixoto IA tem a dizer sobre agentes de código em paralelo e produtividade de quem desenvolve."
 
 msgid "Inspect branches and run SQL"
 msgstr "Inspecionar branches e executar SQL"
@@ -10500,7 +10500,7 @@ msgid "Install & Restart"
 msgstr "Instalar e reiniciar"
 
 msgid "Install a plugin in the Paradev app and every agent can use it."
-msgstr "Instale um plugin no app do Paradev e qualquer agente poderá usá-lo."
+msgstr "Instale um plugin no app do Peixoto IA e qualquer agente poderá usá-lo."
 
 msgid "Install Command Line Tools"
 msgstr "Instalar Command Line Tools"
@@ -10530,7 +10530,7 @@ msgid "Install once. Mention it in any prompt."
 msgstr "Instale uma vez. Mencione em qualquer prompt."
 
 msgid "Install Paradev MCP in your client"
-msgstr "Instale o MCP do Paradev no seu cliente"
+msgstr "Instale o MCP do Peixoto IA no seu cliente"
 
 msgid "Install plugin"
 msgstr "Instalar plugin"
@@ -10539,7 +10539,7 @@ msgid "Install the desktop app"
 msgstr "Instale o app de desktop"
 
 msgid "Install the Paradev GitHub App on each GitHub organization or account whose repositories you want to connect."
-msgstr "Instale o GitHub App do Paradev em cada organização ou conta do GitHub cujos repositórios você quer conectar."
+msgstr "Instale o GitHub App do Peixoto IA em cada organização ou conta do GitHub cujos repositórios você quer conectar."
 
 msgid "Install, authorize, and scope MCP servers across all your workspaces from one place, with centralized OAuth."
 msgstr "Instale, autorize e defina o escopo de servidores MCP em todas as suas áreas de trabalho de um lugar só, com OAuth centralizado."
@@ -10568,7 +10568,7 @@ msgid "Installing..."
 msgstr "Instalando..."
 
 msgid "Installs Paradev on a machine you can reach with ssh, signs Paradev in to your account, and keeps it running as a service."
-msgstr "Instala o Paradev em uma máquina que você acessa por ssh, conecta o Paradev à sua conta e o mantém em execução como serviço."
+msgstr "Instala o Peixoto IA em uma máquina que você acessa por ssh, conecta o Peixoto IA à sua conta e o mantém em execução como serviço."
 
 msgid "Instructions"
 msgstr "Instruções"
@@ -10586,7 +10586,7 @@ msgid "Interactive clients authorize over OAuth 2.1 in your browser, scoped to y
 msgstr "Clientes interativos autorizam por OAuth 2.1 no navegador, no escopo da sua organização ativa. Para ambientes headless e CI, gere uma chave de API em Configurações → Chaves de API no app de desktop e passe-a como Bearer token. A configuração completa, incluindo os cabeçalhos para o Claude Code, está na <0>documentação de autenticação</0>."
 
 msgid "Interested in bringing Paradev to your organization? Reach out and we'll work with you to find the right setup for your team."
-msgstr "Quer levar o Paradev para a sua organização? Fale com a gente e montamos junto a configuração certa para o seu time."
+msgstr "Quer levar o Peixoto IA para a sua organização? Fale com a gente e montamos junto a configuração certa para o seu time."
 
 msgid "Interface"
 msgstr "Interface"
@@ -10712,16 +10712,16 @@ msgid "is now signed in here."
 msgstr "está conectada aqui agora."
 
 msgid "Is Paradev free to use?"
-msgstr "O Paradev é gratuito?"
+msgstr "O Peixoto IA é gratuito?"
 
 msgid "Is Paradev just a wrapper around Claude Code?"
-msgstr "O Paradev é só um wrapper do Claude Code?"
+msgstr "O Peixoto IA é só um wrapper do Claude Code?"
 
 msgid "Is Paradev open source?"
-msgstr "O Paradev é open source?"
+msgstr "O Peixoto IA é open source?"
 
 msgid "Is Paradev SOC 2 compliant?"
-msgstr "O Paradev está em conformidade com SOC 2?"
+msgstr "O Peixoto IA está em conformidade com SOC 2?"
 
 msgid "is signed in."
 msgstr "está conectada."
@@ -10838,7 +10838,7 @@ msgid "Its work, including uncommitted changes, is pushed to a new branch. A wor
 msgstr "O trabalho, incluindo alterações não commitadas, é enviado para uma nova branch. Uma área de trabalho em {computerName} começa a partir dessa branch, e cada chat do Claude continua lá. Agentes que estiverem trabalhando param primeiro. Terminais e outros chats ficam onde estão."
 
 msgid "Its workspaces and terminals are unavailable until it restarts. Use the Paradev tray menu > Host Service > Restart."
-msgstr "As áreas de trabalho e os terminais dele ficam indisponíveis até reiniciar. Use o menu da bandeja do Paradev > Serviço do host > Reiniciar."
+msgstr "As áreas de trabalho e os terminais dele ficam indisponíveis até reiniciar. Use o menu da bandeja do Peixoto IA > Serviço do host > Reiniciar."
 
 msgid "Its workspaces and their worktrees are removed from disk now instead of after 30 days. The repository folder and worktrees with uncommitted changes are kept."
 msgstr "Os workspaces e seus worktrees são removidos do disco agora, em vez de após 30 dias. A pasta do repositório e os worktrees com alterações não confirmadas são mantidos."
@@ -10868,7 +10868,7 @@ msgid "JOIN OUR DISCORD"
 msgstr "ENTRE NO NOSSO DISCORD"
 
 msgid "Join the <0>Paradev</0> community to get help, share ideas, and stay up to date with the latest news and updates."
-msgstr "Participe da comunidade do <0>Paradev</0> para tirar dúvidas, trocar ideias e acompanhar as novidades."
+msgstr "Participe da comunidade do <0>Peixoto IA</0> para tirar dúvidas, trocar ideias e acompanhar as novidades."
 
 msgid "Join the channel first"
 msgstr "Entre no canal primeiro"
@@ -10877,7 +10877,7 @@ msgid "Join the leaderboard"
 msgstr "Entrar no ranking"
 
 msgid "Join the Paradev community to get help, share ideas, and stay up to date with the latest news and updates."
-msgstr "Participe da comunidade do Paradev para obter ajuda, compartilhar ideias e ficar por dentro das últimas novidades e atualizações."
+msgstr "Participe da comunidade do Peixoto IA para obter ajuda, compartilhar ideias e ficar por dentro das últimas novidades e atualizações."
 
 msgid "Join the waitlist"
 msgstr "Entre na lista de espera"
@@ -10886,7 +10886,7 @@ msgid "Join us"
 msgstr "Trabalhe conosco"
 
 msgid "Join us at Paradev"
-msgstr "Venha trabalhar no Paradev"
+msgstr "Venha trabalhar no Peixoto IA"
 
 msgid "Join waitlist"
 msgstr "Entrar na lista de espera"
@@ -11294,7 +11294,7 @@ msgid "Light theme"
 msgstr "Tema claro"
 
 msgid "Like building with Paradev?"
-msgstr "Gosta de construir com o Paradev?"
+msgstr "Gosta de construir com o Peixoto IA?"
 
 msgid "Lime"
 msgstr "Lima"
@@ -11709,7 +11709,7 @@ msgid "Make public"
 msgstr "Tornar pública"
 
 msgid "Make sure the device is awake, online, and running Paradev."
-msgstr "Confira se o dispositivo está ativo, online e com o Paradev em execução."
+msgstr "Confira se o dispositivo está ativo, online e com o Peixoto IA em execução."
 
 msgid "Make the chip style the TooltipContent default"
 msgstr "Tornar o estilo de chip o padrão do TooltipContent"
@@ -11930,7 +11930,7 @@ msgid "Meet the team"
 msgstr "Conheça a equipe"
 
 msgid "Meet the team behind Paradev, building parallel coding agents for developers."
-msgstr "Conheça a equipe por trás do Paradev, construindo agentes de código paralelos para desenvolvedores."
+msgstr "Conheça a equipe por trás do Peixoto IA, construindo agentes de código paralelos para desenvolvedores."
 
 msgid "Member"
 msgstr "Membro"
@@ -11993,7 +11993,7 @@ msgid "Merge pull request"
 msgstr "Fazer merge do pull request"
 
 msgid "Merge pull requests without leaving Paradev, plus a round of chat fixes and polish."
-msgstr "Faça merge de pull requests sem sair do Paradev, além de uma rodada de correções e polimento no chat."
+msgstr "Faça merge de pull requests sem sair do Peixoto IA, além de uma rodada de correções e polimento no chat."
 
 msgid "Merge stack"
 msgstr "Fazer merge da pilha"
@@ -12637,7 +12637,7 @@ msgid "News and deep dives"
 msgstr "Novidades e análises aprofundadas"
 
 msgid "News, updates, and insights from the Paradev team about parallel coding agents and developer productivity."
-msgstr "Notícias, atualizações e análises da equipe do Paradev sobre agentes de código paralelos e produtividade de desenvolvedores."
+msgstr "Notícias, atualizações e análises da equipe do Peixoto IA sobre agentes de código paralelos e produtividade de desenvolvedores."
 
 msgid "Next"
 msgstr "Próxima"
@@ -13392,7 +13392,7 @@ msgid "No. {companyName} never proxies model calls. Agents use your own subscrip
 msgstr "Não. O {companyName} nunca atua como proxy nas chamadas aos modelos. Os agentes usam suas próprias assinaturas e chaves."
 
 msgid "No. Your agents stay independent; Paradev is the orchestration layer around them. Each task gets its own Git worktree and branch, persistent sessions, diff review, and automations that run on events or a schedule, without tying the workflow to one provider."
-msgstr "Não. Seus agentes continuam independentes; o Paradev é a camada de orquestração em volta deles. Cada tarefa tem seu próprio worktree Git e sua própria branch, sessões persistentes, revisão de diffs e automações que rodam por eventos ou em um agendamento, sem prender o fluxo de trabalho a um único provedor."
+msgstr "Não. Seus agentes continuam independentes; o Peixoto IA é a camada de orquestração em volta deles. Cada tarefa tem seu próprio worktree Git e sua própria branch, sessões persistentes, revisão de diffs e automações que rodam por eventos ou em um agendamento, sem prender o fluxo de trabalho a um único provedor."
 
 msgid "Nobody has joined the board yet."
 msgstr "Ninguém entrou no ranking ainda."
@@ -13705,7 +13705,7 @@ msgid "On window change"
 msgstr "Ao alterar a janela"
 
 msgid "On your machine. Repos, worktrees, terminal output, and agent sessions stay local by default; cloud sync covers account and organization metadata only. Paradev doesn't proxy any API calls."
-msgstr "Na sua máquina. Repositórios, worktrees, saída de terminal e sessões de agente ficam locais por padrão; a sincronização na nuvem cobre só metadados de conta e organização. O Paradev não faz proxy de nenhuma chamada de API."
+msgstr "Na sua máquina. Repositórios, worktrees, saída de terminal e sessões de agente ficam locais por padrão; a sincronização na nuvem cobre só metadados de conta e organização. O Peixoto IA não faz proxy de nenhuma chamada de API."
 
 msgid "On-screen Keyboard"
 msgstr "Teclado na tela"
@@ -13949,7 +13949,7 @@ msgid "Open {path} in file pane"
 msgstr "Abrir {path} no painel de arquivos"
 
 msgid "Open <0>Paradev</0> from your <1>Applications</1> folder"
-msgstr "Abra o <0>Paradev</0> pela pasta <1>Aplicativos</1>"
+msgstr "Abra o <0>Peixoto IA</0> pela pasta <1>Aplicativos</1>"
 
 msgid "Open a folder"
 msgstr "Abrir uma pasta"
@@ -13964,7 +13964,7 @@ msgid "Open a new {label} chat?"
 msgstr "Abrir um novo chat do {label}?"
 
 msgid "Open a pull request that adds it to the Paradev repository. We review it and add it to the marketplace."
-msgstr "Abra um pull request que o adicione ao repositório do Paradev. Nós o revisamos e adicionamos ao marketplace."
+msgstr "Abra um pull request que o adicione ao repositório do Peixoto IA. Nós o revisamos e adicionamos ao marketplace."
 
 msgid "Open a pull request to view review status, checks, and comments."
 msgstr "Abra um pull request para ver o status da revisão, as verificações e os comentários."
@@ -14160,7 +14160,7 @@ msgid "Open in New Tab"
 msgstr "Abrir em nova aba"
 
 msgid "Open in Paradev"
-msgstr "Abrir no Paradev"
+msgstr "Abrir no Peixoto IA"
 
 msgid "Open in Pull Requests"
 msgstr "Abrir em Pull requests"
@@ -14231,7 +14231,7 @@ msgid "Open Page in Default Browser"
 msgstr "Abrir a página no navegador padrão"
 
 msgid "Open pages and reply to comments from the Paradev app on iPhone and iPad."
-msgstr "Abra páginas e responda comentários pelo app do Paradev no iPhone e no iPad."
+msgstr "Abra páginas e responda comentários pelo app do Peixoto IA no iPhone e no iPad."
 
 #. placeholder {0}: pr.number
 msgid "Open PR #{0}"
@@ -14397,7 +14397,7 @@ msgid "Operator"
 msgstr "Operador"
 
 msgid "Opt in from Paradev under Settings → Account."
-msgstr "Participe pelo Paradev em Configurações → Conta."
+msgstr "Participe pelo Peixoto IA em Configurações → Conta."
 
 msgid "Opt-out"
 msgstr "Não aceitar"
@@ -14688,190 +14688,190 @@ msgid "PaneHeaderActions.tsx"
 msgstr "PaneHeaderActions.tsx"
 
 msgid "Paradev"
-msgstr "Paradev"
+msgstr "Peixoto IA"
 
 msgid "Paradev {version}"
-msgstr "Paradev {version}"
+msgstr "Peixoto IA {version}"
 
 msgid "Paradev acts on GitHub as you. Connect your GitHub account to merge, comment on and update pull requests."
-msgstr "O Paradev age no GitHub em seu nome. Conecte sua conta do GitHub para fazer merge, comentar e atualizar pull requests."
+msgstr "O Peixoto IA age no GitHub em seu nome. Conecte sua conta do GitHub para fazer merge, comentar e atualizar pull requests."
 
 msgid "Paradev Agent"
-msgstr "Paradev Agent"
+msgstr "Peixoto IA Agent"
 
 msgid "Paradev app"
-msgstr "App Paradev"
+msgstr "App Peixoto IA"
 
 msgid "Paradev Automations"
-msgstr "Automações do Paradev"
+msgstr "Automações do Peixoto IA"
 
 msgid "Paradev CLI"
-msgstr "CLI do Paradev"
+msgstr "CLI do Peixoto IA"
 
 msgid "Paradev cloud workspaces"
-msgstr "Áreas de trabalho na nuvem do Paradev"
+msgstr "Áreas de trabalho na nuvem do Peixoto IA"
 
 msgid "Paradev components"
-msgstr "Componentes do Paradev"
+msgstr "Componentes do Peixoto IA"
 
 msgid "Paradev Components"
-msgstr "Componentes do Paradev"
+msgstr "Componentes do Peixoto IA"
 
 msgid "Paradev could not bring over some of your v1 projects or workspaces. Open the importer to see why and retry each one."
-msgstr "O Paradev não conseguiu trazer alguns dos seus projetos ou workspaces da v1. Abra o importador para ver o motivo e tentar cada um novamente."
+msgstr "O Peixoto IA não conseguiu trazer alguns dos seus projetos ou workspaces da v1. Abra o importador para ver o motivo e tentar cada um novamente."
 
 msgid "Paradev could not complete sign-in. Please try again."
-msgstr "O Paradev não conseguiu concluir o login. Tente novamente."
+msgstr "O Peixoto IA não conseguiu concluir o login. Tente novamente."
 
 msgid "Paradev CPU"
-msgstr "CPU do Paradev"
+msgstr "CPU do Peixoto IA"
 
 msgid "Paradev CPU · last 5 min"
-msgstr "CPU do Paradev · últimos 5 min"
+msgstr "CPU do Peixoto IA · últimos 5 min"
 
 msgid "Paradev Design System"
-msgstr "Design System do Paradev"
+msgstr "Design System do Peixoto IA"
 
 msgid "Paradev desktop app"
-msgstr "App para desktop do Paradev"
+msgstr "App para desktop do Peixoto IA"
 
 msgid "Paradev doesn't have permission to read \"{name}\"."
-msgstr "O Paradev não tem permissão para ler \"{name}\"."
+msgstr "O Peixoto IA não tem permissão para ler \"{name}\"."
 
 msgid "Paradev Enterprise is Paradev for teams. Reach out to learn more about what's included and how it can work for your organization."
-msgstr "O Paradev Enterprise é o Paradev para times. Fale com a gente para saber o que está incluído e como ele pode funcionar na sua organização."
+msgstr "O Peixoto IA Enterprise é o Peixoto IA para times. Fale com a gente para saber o que está incluído e como ele pode funcionar na sua organização."
 
 msgid "Paradev for iPhone and iPad"
-msgstr "Paradev para iPhone e iPad"
+msgstr "Peixoto IA para iPhone e iPad"
 
 msgid "Paradev for your team"
-msgstr "Paradev para o seu time"
+msgstr "Peixoto IA para o seu time"
 
 msgid "Paradev forwards the ports a remote workspace opens while you have it selected."
-msgstr "O Paradev encaminha as portas que uma área de trabalho remota abre enquanto ela estiver selecionada."
+msgstr "O Peixoto IA encaminha as portas que uma área de trabalho remota abre enquanto ela estiver selecionada."
 
 msgid "Paradev GitHub App"
-msgstr "Paradev GitHub App"
+msgstr "Peixoto IA GitHub App"
 
 msgid "Paradev has a free tier. The source code is on GitHub under the MIT License, so you can inspect, modify, and self-host it."
-msgstr "O Paradev tem um plano gratuito. O código-fonte está no GitHub sob a Licença MIT, então você pode inspecionar, modificar e hospedar por conta própria."
+msgstr "O Peixoto IA tem um plano gratuito. O código-fonte está no GitHub sob a Licença MIT, então você pode inspecionar, modificar e hospedar por conta própria."
 
 msgid "Paradev hit an unexpected error. Reload to try again."
-msgstr "O Paradev encontrou um erro inesperado. Recarregue para tentar novamente."
+msgstr "O Peixoto IA encontrou um erro inesperado. Recarregue para tentar novamente."
 
 msgid "Paradev holds no credential for {label} and adds none to your cloud workspaces when they start, restart or wake. A script you run inside the workspace keeps {loginFile} up to date. If it stops, {label} stays signed out until your script signs it in again."
-msgstr "O Paradev não guarda nenhuma credencial do {label} e não adiciona nenhuma às suas áreas de trabalho na nuvem quando elas iniciam, reiniciam ou são retomadas. Um script que você executa dentro da área de trabalho mantém {loginFile} atualizado. Se ele parar, o {label} continua sem login até o seu script fazer login de novo."
+msgstr "O Peixoto IA não guarda nenhuma credencial do {label} e não adiciona nenhuma às suas áreas de trabalho na nuvem quando elas iniciam, reiniciam ou são retomadas. Um script que você executa dentro da área de trabalho mantém {loginFile} atualizado. Se ele parar, o {label} continua sem login até o seu script fazer login de novo."
 
 msgid "Paradev holds the token and makes the calls. Agents never see it."
-msgstr "O Paradev guarda o token e faz as chamadas. Os agentes nunca o veem."
+msgstr "O Peixoto IA guarda o token e faz as chamadas. Os agentes nunca o veem."
 
 msgid "Paradev hooks"
-msgstr "Hooks do Paradev"
+msgstr "Hooks do Peixoto IA"
 
 msgid "Paradev in-app browser"
-msgstr "Navegador integrado do Paradev"
+msgstr "Navegador integrado do Peixoto IA"
 
 msgid "Paradev is a desktop app. Enter your email and we'll send you a download link to open on your Mac."
-msgstr "O Paradev é um app de desktop. Informe seu e-mail e enviamos um link de download para abrir no seu Mac."
+msgstr "O Peixoto IA é um app de desktop. Informe seu e-mail e enviamos um link de download para abrir no seu Mac."
 
 msgid "Paradev is building self-improving software. It starts with giving engineers the best tools that adapt to their needs over time."
-msgstr "O Paradev está construindo software que se aprimora sozinho. Isso começa entregando a quem desenvolve as melhores ferramentas, que se adaptam às suas necessidades com o tempo."
+msgstr "O Peixoto IA está construindo software que se aprimora sozinho. Isso começa entregando a quem desenvolve as melhores ferramentas, que se adaptam às suas necessidades com o tempo."
 
 msgid "Paradev is built by a team based in San Francisco, California. For product support or account questions, email <0>{supportEmail}</0> and we'll get back to you within one business day. For partnerships, press, enterprise, or anything else, write to <1>{teamEmail}</1>."
-msgstr "O Paradev é feito por um time em San Francisco, Califórnia. Para suporte do produto ou dúvidas sobre a conta, escreva para <0>{supportEmail}</0> e respondemos em até um dia útil. Para parcerias, imprensa, enterprise ou qualquer outro assunto, escreva para <1>{teamEmail}</1>."
+msgstr "O Peixoto IA é feito por um time em San Francisco, Califórnia. Para suporte do produto ou dúvidas sobre a conta, escreva para <0>{supportEmail}</0> e respondemos em até um dia útil. Para parcerias, imprensa, enterprise ou qualquer outro assunto, escreva para <1>{teamEmail}</1>."
 
 msgid "Paradev is built in Paradev, so we're our own #1 users. You get paid to make your own life easier."
-msgstr "O Paradev é desenvolvido no Paradev, então somos nossos próprios usuários número um. Você recebe para facilitar a própria vida."
+msgstr "O Peixoto IA é desenvolvido no Peixoto IA, então somos nossos próprios usuários número um. Você recebe para facilitar a própria vida."
 
 msgid "Paradev is designed to work with your existing tool, we natively support deep-linking to IDEs like Cursor so you can open your workspaces and files in your IDE."
-msgstr "O Paradev foi feito para funcionar com a ferramenta que você já usa. Temos suporte nativo a deep links para IDEs como o Cursor, então dá para abrir suas áreas de trabalho e arquivos direto na sua IDE."
+msgstr "O Peixoto IA foi feito para funcionar com a ferramenta que você já usa. Temos suporte nativo a deep links para IDEs como o Cursor, então dá para abrir suas áreas de trabalho e arquivos direto na sua IDE."
 
 msgid "Paradev is MIT licensed, so you're never locked in. Read or change the code on GitHub."
-msgstr "O Paradev tem licença MIT, então você nunca fica preso. Leia ou altere o código no GitHub."
+msgstr "O Peixoto IA tem licença MIT, então você nunca fica preso. Leia ou altere o código no GitHub."
 
 msgid "Paradev is open source. Every pull request, review and bug is public on GitHub."
-msgstr "O Paradev é de código aberto. Cada pull request, revisão e bug é público no GitHub."
+msgstr "O Peixoto IA é de código aberto. Cada pull request, revisão e bug é público no GitHub."
 
 msgid "Paradev is the workbench for the F3 to F4 transition: parallel agents on separate branches, fleets you can actually supervise, and a review surface for code you did not write."
-msgstr "O Paradev é a bancada para a transição de F3 para F4: agentes em paralelo em branches separadas, frotas que você consegue de fato supervisionar e uma interface de revisão para código que você não escreveu."
+msgstr "O Peixoto IA é a bancada para a transição de F3 para F4: agentes em paralelo em branches separadas, frotas que você consegue de fato supervisionar e uma interface de revisão para código que você não escreveu."
 
 msgid "Paradev isn't on Windows yet"
-msgstr "Por enquanto o Paradev é só para Mac"
+msgstr "Por enquanto o Peixoto IA é só para Mac"
 
 msgid "Paradev may sign you back in after restart. Please try signing out again."
-msgstr "O Paradev pode reconectar sua conta depois de reiniciar. Tente sair novamente."
+msgstr "O Peixoto IA pode reconectar sua conta depois de reiniciar. Tente sair novamente."
 
 msgid "Paradev memory"
-msgstr "Memória do Paradev"
+msgstr "Memória do Peixoto IA"
 
 msgid "Paradev memory · last 5 min"
-msgstr "Memória do Paradev · últimos 5 min"
+msgstr "Memória do Peixoto IA · últimos 5 min"
 
 msgid "Paradev Mobile code diff on iPhone"
-msgstr "Diff de código do Paradev Mobile no iPhone"
+msgstr "Diff de código do Peixoto IA Mobile no iPhone"
 
 msgid "Paradev mobile gives me the power of my desktop anywhere I go."
-msgstr "O Paradev mobile me dá o poder do meu desktop onde quer que eu vá."
+msgstr "O Peixoto IA mobile me dá o poder do meu desktop onde quer que eu vá."
 
 msgid "Paradev Mobile terminal on iPhone"
-msgstr "Terminal do Paradev Mobile no iPhone"
+msgstr "Terminal do Peixoto IA Mobile no iPhone"
 
 msgid "Paradev needs Full Disk Access to read another browser's data. Grant it in System Settings, then check again."
-msgstr "O Paradev precisa de Acesso Total ao Disco para ler os dados de outro navegador. Conceda em Ajustes do Sistema e verifique novamente."
+msgstr "O Peixoto IA precisa de Acesso Total ao Disco para ler os dados de outro navegador. Conceda em Ajustes do Sistema e verifique novamente."
 
 msgid "Paradev needs Git to add a project."
-msgstr "O Paradev precisa do Git para adicionar um projeto."
+msgstr "O Peixoto IA precisa do Git para adicionar um projeto."
 
 msgid "Paradev next to others"
-msgstr "Paradev ao lado de outros"
+msgstr "Peixoto IA ao lado de outros"
 
 msgid "Paradev on iPad, showing a pull request and a workspace list"
-msgstr "Paradev no iPad, mostrando um pull request e uma lista de workspaces"
+msgstr "Peixoto IA no iPad, mostrando um pull request e uma lista de workspaces"
 
 msgid "Paradev only receives the permissions this connector asks for. Disconnect at any time to revoke them."
-msgstr "O Paradev recebe apenas as permissões que este conector solicita. Desconecte a qualquer momento para revogá-las."
+msgstr "O Peixoto IA recebe apenas as permissões que este conector solicita. Desconecte a qualquer momento para revogá-las."
 
 msgid "Paradev originals"
-msgstr "Originais do Paradev"
+msgstr "Originais do Peixoto IA"
 
 msgid "Paradev Pages"
-msgstr "Paradev Páginas"
+msgstr "Peixoto IA Páginas"
 
 msgid "Paradev Pages demo"
-msgstr "Demo do Paradev Páginas"
+msgstr "Demo do Peixoto IA Páginas"
 
 msgid "Paradev Plugins"
-msgstr "Plugins do Paradev"
+msgstr "Plugins do Peixoto IA"
 
 msgid "Paradev reads it with your connected GitHub account. Connect one in <0>Settings › Integrations</0> if you have not yet."
-msgstr "O Paradev lê o repositório com sua conta do GitHub conectada. Se ainda não conectou, conecte uma em <0>Configurações › Integrações</0>."
+msgstr "O Peixoto IA lê o repositório com sua conta do GitHub conectada. Se ainda não conectou, conecte uma em <0>Configurações › Integrações</0>."
 
 msgid "Paradev runs locally on your developers' machines. We don't store your code or AI conversations, and Paradev has completed a SOC 2 Type II audit with an independent auditor. Request the report and review our security documentation at {trustHost}."
-msgstr "O Paradev roda localmente nas máquinas do seu time. Não guardamos seu código nem suas conversas com a IA, e o Paradev concluiu uma auditoria SOC 2 Tipo II com um auditor independente. Solicite o relatório e veja nossa documentação de segurança em {trustHost}."
+msgstr "O Peixoto IA roda localmente nas máquinas do seu time. Não guardamos seu código nem suas conversas com a IA, e o Peixoto IA concluiu uma auditoria SOC 2 Tipo II com um auditor independente. Solicite o relatório e veja nossa documentação de segurança em {trustHost}."
 
 msgid "Paradev started as a hackathon project in November 2025. It was a simple desktop app for managing worktrees."
-msgstr "O Paradev começou como um projeto de hackathon em novembro de 2025. Era um app de desktop simples para gerenciar worktrees."
+msgstr "O Peixoto IA começou como um projeto de hackathon em novembro de 2025. Era um app de desktop simples para gerenciar worktrees."
 
 msgid "Paradev Teams"
-msgstr "Equipes do Paradev"
+msgstr "Equipes do Peixoto IA"
 
 msgid "Paradev UI"
-msgstr "Paradev UI"
+msgstr "Peixoto IA UI"
 
 msgid "Paradev uses the GitHub CLI to clone repos and open pull requests. You can also do this later."
-msgstr "O Paradev usa o GitHub CLI para clonar repositórios e abrir pull requests. Você também pode fazer isso depois."
+msgstr "O Peixoto IA usa o GitHub CLI para clonar repositórios e abrir pull requests. Você também pode fazer isso depois."
 
 msgid "Paradev vs the Alternatives"
-msgstr "Paradev e as alternativas"
+msgstr "Peixoto IA e as alternativas"
 
 msgid "Paradev works with any CLI-based coding agent, including Claude Code, OpenCode, OpenAI Codex, and more. Choose a different agent for every task without changing your workspace or review flow."
-msgstr "O Paradev funciona com qualquer agente de código baseado em CLI, incluindo Claude Code, OpenCode, OpenAI Codex e outros. Escolha um agente diferente para cada tarefa sem mudar sua área de trabalho nem seu fluxo de revisão."
+msgstr "O Peixoto IA funciona com qualquer agente de código baseado em CLI, incluindo Claude Code, OpenCode, OpenAI Codex e outros. Escolha um agente diferente para cada tarefa sem mudar sua área de trabalho nem seu fluxo de revisão."
 
 msgid "paradev.com"
 msgstr "paradev.com"
 
 msgid "Paradev's mobile app lets me keep my agents moving and unblock them from anywhere, even when I'm nowhere near my computer."
-msgstr "O aplicativo móvel do Paradev me permite manter meus agentes trabalhando e desbloqueá-los de qualquer lugar, mesmo longe do computador."
+msgstr "O aplicativo móvel do Peixoto IA me permite manter meus agentes trabalhando e desbloqueá-los de qualquer lugar, mesmo longe do computador."
 
 msgid "Paragraph"
 msgstr "Parágrafo"
@@ -14934,7 +14934,7 @@ msgid "Paste attachment"
 msgstr "Colar anexo"
 
 msgid "Paste this into Paradev CLI:"
-msgstr "Cole isto na CLI do Paradev:"
+msgstr "Cole isto na CLI do Peixoto IA:"
 
 msgid "Path"
 msgstr "Caminho"
@@ -14978,7 +14978,7 @@ msgid "Paused until {0}"
 msgstr "Pausado até {0}"
 
 msgid "Paused when Paradev closed"
-msgstr "Pausado quando o Paradev foi fechado"
+msgstr "Pausado quando o Peixoto IA foi fechado"
 
 msgid "Pay {total}"
 msgstr "Pagar {total}"
@@ -15108,7 +15108,7 @@ msgid "Pick a reason"
 msgstr "Escolha um motivo"
 
 msgid "Pick a repository with a plugin marketplace file. Paradev syncs its plugins now and each time you sync again."
-msgstr "Escolha um repositório com um arquivo de marketplace de plugins. O Paradev sincroniza os plugins dele agora e sempre que você sincronizar de novo."
+msgstr "Escolha um repositório com um arquivo de marketplace de plugins. O Peixoto IA sincroniza os plugins dele agora e sempre que você sincronizar de novo."
 
 msgid "Pick a sound or add your own. Custom audio supports .mp3, .wav, and .ogg."
 msgstr "Escolha um som ou adicione o seu. O áudio próprio aceita .mp3, .wav e .ogg."
@@ -15123,7 +15123,7 @@ msgid "Pick an icon and a color, or upload a custom image. Defaults to the linke
 msgstr "Escolha um ícone e uma cor, ou envie uma imagem. Por padrão, usa o avatar do dono do repositório no GitHub."
 
 msgid "Pick one in the Paradev app. It's saved to your account."
-msgstr "Escolha um no app do Paradev. Ele fica salvo na sua conta."
+msgstr "Escolha um no app do Peixoto IA. Ele fica salvo na sua conta."
 
 msgid "Pick the best agent."
 msgstr "Escolha o melhor agente."
@@ -15219,7 +15219,7 @@ msgid "Play the animation"
 msgstr "Reproduzir a animação"
 
 msgid "Play the Paradev Pages demo"
-msgstr "Reproduzir a demo do Paradev Páginas"
+msgstr "Reproduzir a demo do Peixoto IA Páginas"
 
 msgid "Please check your internet connection and try again."
 msgstr "Confira sua conexão com a internet e tente novamente."
@@ -15237,7 +15237,7 @@ msgid "Please select an organization"
 msgstr "Selecione uma organização"
 
 msgid "Please try again, or restart Paradev on that device."
-msgstr "Tente novamente ou reinicie o Paradev nesse dispositivo."
+msgstr "Tente novamente ou reinicie o Peixoto IA nesse dispositivo."
 
 msgid "Please upload a valid .env file."
 msgstr "Envie um arquivo .env válido."
@@ -15377,7 +15377,7 @@ msgid "Press <0>Esc</0> to close"
 msgstr "Pressione <0>Esc</0> para fechar"
 
 msgid "Press ⌘⇧B or open a port Paradev detected. Your dev server loads in a pane beside your terminals."
-msgstr "Pressione ⌘⇧B ou abra uma porta detectada pelo Paradev. Seu servidor de desenvolvimento carrega em um painel ao lado dos seus terminais."
+msgstr "Pressione ⌘⇧B ou abra uma porta detectada pelo Peixoto IA. Seu servidor de desenvolvimento carrega em um painel ao lado dos seus terminais."
 
 msgid "Press a key…"
 msgstr "Pressione uma tecla…"
@@ -15640,7 +15640,7 @@ msgid "Prompt"
 msgstr "Prompt"
 
 msgid "Prompt a coding agent to build what you want to see in Paradev. If we like your prompt, we'll run it and merge the result."
-msgstr "Peça a um agente de código para construir o que você quer ver no Paradev. Se gostarmos do seu prompt, vamos executá-lo e mesclar o resultado."
+msgstr "Peça a um agente de código para construir o que você quer ver no Peixoto IA. Se gostarmos do seu prompt, vamos executá-lo e mesclar o resultado."
 
 msgid "Prompt history"
 msgstr "Histórico de prompts"
@@ -15698,7 +15698,7 @@ msgid "Publish again and the link stays the same. Earlier versions are kept in t
 msgstr "Publique de novo e o link continua o mesmo. As versões anteriores ficam no histórico."
 
 msgid "Publish from the Paradev CLI or over MCP."
-msgstr "Publique pela CLI do Paradev ou via MCP."
+msgstr "Publique pela CLI do Peixoto IA ou via MCP."
 
 msgid "Publish from your own repo"
 msgstr "Publique do seu próprio repo"
@@ -15764,10 +15764,10 @@ msgid "Pull requests above it will remain open and GitHub will retarget them."
 msgstr "Os pull requests acima continuarão abertos e o GitHub mudará o destino deles."
 
 msgid "Pull requests, comments and pushes from Paradev are made as you."
-msgstr "Pull requests, comentários e pushes feitos pelo Paradev são feitos em seu nome."
+msgstr "Pull requests, comentários e pushes feitos pelo Peixoto IA são feitos em seu nome."
 
 msgid "Pull requests, comments and pushes from Paradev will no longer be made as you."
-msgstr "Pull requests, comentários e pushes feitos pelo Paradev deixarão de ser feitos em seu nome."
+msgstr "Pull requests, comentários e pushes feitos pelo Peixoto IA deixarão de ser feitos em seu nome."
 
 msgid "Purple"
 msgstr "Roxo"
@@ -15826,7 +15826,7 @@ msgid "Queue paused by the usage limit"
 msgstr "Fila pausada pelo limite de uso"
 
 msgid "Queue paused when Paradev closed"
-msgstr "Fila pausada quando o Paradev foi fechado"
+msgstr "Fila pausada quando o Peixoto IA foi fechado"
 
 msgid "Queue stack"
 msgstr "Enfileirar pilha"
@@ -15930,7 +15930,7 @@ msgid "Rate limits"
 msgstr "Limites de uso"
 
 msgid "Reach this Mac from anywhere via the Paradev relay, or spin up cloud workspaces. Connect from any client."
-msgstr "Acesse este Mac de qualquer lugar pelo relay do Paradev ou crie áreas de trabalho na nuvem. Conecte-se de qualquer cliente."
+msgstr "Acesse este Mac de qualquer lugar pelo relay do Peixoto IA ou crie áreas de trabalho na nuvem. Conecte-se de qualquer cliente."
 
 msgid "Reached"
 msgstr "Alcançado"
@@ -16088,7 +16088,7 @@ msgid "Ready to Merge"
 msgstr "Pronto para merge"
 
 msgid "Ready to try Paradev?"
-msgstr "Pronto para experimentar o Paradev?"
+msgstr "Pronto para experimentar o Peixoto IA?"
 
 msgid "Reapply all commits"
 msgstr "Reaplica todos os commits"
@@ -16232,7 +16232,7 @@ msgid "Region"
 msgstr "Região"
 
 msgid "Registers lifecycle hooks in this agent's global config so Paradev can show status and send notifications. Turning this off removes Paradev's entries everywhere. Status and notifications stop for this agent, including inside Paradev."
-msgstr "Registra hooks de ciclo de vida na configuração global deste agente para o Paradev mostrar o status e enviar notificações. Desligar isso remove as entradas do Paradev em todo lugar. Status e notificações param para este agente, inclusive dentro do Paradev."
+msgstr "Registra hooks de ciclo de vida na configuração global deste agente para o Peixoto IA mostrar o status e enviar notificações. Desligar isso remove as entradas do Peixoto IA em todo lugar. Status e notificações param para este agente, inclusive dentro do Peixoto IA."
 
 msgid "Reinstall {name}"
 msgstr "Reinstalar {name}"
@@ -16283,7 +16283,7 @@ msgid "Reload from disk"
 msgstr "Recarregar do disco"
 
 msgid "Reload Paradev to refresh the workspace list."
-msgstr "Recarregue o Paradev para atualizar a lista de áreas de trabalho."
+msgstr "Recarregue o Peixoto IA para atualizar a lista de áreas de trabalho."
 
 msgid "Reload to apply"
 msgstr "Recarregar para aplicar"
@@ -16688,7 +16688,7 @@ msgid "Required version: {minimumVersion}+"
 msgstr "Versão necessária: {minimumVersion}+"
 
 msgid "Requires iOS 26 or iPadOS 26 or later. Included with Paradev Pro."
-msgstr "Requer iOS 26 ou iPadOS 26 ou posterior. Incluído no Paradev Pro."
+msgstr "Requer iOS 26 ou iPadOS 26 ou posterior. Incluído no Peixoto IA Pro."
 
 msgid "Resend invite"
 msgstr "Reenviar convite"
@@ -16978,7 +16978,7 @@ msgid "Retry dictation"
 msgstr "Tentar ditado novamente"
 
 msgid "Retry in a few seconds; if it persists, restart Paradev."
-msgstr "Tente de novo em alguns segundos; se persistir, reinicie o Paradev."
+msgstr "Tente de novo em alguns segundos; se persistir, reinicie o Peixoto IA."
 
 msgid "Retry in a few seconds."
 msgstr "Tente de novo em alguns segundos."
@@ -17054,7 +17054,7 @@ msgid "Review pending changes."
 msgstr "Revise as alterações pendentes."
 
 msgid "Review pull requests inside Paradev: diff pane, agent-assisted review, act on comments directly."
-msgstr "Revise pull requests dentro do Paradev: painel de diff, revisão assistida por agente e ações direto nos comentários."
+msgstr "Revise pull requests dentro do Peixoto IA: painel de diff, revisão assistida por agente e ações direto nos comentários."
 
 msgid "Review requested"
 msgstr "Revisão solicitada"
@@ -17259,7 +17259,7 @@ msgid "Run parallel coding agents on features, fixes, and refactors. Each one wo
 msgstr "Rode agentes de código em paralelo em funcionalidades, correções e refatorações. Cada um trabalha na própria branch, localmente ou na nuvem."
 
 msgid "Run parallel coding agents with Paradev"
-msgstr "Execute agentes de código em paralelo com o Paradev"
+msgstr "Execute agentes de código em paralelo com o Peixoto IA"
 
 msgid "Run script"
 msgstr "Executar script"
@@ -17341,7 +17341,7 @@ msgid "Runs in"
 msgstr "Executa em"
 
 msgid "Runs inside the Paradev app on that device, so updating it means updating the app there."
-msgstr "Executa dentro do app Paradev naquele dispositivo, então atualizá-lo significa atualizar o app lá."
+msgstr "Executa dentro do app Peixoto IA naquele dispositivo, então atualizá-lo significa atualizar o app lá."
 
 msgid "Runs land in a workspace. Review the diff, merge what's good."
 msgstr "As execuções chegam em uma área de trabalho. Revise o diff e mescle o que estiver bom."
@@ -17474,10 +17474,10 @@ msgid "Scale to 100+ agents"
 msgstr "Escale para mais de 100 agentes"
 
 msgid "Scan the QR code, then sign in with the same Paradev account and select this organization."
-msgstr "Escaneie o código QR, entre com a mesma conta do Paradev e selecione esta organização."
+msgstr "Escaneie o código QR, entre com a mesma conta do Peixoto IA e selecione esta organização."
 
 msgid "Scan to download Paradev for iPhone"
-msgstr "Escaneie para baixar o Paradev para iPhone"
+msgstr "Escaneie para baixar o Peixoto IA para iPhone"
 
 msgid "Scanning transcript logs…"
 msgstr "Analisando os logs de transcrição…"
@@ -17795,10 +17795,10 @@ msgid "See how {companyName}'s GitHub stars have grown over time."
 msgstr "Veja como as estrelas do {companyName} no GitHub cresceram ao longo do tempo."
 
 msgid "See how Paradev compares to other AI coding tools, from AI editors to coding agents to cloud-based AI engineers."
-msgstr "Veja como o Paradev se compara a outras ferramentas de IA para programar, de editores com IA a agentes de código e engenheiros de IA na nuvem."
+msgstr "Veja como o Peixoto IA se compara a outras ferramentas de IA para programar, de editores com IA a agentes de código e engenheiros de IA na nuvem."
 
 msgid "See how Paradev compares to other tools"
-msgstr "Veja como o Paradev se compara a outras ferramentas"
+msgstr "Veja como o Peixoto IA se compara a outras ferramentas"
 
 msgid "See how we work"
 msgstr "Veja como trabalhamos"
@@ -17828,7 +17828,7 @@ msgid "See the <0>custom themes guide</0> to edit a theme or build your own."
 msgstr "Veja o <0>guia de temas personalizados</0> para editar um tema ou criar o seu."
 
 msgid "See the open roles, or try Paradev first."
-msgstr "Veja as vagas abertas ou experimente o Paradev primeiro."
+msgstr "Veja as vagas abertas ou experimente o Peixoto IA primeiro."
 
 msgid "See this gate on the scorecard"
 msgstr "Ver este portão no placar"
@@ -17840,7 +17840,7 @@ msgid "See what it can do"
 msgstr "Veja o que ele pode fazer"
 
 msgid "See what we're building now, what's coming next, and where Paradev is headed."
-msgstr "Veja o que estamos construindo agora, o que vem a seguir e para onde o Paradev está indo."
+msgstr "Veja o que estamos construindo agora, o que vem a seguir e para onde o Peixoto IA está indo."
 
 msgid "See what your teammates' agents are working on, shipping, and blocked on."
 msgstr "Veja no que os agentes dos seus colegas estão trabalhando, o que estão entregando e onde estão bloqueados."
@@ -18036,7 +18036,7 @@ msgid "Send review"
 msgstr "Enviar revisão"
 
 msgid "Send the link. Your team opens it in a browser or in Paradev."
-msgstr "Envie o link. Sua equipe abre no navegador ou no Paradev."
+msgstr "Envie o link. Sua equipe abre no navegador ou no Peixoto IA."
 
 msgid "Send to"
 msgstr "Enviar para"
@@ -18211,7 +18211,7 @@ msgid "Set up project…"
 msgstr "Configurar projeto…"
 
 msgid "Set up this project for Paradev"
-msgstr "Configurar este projeto para o Paradev"
+msgstr "Configurar este projeto para o Peixoto IA"
 
 msgid "Set up your organization to get started"
 msgstr "Configure sua organização para começar"
@@ -18304,10 +18304,10 @@ msgid "Shared component library."
 msgstr "Biblioteca de componentes compartilhada."
 
 msgid "Shared settings and simpler membership for teams that work in Paradev together."
-msgstr "Configurações compartilhadas e gestão de membros mais simples para equipes que trabalham juntas no Paradev."
+msgstr "Configurações compartilhadas e gestão de membros mais simples para equipes que trabalham juntas no Peixoto IA."
 
 msgid "Shared theme JSON files you can import into Paradev."
-msgstr "Arquivos JSON de tema compartilhados que você pode importar no Paradev."
+msgstr "Arquivos JSON de tema compartilhados que você pode importar no Peixoto IA."
 
 msgid "Shared version"
 msgstr "Versão compartilhada"
@@ -18359,7 +18359,7 @@ msgid "Show a confirmation dialog when quitting the app"
 msgstr "Mostra uma confirmação ao encerrar o app"
 
 msgid "Show a microphone in the chat composer. Speech is transcribed by ChatGPT when Codex is signed in to it, otherwise on your Mac when possible, and otherwise by Paradev's servers."
-msgstr "Mostrar um microfone no campo do chat. A fala é transcrita pelo ChatGPT quando o Codex está conectado a ele; caso contrário, no seu Mac quando possível e, por fim, pelos servidores do Paradev."
+msgstr "Mostrar um microfone no campo do chat. A fala é transcrita pelo ChatGPT quando o Codex está conectado a ele; caso contrário, no seu Mac quando possível e, por fim, pelos servidores do Peixoto IA."
 
 msgid "Show all {count}"
 msgstr "Mostrar todos os {count}"
@@ -18461,7 +18461,7 @@ msgid "Show me the last 10 runs of my Linear triage automation"
 msgstr "Me mostre as últimas 10 execuções da minha automação de triagem do Linear"
 
 msgid "Show me what the Paradev CLI can do. Run `superset --help` and `superset schema` to see its commands, then try a few read-only ones on my account: `superset workspaces list`, `superset tasks list`, `superset automations list` and `superset hosts list`. Summarize what you found and suggest three ways I could use or script the CLI in my workflow. Do not create, change or delete anything."
-msgstr "Mostre o que a CLI do Paradev pode fazer. Execute `superset --help` e `superset schema` para ver os comandos e depois teste alguns somente leitura na minha conta: `superset workspaces list`, `superset tasks list`, `superset automations list` e `superset hosts list`. Resuma o que encontrou e sugira três formas de usar ou automatizar a CLI no meu fluxo de trabalho. Não crie, altere nem exclua nada."
+msgstr "Mostre o que a CLI do Peixoto IA pode fazer. Execute `superset --help` e `superset schema` para ver os comandos e depois teste alguns somente leitura na minha conta: `superset workspaces list`, `superset tasks list`, `superset automations list` e `superset hosts list`. Resuma o que encontrou e sugira três formas de usar ou automatizar a CLI no meu fluxo de trabalho. Não crie, altere nem exclua nada."
 
 msgid "Show more"
 msgstr "Mostrar mais"
@@ -18573,7 +18573,7 @@ msgid "Sign in as Local Admin (dev)"
 msgstr "Entrar como Local Admin (dev)"
 
 msgid "Sign in once. Paradev keeps the connection."
-msgstr "Entre uma vez. O Paradev mantém a conexão."
+msgstr "Entre uma vez. O Peixoto IA mantém a conexão."
 
 #. placeholder {0}: activeOrganization?.name ?? t({ message: "this organization", })
 msgid "Sign in to {0}"
@@ -18592,7 +18592,7 @@ msgid "Sign in to continue"
 msgstr "Entre para continuar"
 
 msgid "Sign in to continue to Paradev"
-msgstr "Entre para continuar no Paradev"
+msgstr "Entre para continuar no Peixoto IA"
 
 msgid "Sign in to get started"
 msgstr "Entre para começar"
@@ -18648,7 +18648,7 @@ msgid "Sign up in one step"
 msgstr "Cadastre-se em um passo"
 
 msgid "Sign up to get started with Paradev"
-msgstr "Crie sua conta para começar no Paradev"
+msgstr "Crie sua conta para começar no Peixoto IA"
 
 msgid "Sign up with GitHub"
 msgstr "Cadastrar-se com o GitHub"
@@ -18774,7 +18774,7 @@ msgid "Skills and MCP tools for your agents. Submit your own."
 msgstr "Skills e ferramentas MCP para seus agentes. Envie o seu."
 
 msgid "Skills ship with the Paradev plugin and are kept up to date automatically in every agent you use. Click one to preview it."
-msgstr "As skills vêm com o plugin do Paradev e são mantidas atualizadas automaticamente em todos os agentes que você usa. Clique em uma para pré-visualizar."
+msgstr "As skills vêm com o plugin do Peixoto IA e são mantidas atualizadas automaticamente em todos os agentes que você usa. Clique em uma para pré-visualizar."
 
 msgid "Skin Tone"
 msgstr "Tom de pele"
@@ -18911,7 +18911,7 @@ msgid "Someone is moving this workspace…"
 msgstr "Alguém está movendo esta área de trabalho…"
 
 msgid "Someone on the Paradev team will review this page. We only follow up if we need more from you."
-msgstr "Alguém da equipe Paradev vai analisar esta página. Só entraremos em contato se precisarmos de mais informações."
+msgstr "Alguém da equipe Peixoto IA vai analisar esta página. Só entraremos em contato se precisarmos de mais informações."
 
 msgid "Something else"
 msgstr "Outra coisa"
@@ -19140,7 +19140,7 @@ msgid "Star on GitHub"
 msgstr "Dar uma estrela no GitHub"
 
 msgid "Star Paradev on GitHub"
-msgstr "Dar uma estrela ao Paradev no GitHub"
+msgstr "Dar uma estrela ao Peixoto IA no GitHub"
 
 msgid "Starred"
 msgstr "Com estrela"
@@ -19373,7 +19373,7 @@ msgid "Stop local {0}"
 msgstr "Parar {0} local"
 
 msgid "Stop Paradev here to delete from another device."
-msgstr "Feche o Paradev aqui para excluir a partir de outro dispositivo."
+msgstr "Feche o Peixoto IA aqui para excluir a partir de outro dispositivo."
 
 msgid "Stop response"
 msgstr "Parar resposta"
@@ -19519,7 +19519,7 @@ msgid "superset browser cdp prints an endpoint for that pane only. Point Playwri
 msgstr "superset browser cdp imprime um endpoint apenas para esse painel. Aponte o Playwright ou o browser-use para ele."
 
 msgid "Superset is now Paradev. Also, we raised an $11.5M seed"
-msgstr "Superset agora é Paradev. Ah, e também captamos uma rodada seed de US$ 11,5 milhões"
+msgstr "Superset agora é Peixoto IA. Ah, e também captamos uma rodada seed de US$ 11,5 milhões"
 
 msgid "Superset Mobile launches on iPhone"
 msgstr "Superset Mobile chega ao iPhone"
@@ -19674,7 +19674,7 @@ msgid "Sync issues bidirectionally with Linear."
 msgstr "Sincronize issues nos dois sentidos com o Linear."
 
 msgid "Sync issues bidirectionally with Linear. Create tasks in Paradev and have them appear in Linear, or import existing Linear issues."
-msgstr "Sincronize issues nos dois sentidos com o Linear. Crie tarefas no Paradev e veja-as aparecer no Linear, ou importe issues já existentes."
+msgstr "Sincronize issues nos dois sentidos com o Linear. Crie tarefas no Peixoto IA e veja-as aparecer no Linear, ou importe issues já existentes."
 
 msgid "Sync now"
 msgstr "Sincronizar agora"
@@ -19713,7 +19713,7 @@ msgstr "Parcela da RAM do sistema"
 #. placeholder {1}: formatMemory(otherUsedMemory)
 #. placeholder {2}: formatMemory(freeMemory)
 msgid "System RAM: Paradev {0}, other apps {1}, free {2}"
-msgstr "RAM do sistema: Paradev {0}, outros apps {1}, livre {2}"
+msgstr "RAM do sistema: Peixoto IA {0}, outros apps {1}, livre {2}"
 
 msgid "Tab"
 msgstr "Aba"
@@ -19767,7 +19767,7 @@ msgid "Talk to it"
 msgstr "Falar com ele"
 
 msgid "Talk to Paradev"
-msgstr "Fale com o Paradev"
+msgstr "Fale com o Peixoto IA"
 
 msgid "Tap anything on the page to comment on it"
 msgstr "Toque em qualquer elemento da página para comentar"
@@ -19822,7 +19822,7 @@ msgid "Tasks"
 msgstr "Tarefas"
 
 msgid "Tasks created in Paradev will be synced to this Linear team."
-msgstr "As tarefas criadas no Paradev serão sincronizadas com esta equipe do Linear."
+msgstr "As tarefas criadas no Peixoto IA serão sincronizadas com esta equipe do Linear."
 
 msgid "Tasks, the CLI and agents follow this. Each member uses their own Linear account."
 msgstr "As tarefas, a CLI e os agentes seguem esta opção. Cada membro usa a própria conta do Linear."
@@ -20075,7 +20075,7 @@ msgid "The agent watching the page reads each comment. It updates the page and r
 msgstr "O agente que acompanha a página lê cada comentário. Ele atualiza a página e responde na conversa."
 
 msgid "The app is on {appVersion} but attached to a host service started by something else, likely an older CLI or another Paradev build. Restarting replaces it with this app's copy."
-msgstr "O app está na {appVersion}, mas conectado a um serviço de host iniciado por outra coisa, provavelmente uma CLI antiga ou outro build do Paradev. Reiniciar o substitui pela cópia deste app."
+msgstr "O app está na {appVersion}, mas conectado a um serviço de host iniciado por outra coisa, provavelmente uma CLI antiga ou outro build do Peixoto IA. Reiniciar o substitui pela cópia deste app."
 
 msgid "The automation and its run history are removed. This can't be undone."
 msgstr "A automação e o histórico de execuções são removidos. Isso não pode ser desfeito."
@@ -20111,7 +20111,7 @@ msgid "The code expired. Start again."
 msgstr "O código expirou. Comece de novo."
 
 msgid "The commands Paradev runs to set up, run and archive this project's workspaces, from the repository's config.toml."
-msgstr "Os comandos que o Paradev executa para preparar, rodar e arquivar as áreas de trabalho deste projeto, a partir do config.toml do repositório."
+msgstr "Os comandos que o Peixoto IA executa para preparar, rodar e arquivar as áreas de trabalho deste projeto, a partir do config.toml do repositório."
 
 msgid "The company raised an $11.5M seed round led by Union Square Ventures, with Y Combinator and Paul Graham. TechCrunch named it one of the standout startups from YC Demo Day."
 msgstr "A empresa captou uma rodada seed de US$ 11,5 milhões liderada pela Union Square Ventures, com Y Combinator e Paul Graham. O TechCrunch a apontou como uma das startups de destaque do YC Demo Day."
@@ -20132,10 +20132,10 @@ msgid "The daemon couldn't hand off your live sessions to the new binary. Reason
 msgstr "O daemon não conseguiu repassar suas sessões ativas para o novo binário. Motivo:"
 
 msgid "The desktop app runs on macOS and Linux today. Drop your email and we'll let you know the moment the Windows build ships."
-msgstr "Estamos trazendo o Paradev para Windows e Linux. Deixe seu e-mail e avisamos assim que estiver pronto."
+msgstr "Estamos trazendo o Peixoto IA para Windows e Linux. Deixe seu e-mail e avisamos assim que estiver pronto."
 
 msgid "The desktop app runs on macOS, with an experimental Linux AppImage; Windows is not yet available. Beyond the desktop app there's a CLI, a TypeScript SDK, and an MCP server, so you can drive Paradev from scripts, terminals, and other agents. An app for iPhone and iPad on the App Store lets you check on agents and review their diffs away from your desk."
-msgstr "O app de desktop roda no macOS, com um AppImage experimental para Linux; ainda não há versão para Windows. Além do app, há uma CLI, um SDK em TypeScript e um servidor MCP, então dá para controlar o Paradev por scripts, terminais e outros agentes. Um app para iPhone e iPad na App Store permite acompanhar os agentes e revisar os diffs deles longe da sua mesa."
+msgstr "O app de desktop roda no macOS, com um AppImage experimental para Linux; ainda não há versão para Windows. Além do app, há uma CLI, um SDK em TypeScript e um servidor MCP, então dá para controlar o Peixoto IA por scripts, terminais e outros agentes. Um app para iPhone e iPad na App Store permite acompanhar os agentes e revisar os diffs deles longe da sua mesa."
 
 msgid "The Dev can't post there."
 msgstr "O Dev não pode publicar lá."
@@ -20207,7 +20207,7 @@ msgid "The funds and angels who back our team."
 msgstr "Os fundos e investidores-anjo que apoiam nosso time."
 
 msgid "The future home for reusable Paradev agent configs, prompts, and setup guides."
-msgstr "O futuro lar de configurações de agentes, prompts e guias de configuração reutilizáveis do Paradev."
+msgstr "O futuro lar de configurações de agentes, prompts e guias de configuração reutilizáveis do Peixoto IA."
 
 #. placeholder {0}: info.version
 msgid "The host came back on {0}, not {targetVersion}."
@@ -20241,10 +20241,10 @@ msgid "The job description shifts. Engineers stop being typists with taste and b
 msgstr "A descrição do cargo muda. Quem desenvolve deixa de ser digitador com bom gosto e vira despachante com bom gosto: decompõe o trabalho, direciona para as frotas e arbitra conflitos entre agentes que mexeram no mesmo módulo."
 
 msgid "The latest updates, improvements, and new features in Paradev."
-msgstr "As atualizações, melhorias e novidades mais recentes do Paradev."
+msgstr "As atualizações, melhorias e novidades mais recentes do Peixoto IA."
 
 msgid "The latest updates, improvements, and new features in Paradev. Updated weekly. For detailed release notes, see <0>GitHub Releases<1/></0>"
-msgstr "As atualizações, melhorias e novidades mais recentes do Paradev. Atualizado toda semana. Para notas de versão detalhadas, veja as <0>Releases no GitHub<1/></0>"
+msgstr "As atualizações, melhorias e novidades mais recentes do Peixoto IA. Atualizado toda semana. Para notas de versão detalhadas, veja as <0>Releases no GitHub<1/></0>"
 
 msgid "The Launch watch automation with a Sentry trigger and a daily schedule, its two runs, and the draft pull request the agent opened."
 msgstr "A automação Launch watch com um gatilho do Sentry e uma agenda diária, suas duas execuções e o pull request em rascunho que o agente abriu."
@@ -20265,7 +20265,7 @@ msgid "The local host service is unavailable for {organization} on {device}. Sta
 msgstr "O serviço do host local está indisponível para {organization} em {device}. Status: {status}. {recovery}"
 
 msgid "The local host service isn't responding. Restarting it usually clears this; if it keeps happening, restart Paradev."
-msgstr "O serviço do host local não está respondendo. Reiniciá-lo costuma resolver; se continuar acontecendo, reinicie o Paradev."
+msgstr "O serviço do host local não está respondendo. Reiniciá-lo costuma resolver; se continuar acontecendo, reinicie o Peixoto IA."
 
 msgid "The local host service isn't running, so nothing on this device can serve the workspace. Restarting it reattaches your terminals and files. Nothing on disk is lost."
 msgstr "O serviço do host local não está rodando, então nada neste dispositivo consegue servir a área de trabalho. Reiniciá-lo reconecta seus terminais e arquivos. Nada em disco se perde."
@@ -20346,13 +20346,13 @@ msgid "The pane uses your real logins. Agents ask you before they take a consequ
 msgstr "O painel usa seus logins reais. Os agentes perguntam a você antes de executar uma ação importante."
 
 msgid "The Paradev desktop app is available for macOS and Linux."
-msgstr "O app desktop do Paradev está disponível para macOS e Linux."
+msgstr "O app desktop do Peixoto IA está disponível para macOS e Linux."
 
 msgid "The Paradev host service for {organization} stopped unexpectedly ({cause}) and could not be restarted automatically."
-msgstr "O serviço do host do Paradev de {organization} parou inesperadamente ({cause}) e não pôde ser reiniciado automaticamente."
+msgstr "O serviço do host do Peixoto IA de {organization} parou inesperadamente ({cause}) e não pôde ser reiniciado automaticamente."
 
 msgid "The Paradev host service stopped unexpectedly ({cause}) and could not be restarted automatically."
-msgstr "O serviço do host do Paradev parou inesperadamente ({cause}) e não pôde ser reiniciado automaticamente."
+msgstr "O serviço do host do Peixoto IA parou inesperadamente ({cause}) e não pôde ser reiniciado automaticamente."
 
 #. js-lingui-explicit-id
 msgid "serverError.plugins.pluginSourcePathOutside"
@@ -20394,10 +20394,10 @@ msgstr "A régua"
 
 #. placeholder {0}: remoteHost?.name ?? t({ message: "the target host", })
 msgid "The run was skipped because <0>{0}</0> isn't connected to the Paradev relay. Make sure relay access is on in Settings > Remote Access on that device, then run it again."
-msgstr "A execução foi ignorada porque <0>{0}</0> não está conectado ao relay do Paradev. Confirme que o acesso ao relay está ligado em Configurações > Acesso remoto nesse dispositivo e execute de novo."
+msgstr "A execução foi ignorada porque <0>{0}</0> não está conectado ao relay do Peixoto IA. Confirme que o acesso ao relay está ligado em Configurações > Acesso remoto nesse dispositivo e execute de novo."
 
 msgid "The run was skipped because this device isn't connected to the Paradev relay. Automations go through the relay even when they run on this device. Enable relay access, then run it again."
-msgstr "A execução foi ignorada porque este dispositivo não está conectado ao relay do Paradev. As automações passam pelo relay mesmo quando rodam neste dispositivo. Habilite o acesso ao relay e execute de novo."
+msgstr "A execução foi ignorada porque este dispositivo não está conectado ao relay do Peixoto IA. As automações passam pelo relay mesmo quando rodam neste dispositivo. Habilite o acesso ao relay e execute de novo."
 
 msgid "The same app runs natively on iPad, in portrait and landscape."
 msgstr "O mesmo app roda nativamente no iPad, na vertical e na horizontal."
@@ -20505,7 +20505,7 @@ msgid "These are linked by base branch, so each merges into the one below it. A 
 msgstr "Eles estão ligados pela branch base, então cada um faz merge no que está abaixo. Um stack do GitHub faz o merge de todos em uma etapa."
 
 msgid "These folders still have your files, but they did not come over to the new Paradev on their own."
-msgstr "Estas pastas ainda têm seus arquivos, mas não foram transferidas automaticamente para o novo Paradev."
+msgstr "Estas pastas ainda têm seus arquivos, mas não foram transferidas automaticamente para o novo Peixoto IA."
 
 msgid "These ports are still in use"
 msgstr "Estas portas ainda estão em uso"
@@ -20526,10 +20526,10 @@ msgid "Thirty"
 msgstr "Trinta"
 
 msgid "This {plugin} account is already connected by another Paradev organization."
-msgstr "Esta conta do {plugin} já está conectada por outra organização do Paradev."
+msgstr "Esta conta do {plugin} já está conectada por outra organização do Peixoto IA."
 
 msgid "This {plugin} account is already connected to another Paradev organization by {owner}. Ask them to disconnect it there first."
-msgstr "Esta conta do {plugin} já foi conectada a outra organização do Paradev por {owner}. Peça para desconectar lá primeiro."
+msgstr "Esta conta do {plugin} já foi conectada a outra organização do Peixoto IA por {owner}. Peça para desconectar lá primeiro."
 
 msgid "This action is irreversible."
 msgstr "Não dá para desfazer."
@@ -20550,7 +20550,7 @@ msgid "This agent no longer exists on the selected device (its agents may have b
 msgstr "Este agente não existe mais no dispositivo selecionado (os agentes podem ter sido redefinidos). As execuções vão falhar até você escolher outro."
 
 msgid "This agent only shows chats saved in Paradev."
-msgstr "Este agente mostra apenas chats salvos no Paradev."
+msgstr "Este agente mostra apenas chats salvos no Peixoto IA."
 
 msgid "This also:"
 msgstr "Isso também:"
@@ -20578,7 +20578,7 @@ msgid "This automation is in another organization"
 msgstr "Esta automação está em outra organização"
 
 msgid "This browser is not signed in to Paradev. Sign in to continue to {connectorName}."
-msgstr "Este navegador não está conectado ao Paradev. Entre para continuar para {connectorName}."
+msgstr "Este navegador não está conectado ao Peixoto IA. Entre para continuar para {connectorName}."
 
 msgid "This cannot be undone."
 msgstr "Não dá para desfazer."
@@ -20641,7 +20641,7 @@ msgid "this device ({id})"
 msgstr "este dispositivo ({id})"
 
 msgid "This device isn't connected to the Paradev relay, so automation runs will be skipped."
-msgstr "Este dispositivo não está conectado ao relay do Paradev, então as execuções de automações serão ignoradas."
+msgstr "Este dispositivo não está conectado ao relay do Peixoto IA, então as execuções de automações serão ignoradas."
 
 msgid "This device's host is not running"
 msgstr "O host deste dispositivo não está em execução"
@@ -20675,7 +20675,7 @@ msgid "This file is empty or was deleted."
 msgstr "Este arquivo está vazio ou foi excluído."
 
 msgid "This GitHub installation is already connected to another Paradev organization. Disconnect it there, or uninstall the Paradev GitHub App, then try again."
-msgstr "Esta instalação do GitHub já está conectada a outra organização do Paradev. Desconecte lá ou desinstale o GitHub App do Paradev e tente de novo."
+msgstr "Esta instalação do GitHub já está conectada a outra organização do Peixoto IA. Desconecte lá ou desinstale o GitHub App do Peixoto IA e tente de novo."
 
 msgid "This host"
 msgstr "Este host"
@@ -20714,7 +20714,7 @@ msgid "This Linear workspace is already connected by {owner}. Ask them to discon
 msgstr "Este workspace do Linear já está conectado por {owner}. Peça para essa pessoa desconectar primeiro."
 
 msgid "This Linear workspace is already connected by another Paradev organization."
-msgstr "Este workspace do Linear já está conectado a outra organização do Paradev."
+msgstr "Este workspace do Linear já está conectado a outra organização do Peixoto IA."
 
 msgid "This looks like a binary file. Opening it as text may show garbled output or freeze the editor for large files."
 msgstr "Isto parece ser um arquivo binário. Abri-lo como texto pode mostrar caracteres estranhos ou travar o editor em arquivos grandes."
@@ -20738,7 +20738,7 @@ msgid "This Microsoft tenant is already connected by {detail}. Ask them to disco
 msgstr "Este tenant da Microsoft já está conectado por {detail}. Peça para essa pessoa desconectar primeiro."
 
 msgid "This Microsoft tenant is already connected by another Paradev organization."
-msgstr "Este tenant da Microsoft já está conectado a outra organização do Paradev."
+msgstr "Este tenant da Microsoft já está conectado a outra organização do Peixoto IA."
 
 msgid "This model isn't available"
 msgstr "Este modelo não está disponível"
@@ -20780,7 +20780,7 @@ msgid "This page no longer exists"
 msgstr "Esta página não existe mais"
 
 msgid "This page was published by a Paradev user. Its contents are unverified."
-msgstr "Esta página foi publicada por um usuário do Paradev. O conteúdo não é verificado."
+msgstr "Esta página foi publicada por um usuário do Peixoto IA. O conteúdo não é verificado."
 
 msgid "This page was taken down and can no longer be changed"
 msgstr "Esta página foi removida e não pode mais ser alterada"
@@ -20864,7 +20864,7 @@ msgid "This Slack workspace is already connected by {owner}. Ask them to disconn
 msgstr "Este workspace do Slack já está conectado por {owner}. Peça para essa pessoa desconectar primeiro."
 
 msgid "This Slack workspace is already connected by another Paradev organization."
-msgstr "Este workspace do Slack já está conectado a outra organização do Paradev."
+msgstr "Este workspace do Slack já está conectado a outra organização do Peixoto IA."
 
 msgid "This slug is already taken"
 msgstr "Este slug já está em uso"
@@ -21138,7 +21138,7 @@ msgid "Tokens"
 msgstr "Tokens"
 
 msgid "Tokens are held by Paradev and attached to requests there. They are never written into your local agent config."
-msgstr "Os tokens ficam com o Paradev e são anexados às requisições lá. Eles nunca são gravados na configuração local do seu agente."
+msgstr "Os tokens ficam com o Peixoto IA e são anexados às requisições lá. Eles nunca são gravados na configuração local do seu agente."
 
 msgid "Tokens per session"
 msgstr "Tokens por sessão"
@@ -21186,7 +21186,7 @@ msgid "Too many untitled items here already."
 msgstr "Já há itens sem título demais aqui."
 
 msgid "Too old for this app to talk to. Update the Paradev app on that device to reconnect."
-msgstr "Antigo demais para este app se comunicar. Atualize o app Paradev naquele dispositivo para reconectar."
+msgstr "Antigo demais para este app se comunicar. Atualize o app Peixoto IA naquele dispositivo para reconectar."
 
 msgid "Too old for this app to talk to. Workspaces on this host will not open until it is updated."
 msgstr "Antigo demais para este app se comunicar. Os workspaces neste host não abrirão até ele ser atualizado."
@@ -21240,7 +21240,7 @@ msgid "Trace charges and subscriptions"
 msgstr "Rastrear cobranças e assinaturas"
 
 msgid "Track and manage tasks synced from Linear. Stay on top of your work without leaving Paradev."
-msgstr "Acompanhe e gerencie tarefas sincronizadas do Linear. Fique por dentro do seu trabalho sem sair do Paradev."
+msgstr "Acompanhe e gerencie tarefas sincronizadas do Linear. Fique por dentro do seu trabalho sem sair do Peixoto IA."
 
 msgid "Track budgets and spending"
 msgstr "Acompanhar orçamentos e gastos"
@@ -21330,10 +21330,10 @@ msgid "Try again, or close this and press Continue in the chat."
 msgstr "Tente de novo, ou feche isto e clique em Continuar no chat."
 
 msgid "Try again, or restart the host service from the Paradev tray menu."
-msgstr "Tente novamente ou reinicie o serviço do host pelo menu do Paradev na bandeja do sistema."
+msgstr "Tente novamente ou reinicie o serviço do host pelo menu do Peixoto IA na bandeja do sistema."
 
 msgid "Try again. If the problem continues, reload Paradev."
-msgstr "Tente novamente. Se o problema continuar, recarregue o Paradev."
+msgstr "Tente novamente. Se o problema continuar, recarregue o Peixoto IA."
 
 msgid "Try early access features and previews."
 msgstr "Experimente recursos em acesso antecipado e prévias."
@@ -21753,16 +21753,16 @@ msgid "Update on Google Play"
 msgstr "Atualizar no Google Play"
 
 msgid "Update Paradev from Google Play to continue."
-msgstr "Atualize o Paradev pelo Google Play para continuar."
+msgstr "Atualize o Peixoto IA pelo Google Play para continuar."
 
 msgid "Update Paradev on {sourceName} to move its workspaces from this phone."
-msgstr "Atualize o Paradev em {sourceName} para mover os workspaces dele a partir deste telefone."
+msgstr "Atualize o Peixoto IA em {sourceName} para mover os workspaces dele a partir deste telefone."
 
 msgid "Update Paradev on that device. In-app updates require a supported standalone install and a released app version."
-msgstr "Atualize o Paradev nesse dispositivo. As atualizações pelo aplicativo exigem uma instalação independente compatível e uma versão publicada do aplicativo."
+msgstr "Atualize o Peixoto IA nesse dispositivo. As atualizações pelo aplicativo exigem uma instalação independente compatível e uma versão publicada do aplicativo."
 
 msgid "Update Paradev on this host to edit its workspace config."
-msgstr "Atualize o Paradev neste host para editar a configuração da área de trabalho."
+msgstr "Atualize o Peixoto IA neste host para editar a configuração da área de trabalho."
 
 msgid "Update payment method"
 msgstr "Atualizar forma de pagamento"
@@ -21949,16 +21949,16 @@ msgid "Use more browser features: {features}"
 msgstr "Usar mais recursos do navegador: {features}"
 
 msgid "Use Paradev anywhere"
-msgstr "Use o Paradev em qualquer lugar"
+msgstr "Use o Peixoto IA em qualquer lugar"
 
 msgid "Use Paradev anywhere button"
-msgstr "Botão \"Use o Paradev em qualquer lugar\""
+msgstr "Botão \"Use o Peixoto IA em qualquer lugar\""
 
 msgid "Use Paradev on mobile"
-msgstr "Use o Paradev no celular"
+msgstr "Use o Peixoto IA no celular"
 
 msgid "Use Paradev on your phone with Pro."
-msgstr "Use o Paradev no celular com o Pro."
+msgstr "Use o Peixoto IA no celular com o Pro."
 
 msgid "Use the agent plans and API keys you already have. Model calls go straight to your provider."
 msgstr "Use os planos de agentes e as chaves de API que você já tem. As chamadas aos modelos vão direto para o seu provedor."
@@ -21967,7 +21967,7 @@ msgid "Use the desktop app to start running parallel coding agents."
 msgstr "Use o app de desktop para rodar agentes de código em paralelo."
 
 msgid "Use the Paradev tray menu > Host Service > Restart, then retry."
-msgstr "Use o menu da bandeja do Paradev > Serviço do host > Reiniciar e tente de novo."
+msgstr "Use o menu da bandeja do Peixoto IA > Serviço do host > Reiniciar e tente de novo."
 
 msgid "Use the redesigned New Workspace page: the prompt box in the middle, with project and branch pickers above it."
 msgstr "Use a página “Nova área de trabalho” redesenhada: a caixa de prompt no centro, com os seletores de projeto e branch acima dela."
@@ -21985,7 +21985,7 @@ msgid "Use this repo"
 msgstr "Usar este repositório"
 
 msgid "Use this when calling the Paradev API."
-msgstr "Use isto ao chamar a API do Paradev."
+msgstr "Use isto ao chamar a API do Peixoto IA."
 
 msgid "Use voice transcription and push-to-talk features."
 msgstr "Usar transcrição de voz e o recurso de apertar para falar."
@@ -22173,7 +22173,7 @@ msgid "View open roles on Y Combinator"
 msgstr "Ver vagas abertas no Y Combinator"
 
 msgid "View Paradev repository on GitHub"
-msgstr "Ver o repositório do Paradev no GitHub"
+msgstr "Ver o repositório do Peixoto IA no GitHub"
 
 msgid "View profile"
 msgstr "Ver perfil"
@@ -22303,7 +22303,7 @@ msgid "Watch a design review go from comment to new version."
 msgstr "Veja uma revisão de design ir de um comentário a uma nova versão."
 
 msgid "Watch the Paradev Automations video on YouTube"
-msgstr "Assista ao vídeo do Paradev Automations no YouTube"
+msgstr "Assista ao vídeo do Peixoto IA Automations no YouTube"
 
 msgid "Wayfinding and disclosure"
 msgstr "Orientação e revelação de conteúdo"
@@ -22354,7 +22354,7 @@ msgid "We'll bring you back as soon as we reconnect."
 msgstr "Você voltará ao seu espaço assim que a conexão for restabelecida."
 
 msgid "We'll email you when Paradev for Android is ready."
-msgstr "Enviaremos um e-mail quando o Paradev para Android estiver pronto."
+msgstr "Enviaremos um e-mail quando o Peixoto IA para Android estiver pronto."
 
 msgid "We'll get back to you shortly."
 msgstr "Retornamos em breve."
@@ -22444,10 +22444,10 @@ msgid "Welcome to {appName}"
 msgstr "Boas-vindas ao {appName}"
 
 msgid "Welcome to Paradev"
-msgstr "Boas-vindas ao Paradev"
+msgstr "Boas-vindas ao Peixoto IA"
 
 msgid "Welcome to the new Paradev"
-msgstr "Boas-vindas ao novo Paradev"
+msgstr "Boas-vindas ao novo Peixoto IA"
 
 #. placeholder {0}: BRAND.INTRO_NAME
 msgid "What {0} is, who builds it, and who it's for. A San Francisco team, led by three ex-YC CTOs, building the workspace for parallel coding agents."
@@ -22457,7 +22457,7 @@ msgid "What are the benefits?"
 msgstr "Quais são os benefícios?"
 
 msgid "What builders say about Paradev"
-msgstr "O que quem constrói fala do Paradev"
+msgstr "O que quem constrói fala do Peixoto IA"
 
 msgid "What comes with you"
 msgstr "O que vem com você"
@@ -22487,7 +22487,7 @@ msgid "What is a workspace?"
 msgstr "O que é uma área de trabalho?"
 
 msgid "What is Paradev Enterprise?"
-msgstr "O que é o Paradev Enterprise?"
+msgstr "O que é o Peixoto IA Enterprise?"
 
 msgid "What is wrong?"
 msgstr "Qual é o problema?"
@@ -22496,7 +22496,7 @@ msgid "What it does"
 msgstr "O que faz"
 
 msgid "What platforms does Paradev run on?"
-msgstr "Em quais plataformas o Paradev roda?"
+msgstr "Em quais plataformas o Peixoto IA roda?"
 
 msgid "What problem are you trying to solve?"
 msgstr "Que problema você quer resolver?"
@@ -22568,7 +22568,7 @@ msgid "Where detected-port badges in the sidebar open when clicked."
 msgstr "Onde os selos de porta detectada na barra lateral abrem ao serem clicados."
 
 msgid "Where did you hear about Paradev?"
-msgstr "Onde você conheceu o Paradev?"
+msgstr "Onde você conheceu o Peixoto IA?"
 
 msgid "Where do you rank?"
 msgstr "Qual é a sua posição?"
@@ -22644,7 +22644,7 @@ msgid "with or without attachments"
 msgstr "com ou sem anexos"
 
 msgid "With the Paradev mobile app, I can address production issues from anywhere."
-msgstr "Com o aplicativo móvel do Paradev, posso resolver problemas de produção de qualquer lugar."
+msgstr "Com o aplicativo móvel do Peixoto IA, posso resolver problemas de produção de qualquer lugar."
 
 msgid "Wordmark, black"
 msgstr "Logotipo, preto"
@@ -22907,13 +22907,13 @@ msgid "Yes. On plans with cloud workspaces, owners can buy any amount of extra G
 msgstr "Sim. Nos planos com workspaces na nuvem, os proprietários podem comprar qualquer quantidade de GB-horas extras a {packPrice} por GB-hora em Configurações, Cobrança. As GB-horas compradas são usadas depois do conjunto mensal e nunca expiram, e a recarga automática pode comprar mais quando estiverem acabando."
 
 msgid "Yes. Paradev has completed a SOC 2 Type II audit with an independent auditor, covering our security controls in operation over time. Request the report and review our security documentation at {trustHost}."
-msgstr "Sim. O Paradev concluiu uma auditoria SOC 2 Tipo II com um auditor independente, cobrindo nossos controles de segurança em operação ao longo do tempo. Solicite o relatório e veja nossa documentação de segurança em {trustHost}."
+msgstr "Sim. O Peixoto IA concluiu uma auditoria SOC 2 Tipo II com um auditor independente, cobrindo nossos controles de segurança em operação ao longo do tempo. Solicite o relatório e veja nossa documentação de segurança em {trustHost}."
 
 msgid "Yes. Paradev is open source under the MIT License. The code is public on GitHub, and anyone can file issues, open pull requests, or fork it. Paradev is unrelated to Apache Superset, the business-intelligence tool."
-msgstr "Sim. O Paradev é de código aberto sob a licença MIT. O código é público no GitHub, e qualquer pessoa pode abrir issues, enviar pull requests ou fazer um fork. O Paradev não tem relação com o Apache Superset, a ferramenta de business intelligence."
+msgstr "Sim. O Peixoto IA é de código aberto sob a licença MIT. O código é público no GitHub, e qualquer pessoa pode abrir issues, enviar pull requests ou fazer um fork. O Peixoto IA não tem relação com o Apache Superset, a ferramenta de business intelligence."
 
 msgid "Yes. Paradev is the workspace your agents run in, not a model provider. Bring Claude Code, Codex, OpenCode, or any CLI agent, and use your existing accounts or API keys on every plan."
-msgstr "Sim. O Paradev é a área de trabalho onde seus agentes rodam, não um provedor de modelos. Traga Claude Code, Codex, OpenCode ou qualquer agente de CLI e use suas contas ou chaves de API atuais em qualquer plano."
+msgstr "Sim. O Peixoto IA é a área de trabalho onde seus agentes rodam, não um provedor de modelos. Traga Claude Code, Codex, OpenCode ou qualquer agente de CLI e use suas contas ou chaves de API atuais em qualquer plano."
 
 msgid "Yes. Use superset automations in the CLI to create, run, and pause them."
 msgstr "Sim. Use superset automations na CLI para criá-las, executá-las e pausá-las."
@@ -23066,7 +23066,7 @@ msgid "You'd be one of the first on the board."
 msgstr "Você seria um dos primeiros no ranking."
 
 msgid "You'll need to sign in again to use Paradev on this device."
-msgstr "Você vai precisar entrar de novo para usar o Paradev neste dispositivo."
+msgstr "Você vai precisar entrar de novo para usar o Peixoto IA neste dispositivo."
 
 msgid "You'll stop being a member of this team. You can be re-added by another team member."
 msgstr "Você deixa de ser membro desta equipe. Outra pessoa da equipe pode te adicionar de novo."
@@ -23075,7 +23075,7 @@ msgid "You're about to change your role from {currentRoleName} to {newRoleName}.
 msgstr "Você está prestes a mudar seu cargo de {currentRoleName} para {newRoleName}. Outro proprietário vai precisar devolver suas permissões. Tem certeza?"
 
 msgid "You're about to get Paradev"
-msgstr "Você está quase com o Paradev"
+msgstr "Você está quase com o Peixoto IA"
 
 msgid "You're all set!"
 msgstr "Tudo pronto!"
@@ -23201,16 +23201,16 @@ msgid "Your organization reached its environment limit."
 msgstr "Sua organização atingiu o limite de ambientes."
 
 msgid "Your own accounts. Your organization's integrations let Paradev reach its tools; connecting yours makes the work Paradev does for you show up as you."
-msgstr "Suas próprias contas. As integrações da sua organização permitem que o Paradev acesse as ferramentas dela; conectar as suas faz o trabalho que o Paradev faz por você aparecer em seu nome."
+msgstr "Suas próprias contas. As integrações da sua organização permitem que o Peixoto IA acesse as ferramentas dela; conectar as suas faz o trabalho que o Peixoto IA faz por você aparecer em seu nome."
 
 msgid "Your Paradev download is starting."
-msgstr "O download do Paradev está começando."
+msgstr "O download do Peixoto IA está começando."
 
 msgid "Your Paradev session in this browser has expired. Sign in again to continue to {connectorName}."
-msgstr "Sua sessão do Paradev neste navegador expirou. Entre novamente para continuar para {connectorName}."
+msgstr "Sua sessão do Peixoto IA neste navegador expirou. Entre novamente para continuar para {connectorName}."
 
 msgid "Your Paradev session in this browser has expired. Sign in again to continue."
-msgstr "Sua sessão do Paradev neste navegador expirou. Entre novamente para continuar."
+msgstr "Sua sessão do Peixoto IA neste navegador expirou. Entre novamente para continuar."
 
 msgid "Your plan does not include cloud environments."
 msgstr "Seu plano não inclui ambientes na nuvem."
@@ -23238,7 +23238,7 @@ msgid "Your signed-in session"
 msgstr "Sua sessão conectada"
 
 msgid "Your Slack account has been linked to Paradev. You can close this tab and return to Slack."
-msgstr "Sua conta do Slack foi vinculada ao Paradev. Você pode fechar esta aba e voltar ao Slack."
+msgstr "Sua conta do Slack foi vinculada ao Peixoto IA. Você pode fechar esta aba e voltar ao Slack."
 
 msgid "Your stats, settled in mortal combat"
 msgstr "Suas estatísticas decidem um combate mortal"
@@ -23269,7 +23269,7 @@ msgid "Your usage by day"
 msgstr "Seu uso por dia"
 
 msgid "Your v1 projects and workspaces are moving to the new Paradev. They appear in the sidebar as each one is ready."
-msgstr "Seus projetos e workspaces da v1 estão sendo levados para o novo Paradev. Eles aparecem na barra lateral à medida que cada um fica pronto."
+msgstr "Seus projetos e workspaces da v1 estão sendo levados para o novo Peixoto IA. Eles aparecem na barra lateral à medida que cada um fica pronto."
 
 msgid "Your version: {currentVersion}"
 msgstr "Sua versão: {currentVersion}"

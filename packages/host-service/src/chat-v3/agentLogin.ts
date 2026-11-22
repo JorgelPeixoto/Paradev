@@ -1,6 +1,7 @@
 import { envOverlayPrefix } from "@superset/shared/agent-prompt-launch";
 
 const LOGINS: Record<string, { command: string; profileEnv?: string }> = {
+	agy: { command: "agy acp --login" },
 	claude: { command: "claude auth login", profileEnv: "CLAUDE_CONFIG_DIR" },
 	codex: { command: "codex login", profileEnv: "CODEX_HOME" },
 	opencode: { command: "opencode auth login" },
