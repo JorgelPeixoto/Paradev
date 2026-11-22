@@ -1,3 +1,5 @@
+import { formatQuotaLabel } from "renderer/utils/usage/formatQuotaLabel";
+import { quotaRemaining } from "renderer/utils/usage/quotaRemaining";
 import { Trans, useLingui } from "@lingui/react/macro";
 import type { SessionConfigOption } from "@superset/chat/protocol";
 import { formatPercent } from "@superset/i18n/format";
@@ -87,7 +89,7 @@ export function SessionControlBar({
 			>
 				<Gauge className="size-3.5" />
 				{tightest && (state === "ready" || state === "stale")
-					? `${tightest.label} · ${formatPercent(tightest.usedPercent / 100)}`
+					? `${formatQuotaLabel(tightest.label)} · ${t({ message: `${formatPercent(quotaRemaining(tightest.usedPercent) / 100)} remaining` })}`
 					: (status ?? t({ message: "Session status" }))}
 			</button>
 			<div className="flex items-center gap-1">

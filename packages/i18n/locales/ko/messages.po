@@ -567,6 +567,10 @@ msgstr "GB 시간당 {0}"
 msgid "{0} projects"
 msgstr "프로젝트 {0}개"
 
+#. placeholder {0}: formatPercent(quotaRemaining(tightest.usedPercent) / 100)
+msgid "{0} remaining"
+msgstr "{0} 남음"
+
 #. placeholder {0}: tally.running
 msgid "{0} Running"
 msgstr "{0}개 실행 중"
@@ -1116,8 +1120,8 @@ msgstr "{label}은(는) 설정되지 않은 상태로 돌아갑니다. 워크스
 msgid "{label} is set to manual"
 msgstr "{label}이(가) 수동 로그인으로 설정되었습니다"
 
-msgid "{label} quota used: {summary}. Open usage settings"
-msgstr "{label} 사용한 할당량: {summary}. 사용량 설정 열기"
+msgid "{label} quota remaining: {summary}. Open usage settings"
+msgstr "{label} 남은 할당량: {summary}. 사용 설정 열기"
 
 msgid "{level} · {gate} · {statusLabel}"
 msgstr "{level} · {gate} · {statusLabel}"
@@ -1368,6 +1372,9 @@ msgstr "{reason}"
 
 msgid "{received} of {total}"
 msgstr "{total} 중 {received}"
+
+msgid "{remaining} remaining"
+msgstr "{remaining} 남음"
 
 msgid "{remaining} tokens left"
 msgstr "{remaining} 토큰 남음"
@@ -16312,6 +16319,9 @@ msgstr "이동하는 중…"
 msgid "Remaining"
 msgstr "남음"
 
+msgid "Remaining quota"
+msgstr "남은 할당량"
+
 msgid "rematch"
 msgstr "재대결"
 
@@ -18117,6 +18127,9 @@ msgstr "서비스 가용성은 <0>{statusHost}</0>에, 보안 및 규정 준수 
 
 msgid "Session"
 msgstr "세션"
+
+msgid "Session (5h)"
+msgstr "세션 (5시간)"
 
 #. placeholder {0}: session.id.slice(0, 8)
 msgid "Session {0}"

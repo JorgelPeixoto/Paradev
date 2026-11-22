@@ -567,6 +567,10 @@ msgstr "{0} за ГБ-час"
 msgid "{0} projects"
 msgstr "{0} проектов"
 
+#. placeholder {0}: formatPercent(quotaRemaining(tightest.usedPercent) / 100)
+msgid "{0} remaining"
+msgstr "{0} осталось"
+
 #. placeholder {0}: tally.running
 msgid "{0} Running"
 msgstr "Выполняется: {0}"
@@ -1116,8 +1120,8 @@ msgstr "{label} снова станет ненастроенным. В рабо�
 msgid "{label} is set to manual"
 msgstr "Для {label} включён ручной вход"
 
-msgid "{label} quota used: {summary}. Open usage settings"
-msgstr "Использовано лимита {label}: {summary}. Открыть настройки использования"
+msgid "{label} quota remaining: {summary}. Open usage settings"
+msgstr "Оставшаяся квота {label}: {summary}. Открыть настройки использования"
 
 msgid "{level} · {gate} · {statusLabel}"
 msgstr "{level} · {gate} · {statusLabel}"
@@ -1368,6 +1372,9 @@ msgstr "{reason}"
 
 msgid "{received} of {total}"
 msgstr "{received} из {total}"
+
+msgid "{remaining} remaining"
+msgstr "{remaining} осталось"
 
 msgid "{remaining} tokens left"
 msgstr "Осталось токенов: {remaining}"
@@ -16312,6 +16319,9 @@ msgstr "Перемещение…"
 msgid "Remaining"
 msgstr "Осталось"
 
+msgid "Remaining quota"
+msgstr "Оставшаяся квота"
+
 msgid "rematch"
 msgstr "реванш"
 
@@ -18117,6 +18127,9 @@ msgstr "Доступность сервиса публикуется на <0>{st
 
 msgid "Session"
 msgstr "Сессия"
+
+msgid "Session (5h)"
+msgstr "Сеанс (5ч)"
 
 #. placeholder {0}: session.id.slice(0, 8)
 msgid "Session {0}"

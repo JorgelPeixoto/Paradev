@@ -45,7 +45,7 @@ describe("SessionStatusContent", () => {
 		expect(text).toContain("Remaining116K");
 		expect(text).toContain("Window200K");
 		expect(text).toContain("Session cost$1.50");
-		expect(text).toContain("Session (5h)82% used · Resets in 2h");
+		expect(text).toContain("Session (5h)18% remaining · Resets in 2h");
 		expect(text).not.toContain("Effort");
 	});
 
@@ -58,7 +58,7 @@ describe("SessionStatusContent", () => {
 		);
 
 		expect(container.textContent).toContain(
-			"Rate limitsUsage is out of dateSession (5h)82% used",
+			"Rate limitsUsage is out of dateSession (5h)18% remaining",
 		);
 	});
 

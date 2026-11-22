@@ -567,6 +567,10 @@ msgstr "{0} cho mỗi GB-giờ"
 msgid "{0} projects"
 msgstr "{0} dự án"
 
+#. placeholder {0}: formatPercent(quotaRemaining(tightest.usedPercent) / 100)
+msgid "{0} remaining"
+msgstr "{0} còn lại"
+
 #. placeholder {0}: tally.running
 msgid "{0} Running"
 msgstr "{0} đang chạy"
@@ -1116,8 +1120,8 @@ msgstr "{label} sẽ trở lại trạng thái chưa thiết lập. Không có g
 msgid "{label} is set to manual"
 msgstr "{label} đã chuyển sang đăng nhập thủ công"
 
-msgid "{label} quota used: {summary}. Open usage settings"
-msgstr "Hạn mức đã dùng của {label}: {summary}. Mở cài đặt mức dùng"
+msgid "{label} quota remaining: {summary}. Open usage settings"
+msgstr "Hạn mức còn lại của {label}: {summary}. Mở cài đặt sử dụng"
 
 msgid "{level} · {gate} · {statusLabel}"
 msgstr "{level} · {gate} · {statusLabel}"
@@ -1368,6 +1372,9 @@ msgstr "{reason}"
 
 msgid "{received} of {total}"
 msgstr "{received} trên {total}"
+
+msgid "{remaining} remaining"
+msgstr "{remaining} còn lại"
 
 msgid "{remaining} tokens left"
 msgstr "Còn {remaining} token"
@@ -16312,6 +16319,9 @@ msgstr "Đang chuyển…"
 msgid "Remaining"
 msgstr "Còn lại"
 
+msgid "Remaining quota"
+msgstr "Hạn mức còn lại"
+
 msgid "rematch"
 msgstr "tái đấu"
 
@@ -18117,6 +18127,9 @@ msgstr "Tình trạng dịch vụ được công bố tại <0>{statusHost}</0>,
 
 msgid "Session"
 msgstr "Phiên"
+
+msgid "Session (5h)"
+msgstr "Phiên (5 giờ)"
 
 #. placeholder {0}: session.id.slice(0, 8)
 msgid "Session {0}"

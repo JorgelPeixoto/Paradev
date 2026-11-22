@@ -1,3 +1,6 @@
+import { formatQuotaLabel } from "renderer/utils/usage/formatQuotaLabel";
+import { quotaRemaining } from "renderer/utils/usage/quotaRemaining";
+import { useLingui } from "@lingui/react/macro";
 import { cn } from "@superset/ui/utils";
 import type { UsageQuotaWindow } from "renderer/hooks/host-service/useHostUsageQuota";
 import { useNow } from "renderer/hooks/useNow";
@@ -17,8 +20,9 @@ export function QuotaWindowRow({
 	window: UsageQuotaWindow;
 	className?: string;
 }) {
+	const { t } = useLingui();
 	const now = useNow(60_000);
-	const percent = Math.min(window.usedPercent, 100);
+	const percent = quotaRemaining(window.usedPercent);
 	return (
 		<div
 			className={cn(
@@ -27,7 +31,7 @@ export function QuotaWindowRow({
 			)}
 		>
 			<span className="truncate text-[11px] text-muted-foreground">
-				{window.label}
+				{formatQuotaLabel(window.label)}
 			</span>
 			<div className="h-1 w-full overflow-hidden rounded-full bg-muted">
 				<div
@@ -35,11 +39,11 @@ export function QuotaWindowRow({
 						"h-full rounded-full",
 						QUOTA_METER_FILL_CLASS[quotaMeterTone(window.usedPercent)],
 					)}
-					style={{ width: `${Math.max(percent, 1)}%` }}
+					style={{ width: `${percent}%` }}
 				/>
 			</div>
-			<span className="text-right text-[11px] tabular-nums">
-				{window.usedPercent}%
+			<span className="text-right text-[11px] tabular-nums" title={t({ message: "Remaining quota" })}>
+				{percent}%
 			</span>
 			<span
 				className="text-right text-[11px] text-muted-foreground tabular-nums"

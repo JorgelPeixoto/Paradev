@@ -1,3 +1,5 @@
+import { formatQuotaLabel } from "renderer/utils/usage/formatQuotaLabel";
+import { quotaRemaining } from "renderer/utils/usage/quotaRemaining";
 import { useLingui } from "@lingui/react/macro";
 import {
 	HoverCard,
@@ -52,7 +54,7 @@ export function RailUsageRing({
 	);
 	const scopedWindows = account.windows.filter(isModelScopedWindow);
 	const summary = rings
-		.map((ring) => `${ring.label} ${ring.usedPercent}%`)
+		.map((ring) => `${formatQuotaLabel(ring.label)} ${quotaRemaining(ring.usedPercent)}%`)
 		.join(", ");
 
 	return (
@@ -61,7 +63,7 @@ export function RailUsageRing({
 				<button
 					type="button"
 					aria-label={t({
-						message: `${label} quota used: ${summary}. Open usage settings`,
+						message: `${label} quota remaining: ${summary}. Open usage settings`,
 					})}
 					onClick={onOpen}
 					className="group relative flex size-9 items-center justify-center rounded-[10px] text-muted-foreground outline-none focus-visible:ring-1 focus-visible:ring-ring"
@@ -76,7 +78,7 @@ export function RailUsageRing({
 					>
 						{rings.map((ring, index) => {
 							const radius = outerRadius - index * RING_SPACING;
-							const used = Math.min(100, Math.max(0, ring.usedPercent));
+							const remaining = quotaRemaining(ring.usedPercent);
 							return (
 								<g key={ring.id}>
 									<circle
@@ -86,7 +88,7 @@ export function RailUsageRing({
 										strokeWidth={geometry.stroke}
 										className="stroke-current opacity-15"
 									/>
-									{used > 0 && (
+									{remaining > 0 && (
 										<circle
 											cx={center}
 											cy={center}
@@ -94,7 +96,7 @@ export function RailUsageRing({
 											strokeWidth={geometry.stroke}
 											strokeLinecap="round"
 											pathLength={100}
-											strokeDasharray={`${used} 100`}
+											strokeDasharray={`${remaining} 100`}
 											className={cn(
 												"transition-[stroke-dasharray,stroke] duration-500 motion-reduce:transition-none",
 												RING_STROKE_CLASS[quotaMeterTone(ring.usedPercent)],

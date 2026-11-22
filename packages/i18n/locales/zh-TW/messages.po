@@ -567,6 +567,10 @@ msgstr "每 GB 小時 {0}"
 msgid "{0} projects"
 msgstr "{0}個專案"
 
+#. placeholder {0}: formatPercent(quotaRemaining(tightest.usedPercent) / 100)
+msgid "{0} remaining"
+msgstr "{0} 剩餘"
+
 #. placeholder {0}: tally.running
 msgid "{0} Running"
 msgstr "{0}項執行中"
@@ -1116,8 +1120,8 @@ msgstr "{label} 將恢復為未設定。工作區內不會有任何變化：你�
 msgid "{label} is set to manual"
 msgstr "{label} 已設為手動登入"
 
-msgid "{label} quota used: {summary}. Open usage settings"
-msgstr "{label} 已用配額：{summary}。開啟用量設定"
+msgid "{label} quota remaining: {summary}. Open usage settings"
+msgstr "{label} 剩餘配額：{summary}。開啟用量設定"
 
 msgid "{level} · {gate} · {statusLabel}"
 msgstr "{level} · {gate} · {statusLabel}"
@@ -1368,6 +1372,9 @@ msgstr "{reason}"
 
 msgid "{received} of {total}"
 msgstr "{received}/{total}"
+
+msgid "{remaining} remaining"
+msgstr "{remaining} 剩餘"
 
 msgid "{remaining} tokens left"
 msgstr "剩餘 {remaining} 個 token"
@@ -16312,6 +16319,9 @@ msgstr "正在遷移…"
 msgid "Remaining"
 msgstr "剩餘"
 
+msgid "Remaining quota"
+msgstr "剩餘配額"
+
 msgid "rematch"
 msgstr "再來一局"
 
@@ -18117,6 +18127,9 @@ msgstr "服務可用性發布在<0>{statusHost}</0>，安全與合規文件在<1
 
 msgid "Session"
 msgstr "會話"
+
+msgid "Session (5h)"
+msgstr "工作階段（5小時）"
 
 #. placeholder {0}: session.id.slice(0, 8)
 msgid "Session {0}"

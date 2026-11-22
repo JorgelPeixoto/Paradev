@@ -1,3 +1,5 @@
+import { formatQuotaLabel } from "renderer/utils/usage/formatQuotaLabel";
+import { quotaRemaining } from "renderer/utils/usage/quotaRemaining";
 import { Trans, useLingui } from "@lingui/react/macro";
 import type { SessionUsage } from "@superset/chat/protocol";
 import { formatPercent } from "@superset/i18n/format";
@@ -129,7 +131,7 @@ export function SessionStatusContent({
 				{limits.windows.length > 0 ? (
 					<ul className="flex flex-col gap-2">
 						{limits.windows.map((quota) => {
-							const used = formatPercent(quota.usedPercent / 100, {
+							const remaining = formatPercent(quotaRemaining(quota.usedPercent) / 100, {
 								maximumFractionDigits: 0,
 							});
 							const resetsAt = quota.resetsAt ? new Date(quota.resetsAt) : null;
@@ -138,9 +140,9 @@ export function SessionStatusContent({
 									key={quota.id}
 									className="flex items-baseline justify-between gap-3 text-sm"
 								>
-									<span className="min-w-0 truncate">{quota.label}</span>
+									<span className="min-w-0 truncate">{formatQuotaLabel(quota.label)}</span>
 									<span className="shrink-0 text-muted-foreground text-xs tabular-nums">
-										<Trans>{used} used</Trans>
+										<Trans>{remaining} remaining</Trans>
 										{resetsAt && resetsAt.getTime() > limits.now.getTime()
 											? ` · ${formatResetLabel(resetsAt, limits.now)}`
 											: null}

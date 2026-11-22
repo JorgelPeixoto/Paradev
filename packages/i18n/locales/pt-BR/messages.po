@@ -567,6 +567,10 @@ msgstr "{0} por GB-hora"
 msgid "{0} projects"
 msgstr "{0} projetos"
 
+#. placeholder {0}: formatPercent(quotaRemaining(tightest.usedPercent) / 100)
+msgid "{0} remaining"
+msgstr "{0} restantes"
+
 #. placeholder {0}: tally.running
 msgid "{0} Running"
 msgstr "{0} em execução"
@@ -1116,8 +1120,8 @@ msgstr "O {label} volta a ficar sem configuração. Nada muda nas suas áreas de
 msgid "{label} is set to manual"
 msgstr "{label} agora usa login manual"
 
-msgid "{label} quota used: {summary}. Open usage settings"
-msgstr "Cota usada de {label}: {summary}. Abrir configurações de uso"
+msgid "{label} quota remaining: {summary}. Open usage settings"
+msgstr "Cota restante de {label}: {summary}. Abrir configurações de uso"
 
 msgid "{level} · {gate} · {statusLabel}"
 msgstr "{level} · {gate} · {statusLabel}"
@@ -1368,6 +1372,9 @@ msgstr "{reason}"
 
 msgid "{received} of {total}"
 msgstr "{received} de {total}"
+
+msgid "{remaining} remaining"
+msgstr "{remaining} restantes"
 
 msgid "{remaining} tokens left"
 msgstr "Restam {remaining} tokens"
@@ -16312,6 +16319,9 @@ msgstr "Movendo…"
 msgid "Remaining"
 msgstr "Restante"
 
+msgid "Remaining quota"
+msgstr "Cota restante"
+
 msgid "rematch"
 msgstr "revanche"
 
@@ -18117,6 +18127,9 @@ msgstr "A disponibilidade do serviço fica em <0>{statusHost}</0>, e a documenta
 
 msgid "Session"
 msgstr "Sessão"
+
+msgid "Session (5h)"
+msgstr "Sessão (5h)"
 
 #. placeholder {0}: session.id.slice(0, 8)
 msgid "Session {0}"

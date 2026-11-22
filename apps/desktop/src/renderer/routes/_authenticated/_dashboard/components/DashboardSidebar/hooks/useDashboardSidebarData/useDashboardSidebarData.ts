@@ -1,3 +1,4 @@
+import { importedPinPlan } from "./importedPinPlan";
 import { useLingui } from "@lingui/react/macro";
 import { useLiveQuery } from "@tanstack/react-db";
 import { useQueries, useQueryClient } from "@tanstack/react-query";
@@ -303,6 +304,20 @@ export function useDashboardSidebarData() {
 			),
 		[allHostWorkspaces, hostWorkspacesCache],
 	);
+	// One-time placement of imported chats. Updates only sidebar metadata, never panes
+	// or live sessions; the per-row marker preserves later manual unpinning.
+	useEffect(() => {
+		const plan = importedPinPlan(hostWorkspaces, Array.from(collections.workspaceLocalState.state.values()), Date.now());
+		if (!plan.length) return;
+		const pins = new Map(plan.map(item => [item.workspaceId, item.pinnedAt]));
+		collections.workspaceLocalState.update(plan.map(item => item.workspaceId), drafts => {
+			for (const draft of drafts) {
+				draft.sidebarState.pinnedAt = pins.get(draft.workspaceId) ?? draft.sidebarState.pinnedAt;
+				draft.sidebarState.isHidden = false;
+				draft.sidebarState.importPinMigrated = true;
+			}
+		});
+	}, [hostWorkspaces, collections]);
 	const hostWorkspacesById = useMemo(
 		() => new Map(hostWorkspaces.map((workspace) => [workspace.id, workspace])),
 		[hostWorkspaces],
