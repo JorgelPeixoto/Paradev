@@ -12,7 +12,7 @@ import {
 	useRef,
 } from "react";
 import { HiCheck, HiMiniXMark } from "react-icons/hi2";
-import { LuArchive } from "react-icons/lu";
+import { LuArchive, LuLoaderCircle } from "react-icons/lu";
 import { WorkspaceNameMarquee } from "renderer/components/WorkspaceNameMarquee";
 import { useFocusVisible } from "renderer/hooks/useFocusVisible";
 import { HotkeyLabel } from "renderer/hotkeys";
@@ -20,7 +20,6 @@ import { usePullRequestLinkPolicy } from "renderer/lib/clickPolicy";
 import { openPullRequestLink } from "renderer/lib/github/openPullRequestLink";
 import { useDashboardSidebarWorkspacePorts } from "renderer/routes/_authenticated/_dashboard/components/DashboardSidebar/providers/DashboardSidebarPortsProvider";
 import { navigateToWorkspace } from "renderer/routes/_authenticated/_dashboard/utils/workspace-navigation";
-import { ProjectThumbnail } from "renderer/routes/_authenticated/components/ProjectThumbnail";
 import { getStatusTooltip } from "renderer/screens/main/components/StatusIndicator";
 import { RenameInput } from "renderer/screens/main/components/WorkspaceSidebar/RenameInput";
 import { useBoxPressure } from "renderer/stores/box-pressure";
@@ -51,7 +50,7 @@ interface DashboardSidebarExpandedWorkspaceRowProps
 	indentation?: DashboardSidebarWorkspaceIndentation;
 	isBulkSelectable?: boolean;
 	isSelected?: boolean;
-	/** Present when rendered in the Pinned section: shows the project avatar. */
+	/** Placement context is accepted without adding an avatar or name prefix. */
 	/** projectName is null for pinned project-less "session" workspaces. */
 	pinnedContext?: { projectName: string | null; projectIconUrl: string | null };
 	onClick?: MouseEventHandler<HTMLDivElement>;
@@ -72,6 +71,7 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 	(
 		{
 			workspace,
+			pinnedContext,
 			isActive,
 			isRenaming,
 			renameValue,
@@ -81,7 +81,6 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 			indentation,
 			isBulkSelectable = false,
 			isSelected = false,
-			pinnedContext,
 			onClick,
 			onKeyboardActivate,
 			onWorkspaceChipsClick,
@@ -152,7 +151,9 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 				: sandboxStatus === "provisioning"
 					? t({ message: "Creating the sandbox" })
 					: null;
-		const leadIndicator = (
+		const leadIndicator = pinnedContext && workspaceStatus === "working" ? (
+			<LuLoaderCircle className="size-3.5 animate-spin motion-reduce:animate-none text-muted-foreground" />
+		) : (
 			<DashboardSidebarWorkspaceLeadIndicator
 				workspaceStatus={workspaceStatus}
 				isCreatePending={isPending}
@@ -170,6 +171,7 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 				}}
 				className={cn(
 					"relative mx-2 rounded-md text-left text-sm transition-colors",
+					pinnedContext && "rounded-xl",
 					isActive && "bg-fill-selected",
 					isSelected && "bg-fill-selected",
 					onClick &&
@@ -201,7 +203,8 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 					onFocus={handleRowFocus}
 					onBlur={handleRowBlur}
 					className={cn(
-						"group relative flex h-7 w-full items-center pr-2",
+						"group relative flex w-full items-center pr-2",
+						pinnedContext ? "h-8" : "h-7",
 						resolvedIndentation === "top-level"
 							? "pl-2"
 							: resolvedIndentation === "grouped"
@@ -210,6 +213,9 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 						onClick && "cursor-pointer",
 					)}
 				>
+					{(!pinnedContext || isSelected || showsPullRequest || workspaceStatus || isPending || sandboxLabel) && (
+						<div className={cn(pinnedContext ? "order-last ml-2 flex items-center [&_.mr-2]:mr-0" : "contents")}>
+
 					{isSelected ? (
 						<span className="mr-2 flex size-4 shrink-0 items-center justify-center text-foreground">
 							<HiCheck className="size-3.5" />
@@ -268,29 +274,7 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 						</span>
 					)}
 
-					{pinnedContext && (
-						<Tooltip delayDuration={500}>
-							<TooltipTrigger asChild>
-								<div className="mr-1.5 flex shrink-0 items-center">
-									<ProjectThumbnail
-										projectName={
-											pinnedContext.projectName ??
-											t({
-												message: "Session",
-											})
-										}
-										iconUrl={pinnedContext.projectIconUrl}
-										className="size-3.5 text-[8px]"
-									/>
-								</div>
-							</TooltipTrigger>
-							<TooltipContent side="right" sideOffset={8}>
-								{pinnedContext.projectName ??
-									t({
-										message: "Session",
-									})}
-							</TooltipContent>
-						</Tooltip>
+						</div>
 					)}
 
 					<div className="grid min-w-0 flex-1 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-1.5">
@@ -308,17 +292,10 @@ export const DashboardSidebarExpandedWorkspaceRow = forwardRef<
 							<div className="flex min-w-0 items-center">
 								<WorkspaceNameMarquee
 									name={name || branch}
-									prefix={
-										pinnedContext
-											? (pinnedContext.projectName ??
-												t({
-													message: "Session",
-												}))
-											: undefined
-									}
 									forceActive={isFocused}
 									className={cn(
-										"min-w-0 text-[13px] leading-tight transition-colors",
+										"min-w-0 leading-tight transition-colors",
+										pinnedContext ? "text-[14px]" : "text-[13px]",
 										isActive || isSelected
 											? "text-foreground"
 											: "text-foreground/80",

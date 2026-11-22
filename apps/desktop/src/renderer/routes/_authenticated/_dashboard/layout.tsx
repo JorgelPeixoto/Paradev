@@ -11,7 +11,7 @@ import { DashboardSidebarPortsProvider } from "renderer/routes/_authenticated/_d
 import { PortForwardsProvider } from "renderer/routes/_authenticated/_dashboard/components/DashboardSidebar/providers/PortForwardsProvider";
 import { WorkspaceSidebarPanel } from "renderer/routes/_authenticated/_dashboard/components/WorkspaceSidebarPanel";
 import { useHistoryNavigationShortcuts } from "renderer/routes/_authenticated/_dashboard/hooks/useHistoryNavigationShortcuts";
-import { useOpenNewWorkspaceInViewedProject } from "renderer/routes/_authenticated/_dashboard/hooks/useOpenNewWorkspaceInViewedProject";
+import { useOpenNewSession } from "renderer/hooks/useOpenNewWorkspace";
 import { useResumeMovesToThisComputer } from "renderer/routes/_authenticated/_dashboard/hooks/useResumeMovesToThisComputer";
 import { useChatTabsStore } from "renderer/routes/_authenticated/_dashboard/stores/chatTabsStore";
 import { useCloudSidebarStore } from "renderer/routes/_authenticated/_dashboard/stores/cloudSidebarStore";
@@ -96,7 +96,7 @@ function DashboardLayout() {
 		[hostWorkspaces, currentWorkspaceId],
 	);
 	const { machineId: localMachineId } = useLocalHostService();
-	const openNewWorkspaceInViewedProject = useOpenNewWorkspaceInViewedProject();
+	const openNewChat = useOpenNewSession();
 	useWorkspaceNamingFailedToast();
 	useResumeMovesToThisComputer();
 	// Forwarding needs port data only for a workspace on another machine;
@@ -122,7 +122,7 @@ function DashboardLayout() {
 		ignoreEventWhen: (e) => e.defaultPrevented,
 	});
 	useHotkey("TOGGLE_WORKSPACE_SIDEBAR", toggleWorkspaceSidebarCollapsed);
-	useHotkey("NEW_WORKSPACE", () => openNewWorkspaceInViewedProject());
+	useHotkey("NEW_WORKSPACE", () => openNewChat());
 	useHotkey("QUICK_CREATE_WORKSPACE", () =>
 		quickCreateWorkspace(currentWorkspace?.projectId ?? null),
 	);

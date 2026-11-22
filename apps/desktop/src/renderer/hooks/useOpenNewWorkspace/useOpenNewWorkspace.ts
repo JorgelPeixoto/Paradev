@@ -14,6 +14,10 @@ export function openNewWorkspace(
 	requestedHostId?: string,
 	repository?: string | null,
 ) {
+	if (!projectId && !requestedHostId && !repository) {
+		openNewSession({ machineId: undefined, navigate });
+		return;
+	}
 	if (projectId) {
 		useNewWorkspaceDraftStore.getState().selectProject(projectId, repository);
 	}

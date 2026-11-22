@@ -6,12 +6,12 @@ import {
 import { Tooltip, TooltipContent, TooltipTrigger } from "@superset/ui/tooltip";
 import { SquarePen } from "lucide-react";
 import { HotkeyLabel } from "renderer/hotkeys";
-import { useOpenNewWorkspaceInViewedProject } from "renderer/routes/_authenticated/_dashboard/hooks/useOpenNewWorkspaceInViewedProject";
+import { useOpenNewSession } from "renderer/hooks/useOpenNewWorkspace";
 
 export function NewWorkspaceButton() {
 	const { t } = useLingui();
-	const openNewWorkspace = useOpenNewWorkspaceInViewedProject();
-	const label = t({ message: "New Workspace" });
+	const openNewWorkspace = useOpenNewSession();
+	const label = t({ message: "New chat" });
 	return (
 		<Tooltip delayDuration={300}>
 			<TooltipTrigger asChild>

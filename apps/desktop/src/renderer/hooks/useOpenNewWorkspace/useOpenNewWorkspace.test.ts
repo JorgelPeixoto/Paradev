@@ -89,3 +89,17 @@ test("a handoff with a repository lets the pick follow it to another host", () =
 		selectedProjectRepository: "thinkfiveable/hours",
 	});
 });
+
+
+test("generic new chat clears the previous project without losing the prompt", () => {
+ useNewWorkspaceDraftStore.getState().selectProject("previous-project");
+ useNewWorkspaceDraftStore.getState().updateDraft({promptDraft:[{type:"text",text:"Organizar arquivos do Mac"}]});
+ openNewWorkspace(v2);
+ expect(navigate).toHaveBeenCalledWith(expect.objectContaining({search:{session:true}}));
+ expect(useNewWorkspaceDraftStore.getState()).toMatchObject({selectedProjectId:null,isSession:true,promptDraft:[{type:"text",text:"Organizar arquivos do Mac"}]});
+});
+
+
+test("the first screen and a fresh draft allow chat without a project", () => {
+ expect(useNewWorkspaceDraftStore.getState()).toMatchObject({selectedProjectId:null,isSession:true});
+});

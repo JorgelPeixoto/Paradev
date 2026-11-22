@@ -33,7 +33,7 @@ export interface NewWorkspaceDraft {
 	selectedProjectId: string | null;
 	/** `owner/name`, so the pick can follow its repository to another host. */
 	selectedProjectRepository: string | null;
-	/** Explicit "No project" (session) choice — distinct from not-yet-selected. */
+	/** A free chat starts without a project; choosing a project opts into repository work. */
 	isSession: boolean;
 	checkout: WorkspaceCheckout;
 	promptDraft: ComposerDraftSegment[];
@@ -65,7 +65,7 @@ function buildInitialDraft(): NewWorkspaceDraft {
 	return {
 		selectedProjectId: null,
 		selectedProjectRepository: null,
-		isSession: false,
+		isSession: true,
 		checkout: useWorkspaceCreateDefaultsStore.getState().checkout,
 		promptDraft: [],
 		baseBranch: null,
