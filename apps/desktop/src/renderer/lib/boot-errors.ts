@@ -38,7 +38,7 @@ const renderBootError = (message: string, error?: unknown) => {
 	inner.style.textAlign = "center";
 
 	const title = document.createElement("div");
-	title.textContent = "Paradev failed to start";
+	title.textContent = "Não foi possível iniciar o Peixoto IA";
 	title.style.fontSize = "18px";
 	title.style.marginBottom = "8px";
 
