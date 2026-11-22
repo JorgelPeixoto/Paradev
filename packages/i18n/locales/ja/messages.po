@@ -12967,6 +12967,9 @@ msgstr "アイコンなし"
 msgid "No icons match."
 msgstr "一致するアイコンはありません。"
 
+msgid "No image on the clipboard."
+msgstr "クリップボードに画像がありません。"
+
 msgid "No installed agent can be opened as a chat"
 msgstr "チャットとして開けるエージェントがインストールされていません"
 
@@ -14926,6 +14929,9 @@ msgstr "貼り付け"
 
 msgid "Paste a link"
 msgstr "リンクを貼り付け"
+
+msgid "Paste a screenshot or drag files here."
+msgstr "スクリーンショットを貼り付けるか、ここにファイルをドラッグしてください。"
 
 msgid "Paste an API key instead"
 msgstr "代わりにAPIキーを貼り付ける"
@@ -22171,6 +22177,9 @@ msgstr "募集中の職種を見る"
 
 msgid "View open roles on Y Combinator"
 msgstr "Y Combinatorで募集中のポジションを見る"
+
+msgid "View page"
+msgstr "ページを表示"
 
 msgid "View Paradev repository on GitHub"
 msgstr "GitHubでParadevのリポジトリを見る"

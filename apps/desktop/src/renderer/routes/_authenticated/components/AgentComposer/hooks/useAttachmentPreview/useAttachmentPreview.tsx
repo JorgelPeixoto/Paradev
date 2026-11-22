@@ -1,3 +1,5 @@
+import { attachmentMediaType } from "@superset/shared/attachment-media-type";
+import { DocumentPreview } from "./components/DocumentPreview";
 import type { PromptInputAttachment } from "@superset/chat-ui/PromptInput";
 import { type ReactNode, useCallback, useState } from "react";
 import { ImagePreviewOverlay } from "renderer/routes/_authenticated/components/ImagePreviewOverlay";
@@ -8,7 +10,10 @@ type PreviewImage = { id: string; src: string; filename: string };
 type Preview = { images: PreviewImage[]; index: number };
 
 function previewImage(attachment: PromptInputAttachment): PreviewImage | null {
-	if (!attachment.previewUrl || !attachment.file.type.startsWith("image/"))
+	if (
+		!attachment.previewUrl ||
+		!attachmentMediaType(attachment.file).startsWith("image/")
+	)
 		return null;
 	return {
 		id: attachment.id,
@@ -29,11 +34,16 @@ export function useAttachmentPreview(): {
 	const copyImage = useCopyImageToClipboard();
 	const [preview, setPreview] = useState<Preview | null>(null);
 	const [open, setOpen] = useState(false);
+	const [document, setDocument] = useState<PromptInputAttachment | null>(null);
 	const onAttachmentClick = useCallback(
 		(
 			attachment: PromptInputAttachment,
 			attachments: readonly PromptInputAttachment[],
 		) => {
+			if (!attachmentMediaType(attachment.file).startsWith("image/")) {
+				setDocument(attachment);
+				return;
+			}
 			const images = attachments.flatMap((candidate) => {
 				const image = previewImage(candidate);
 				return image ? [image] : [];
@@ -66,5 +76,19 @@ export function useAttachmentPreview(): {
 				src={image.src}
 			/>
 		) : null;
-	return { onAttachmentClick, overlay };
+	return {
+		onAttachmentClick,
+		overlay: (
+			<>
+				{overlay}
+				{document ? (
+					<DocumentPreview
+						key={document.id}
+						attachment={document}
+						onClose={() => setDocument(null)}
+					/>
+				) : null}
+			</>
+		),
+	};
 }

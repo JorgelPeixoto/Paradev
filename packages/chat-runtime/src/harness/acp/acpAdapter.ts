@@ -1138,6 +1138,14 @@ export class AcpAdapter implements HarnessAdapter {
 
 			this.emitSession({
 				status: "idle",
+				attachmentCapabilities: {
+					images:
+						(
+							this.agentCapabilities as {
+								promptCapabilities?: { image?: boolean };
+							}
+						).promptCapabilities?.image === true,
+				},
 				harnessSessionId: this.sessionId,
 				...(this.options.clientApprovalModes
 					? {

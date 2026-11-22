@@ -12967,6 +12967,9 @@ msgstr "Aucune icône"
 msgid "No icons match."
 msgstr "Aucune icône ne correspond."
 
+msgid "No image on the clipboard."
+msgstr "Aucune image dans le presse-papiers."
+
 msgid "No installed agent can be opened as a chat"
 msgstr "Aucun agent installé ne peut être ouvert en chat"
 
@@ -14926,6 +14929,9 @@ msgstr "Coller"
 
 msgid "Paste a link"
 msgstr "Collez un lien"
+
+msgid "Paste a screenshot or drag files here."
+msgstr "Collez une capture ou glissez des fichiers ici."
 
 msgid "Paste an API key instead"
 msgstr "Coller plutôt une clé API"
@@ -22171,6 +22177,9 @@ msgstr "Voir les postes ouverts"
 
 msgid "View open roles on Y Combinator"
 msgstr "Voir les postes ouverts sur Y Combinator"
+
+msgid "View page"
+msgstr "Voir la page"
 
 msgid "View Paradev repository on GitHub"
 msgstr "Voir le dépôt Paradev sur GitHub"

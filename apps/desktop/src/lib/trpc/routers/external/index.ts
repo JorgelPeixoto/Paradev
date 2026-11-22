@@ -1,4 +1,5 @@
 import fs from "node:fs";
+import { readClipboardImage } from "./read-clipboard-image/read-clipboard-image";
 import nodePath from "node:path";
 import {
 	EXTERNAL_APPS,
@@ -243,6 +244,9 @@ export const createExternalRouter = () => {
 				}
 			}),
 
+		readClipboardImage: publicProcedure.query(() =>
+			readClipboardImage(() => clipboard.read()),
+		),
 		copyImage: publicProcedure
 			.input(z.object({ pngBase64: z.string().min(1).max(70_000_000) }))
 			.mutation(async ({ input }) => {

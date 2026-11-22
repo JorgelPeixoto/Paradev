@@ -12967,6 +12967,9 @@ msgstr "Simge yok"
 msgid "No icons match."
 msgstr "Eşleşen simge yok."
 
+msgid "No image on the clipboard."
+msgstr "Panoda görüntü yok."
+
 msgid "No installed agent can be opened as a chat"
 msgstr "Yüklü hiçbir ajan sohbet olarak açılamıyor"
 
@@ -14926,6 +14929,9 @@ msgstr "Yapıştır"
 
 msgid "Paste a link"
 msgstr "Bağlantı yapıştır"
+
+msgid "Paste a screenshot or drag files here."
+msgstr "Ekran görüntüsü yapıştırın veya dosyaları buraya sürükleyin."
 
 msgid "Paste an API key instead"
 msgstr "Bunun yerine bir API anahtarı yapıştır"
@@ -22171,6 +22177,9 @@ msgstr "Açık pozisyonlara bak"
 
 msgid "View open roles on Y Combinator"
 msgstr "Açık pozisyonları Y Combinator'da görüntüle"
+
+msgid "View page"
+msgstr "Sayfayı görüntüle"
 
 msgid "View Paradev repository on GitHub"
 msgstr "Paradev deposunu GitHub'da görüntüle"

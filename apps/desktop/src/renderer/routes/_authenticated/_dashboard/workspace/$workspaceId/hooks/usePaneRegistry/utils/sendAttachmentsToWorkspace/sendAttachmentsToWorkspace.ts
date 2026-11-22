@@ -1,3 +1,4 @@
+import { attachmentMediaType } from "@superset/shared/attachment-media-type";
 import { msg } from "@lingui/core/macro";
 import type { UserContent } from "@superset/chat/protocol";
 import { i18n } from "@superset/i18n";
@@ -126,7 +127,7 @@ function nameOf(file: File, index: number): string {
 }
 
 function typeOf(file: File): string {
-	return file.type || FALLBACK_CONTENT_TYPE;
+	return attachmentMediaType(file) || FALLBACK_CONTENT_TYPE;
 }
 
 /** Fits the request body a host holds in memory; above it, a host takes a path instead. */

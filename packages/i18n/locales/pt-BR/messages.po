@@ -12967,6 +12967,9 @@ msgstr "Sem ícone"
 msgid "No icons match."
 msgstr "Nenhum ícone corresponde."
 
+msgid "No image on the clipboard."
+msgstr "Não há imagem na área de transferência."
+
 msgid "No installed agent can be opened as a chat"
 msgstr "Nenhum agente instalado pode ser aberto como chat"
 
@@ -14926,6 +14929,9 @@ msgstr "Colar"
 
 msgid "Paste a link"
 msgstr "Cole um link"
+
+msgid "Paste a screenshot or drag files here."
+msgstr "Cole uma captura ou arraste arquivos aqui."
 
 msgid "Paste an API key instead"
 msgstr "Colar uma chave de API em vez disso"
@@ -22171,6 +22177,9 @@ msgstr "Ver vagas abertas"
 
 msgid "View open roles on Y Combinator"
 msgstr "Ver vagas abertas no Y Combinator"
+
+msgid "View page"
+msgstr "Ver página"
 
 msgid "View Paradev repository on GitHub"
 msgstr "Ver o repositório do Peixoto IA no GitHub"

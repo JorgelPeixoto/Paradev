@@ -12967,6 +12967,9 @@ msgstr "Geen icoon"
 msgid "No icons match."
 msgstr "Geen pictogrammen gevonden."
 
+msgid "No image on the clipboard."
+msgstr "Geen afbeelding op het klembord."
+
 msgid "No installed agent can be opened as a chat"
 msgstr "Geen geïnstalleerde agent kan als chat worden geopend"
 
@@ -14926,6 +14929,9 @@ msgstr "Plakken"
 
 msgid "Paste a link"
 msgstr "Plak een link"
+
+msgid "Paste a screenshot or drag files here."
+msgstr "Plak een schermafbeelding of sleep bestanden hierheen."
 
 msgid "Paste an API key instead"
 msgstr "In plaats daarvan een API-sleutel plakken"
@@ -22171,6 +22177,9 @@ msgstr "Bekijk openstaande vacatures"
 
 msgid "View open roles on Y Combinator"
 msgstr "Bekijk openstaande vacatures op Y Combinator"
+
+msgid "View page"
+msgstr "Pagina bekijken"
 
 msgid "View Paradev repository on GitHub"
 msgstr "Paradev-repository bekijken op GitHub"

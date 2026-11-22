@@ -1,5 +1,7 @@
 "use client";
 
+import { attachmentMediaType } from "@superset/shared/attachment-media-type";
+
 import {
 	$insertDataTransferForRichText,
 	setLexicalClipboardDataTransfer,
@@ -290,7 +292,8 @@ export function ComposerBody({
 					...rest,
 					file,
 					previewUrl:
-						file.type.startsWith("image/") || file.type.startsWith("video/")
+						attachmentMediaType(file).startsWith("image/") ||
+						attachmentMediaType(file).startsWith("video/")
 							? URL.createObjectURL(file)
 							: undefined,
 				})),

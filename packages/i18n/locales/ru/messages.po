@@ -12967,6 +12967,9 @@ msgstr "Без иконки"
 msgid "No icons match."
 msgstr "Нет подходящих значков."
 
+msgid "No image on the clipboard."
+msgstr "В буфере обмена нет изображения."
+
 msgid "No installed agent can be opened as a chat"
 msgstr "Ни один установленный агент нельзя открыть как чат"
 
@@ -14926,6 +14929,9 @@ msgstr "Вставить"
 
 msgid "Paste a link"
 msgstr "Вставьте ссылку"
+
+msgid "Paste a screenshot or drag files here."
+msgstr "Вставьте снимок экрана или перетащите файлы сюда."
 
 msgid "Paste an API key instead"
 msgstr "Вставить ключ API вместо этого"
@@ -22171,6 +22177,9 @@ msgstr "Смотреть вакансии"
 
 msgid "View open roles on Y Combinator"
 msgstr "Смотреть вакансии на Y Combinator"
+
+msgid "View page"
+msgstr "Посмотреть страницу"
 
 msgid "View Paradev repository on GitHub"
 msgstr "Открыть репозиторий Paradev на GitHub"
