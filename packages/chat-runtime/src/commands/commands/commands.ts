@@ -5,6 +5,7 @@ import {
 	type ChatSelections,
 	deriveQueuedPrompts,
 	deriveTimeline,
+	displayText,
 	emptySnapshot,
 	isStartingMode,
 	outlineSnapshot,
@@ -18,6 +19,7 @@ import {
 	selectionKey,
 	sessionSelections,
 	userStopOf,
+	userMessageText,
 } from "@superset/chat/core";
 import type {
 	AgentMessage,
@@ -95,6 +97,7 @@ import type {
 } from "../../sessions";
 import { replayKey } from "../../sessions";
 import { SubagentItems } from "../../stream";
+import { conversationContext } from "./conversationContext/conversationContext";
 
 export const createSessionCommandSchema = createSessionInputSchema
 	.omit({ workspaceId: true })
@@ -344,6 +347,7 @@ export type ItemBodiesResult =
 	| { ok: false; reset: ChatResetReason };
 
 export type CommandsOptions = {
+	historyDir?: string;
 	journal: ChatJournal;
 	db: ChatDb;
 	sessions: ChatSessionStore;
@@ -614,6 +618,28 @@ export function createCommands(options: CommandsOptions): ChatCommands {
 		createSession(input) {
 			const parsed = createSessionCommandSchema.parse(input);
 			return options.dedupe.run(`createSession:${parsed.commandId}`, () => {
+				const resumedSourceId = parsed.resume?.replacesSessionId;
+				const resumedSource = resumedSourceId ? replaySession(resumedSourceId) : null;
+				if (resumedSource?.ok && resumedSource.snapshot.items.has("conversation-history")) {
+					parsed.continuation = { sessionId: resumedSourceId! };
+					parsed.resume = undefined;
+				}
+				const continuationRow = parsed.continuation
+					? options.sessions.get(parsed.continuation.sessionId)
+					: null;
+				const continuationReplay = parsed.continuation
+					? replaySession(parsed.continuation.sessionId)
+					: null;
+				if (
+					parsed.continuation &&
+					(parsed.resume ||
+						continuationRow?.scopeId !== parsed.scopeId ||
+						!continuationReplay?.ok)
+				) {
+					throw new Error(
+						"Cannot continue a conversation outside its workspace",
+					);
+				}
 				const pending = resumedFor(parsed);
 				// Recovery prompts stay with the account they were queued under.
 				const resumed =
@@ -681,6 +707,113 @@ export function createCommands(options: CommandsOptions): ChatCommands {
 						resume: parsed.resume,
 						terminalId: parsed.terminalId,
 					});
+					if (parsed.historyImport) {
+						const live = options.live.require(sessionId);
+						const events: DurableEvent[] = [];
+						const turns = new Set<string>();
+						for (const message of parsed.historyImport.messages) {
+							if (!turns.has(message.turnId)) {
+								turns.add(message.turnId);
+								events.push({
+									type: "turn",
+									turn: {
+										id: message.turnId,
+										status: "completed",
+										startedAtMs: message.at,
+										completedAtMs: message.at,
+									},
+								});
+							}
+							events.push({
+								type: "item",
+								turnId: message.turnId,
+								item:
+									message.role === "user"
+										? {
+												id: message.id,
+												kind: "user_message",
+												startedAtMs: message.at,
+												content: [{ type: "text", text: message.text }],
+											}
+										: {
+												id: message.id,
+												kind: "agent_message",
+												startedAtMs: message.at,
+												text: message.text,
+											},
+							});
+						}
+						const context = conversationContext(
+							parsed.historyImport.messages.map(({ role, text }) => ({
+								role,
+								text,
+							})),
+							options.historyDir,
+							sessionId,
+						);
+						events.push({
+							type: "item",
+							turnId: `import-context-turn-${sessionId}`,
+							item: {
+								id: `import-context-${sessionId}`,
+								kind: "user_message",
+								startedAtMs: Date.now(),
+								content: [{ type: "text", text: context, hidden: true }],
+							},
+						});
+						events.push({
+							type: "session",
+							session: { ...live.state, title: parsed.historyImport.title },
+						});
+						live.seed(events);
+						live.seed([{ type: "item", turnId: "conversation-history", item: { id: "conversation-history", kind: "user_message", startedAtMs: 0, content: [] } }]);
+					}
+					if (continuationReplay?.ok && parsed.continuation) {
+						const live = options.live.require(sessionId);
+						const events: DurableEvent[] = [];
+						for (const group of deriveTimeline(continuationReplay.snapshot)) {
+							if (group.turn) events.push({ type: "turn", turn: group.turn });
+							for (const entry of group.entries) {
+								const items =
+									entry.kind === "tool_run" ? entry.items : [entry.item];
+								for (const item of items) {
+									if (item.id.startsWith("import-context-")) continue;
+									if (
+										item.kind === "approval_request" &&
+										item.status === "pending"
+									)
+										continue;
+									events.push({ type: "item", item, turnId: group.turnId });
+								}
+							}
+						}
+						live.seed(events);
+						live.seed([{ type: "item", turnId: "conversation-history", item: { id: "conversation-history", kind: "user_message", startedAtMs: 0, content: [] } }]);
+						const messages = [
+							...continuationReplay.snapshot.items.values(),
+						].flatMap(({ item }) => {
+							if (item.kind === "user_message") {
+								const text = userMessageText(item as UserMessage).trim();
+								return text ? [{ role: "user", text }] : [];
+							}
+							if (item.kind === "agent_message") {
+								const text = displayText(
+									continuationReplay.snapshot,
+									item.id,
+								).trim();
+								return text ? [{ role: "assistant", text }] : [];
+							}
+							return [];
+						});
+						const context = [
+							conversationContext(messages, options.historyDir, sessionId),
+							"Do not run tools or continue earlier tasks automatically. Briefly acknowledge the switch in the user's language and wait for their next message.",
+						].join("\n\n");
+						live.prompt(
+							[{ type: "text", text: context, hidden: true }],
+							`continuation-${parsed.commandId}`,
+						);
+					}
 				} catch (error) {
 					options.journal.discard(sessionId);
 					throw error;
@@ -795,14 +928,35 @@ export function createCommands(options: CommandsOptions): ChatCommands {
 
 		prompt(input) {
 			const parsed: PromptInput = promptInputSchema.parse(input);
-			return options.dedupe.run(`prompt:${parsed.commandId}`, () =>
-				options.live
-					.require(parsed.sessionId)
-					.prompt(parsed.content, parsed.clientId, {
+			return options.dedupe.run(`prompt:${parsed.commandId}`, () => {
+				const live = options.live.require(parsed.sessionId);
+				const replay = replaySession(parsed.sessionId);
+				const marker = replay.ok
+					? replay.snapshot.items.get(`import-context-${parsed.sessionId}`)
+							?.item
+					: undefined;
+				const imported =
+					marker?.kind === "user_message"
+						? (marker as UserMessage).content
+						: [];
+				const result = live.prompt(
+					[...imported, ...parsed.content],
+					parsed.clientId,
+					{
 						steerTurnId: parsed.steer?.expectedTurnId,
 						snapshotWorktree: parsed.snapshotWorktree === true,
-					}),
-			);
+					},
+				);
+				if (imported.length && marker?.kind === "user_message")
+					live.seed([
+						{
+							type: "item",
+							turnId: `import-context-turn-${parsed.sessionId}`,
+							item: { ...marker, kind: "user_message", content: [] },
+						},
+					]);
+				return result;
+			});
 		},
 
 		removeQueuedPrompt(input) {

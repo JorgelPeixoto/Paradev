@@ -412,7 +412,10 @@ export class LiveSession {
 
 	/** Writes finished turns and items from another session's transcript into this one. */
 	seed(events: DurableEvent[]): void {
-		for (const event of events) this.appendDurable(event);
+		for (const event of events) {
+			if (event.type === "session") this.sessionState = event.session;
+			this.appendDurable(event);
+		}
 	}
 
 	removeQueued(itemId: string): void {

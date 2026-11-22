@@ -76,6 +76,7 @@ export interface AgentSwitchTarget {
 	model: { id: string; label: string } | null;
 	modeId: string | undefined;
 	handoffPrompt: string | null;
+	sourceSessionId?: string;
 }
 
 export function AcpChatPane({
@@ -83,6 +84,7 @@ export function AcpChatPane({
 	awaitingMove,
 	onMoveArrived,
 	draftId,
+	continuation,
 	isActive,
 	onSessionInfo,
 	onPendingPromptsSent,
@@ -114,6 +116,7 @@ export function AcpChatPane({
 	workspaceId: string;
 	terminalId: string;
 	draftId?: string;
+	continuation?: { sessionId: string };
 	/** `sessionId` is absent until the agent has run a turn to report one. */
 	agent: { id: string; sessionId?: string } | undefined;
 	/** The chat is moving here and the host may not have it yet: wait, do not recover. */
@@ -245,6 +248,7 @@ export function AcpChatPane({
 										workspaceId,
 										harness: resumeHarness,
 										terminalId,
+										...(!resume && continuation ? { continuation } : {}),
 										...(modelId ? { modelId } : {}),
 										...(effortId ? { effortId } : {}),
 										...(startModeId ? { modeId: startModeId } : {}),
@@ -292,6 +296,7 @@ export function AcpChatPane({
 		},
 		[
 			createKey,
+			continuation,
 			wiring.transport,
 			workspaceId,
 			terminalId,
@@ -415,6 +420,7 @@ export function AcpChatPane({
 					presetId,
 					label,
 					model: nextModel,
+					sourceSessionId: sessionId ?? undefined,
 					// Never more access than the chat being left.
 					modeId: isUnrestrictedMode(currentModeId)
 						? undefined
@@ -427,7 +433,7 @@ export function AcpChatPane({
 						: null,
 				};
 				const { handoffPrompt } = target;
-				if (handoffPrompt && onOpenAgentChat) {
+				if (handoffPrompt && onOpenAgentChat && !sessionId) {
 					alert({
 						title: t({ message: `Open a new ${label} chat?` }),
 						description: t({

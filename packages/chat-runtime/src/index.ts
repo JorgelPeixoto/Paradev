@@ -1,3 +1,4 @@
+import { join } from "node:path";
 import type { ChatCheckpoints } from "./checkpoints";
 import type { ChatCommands } from "./commands";
 import { CommandDedupe, createCommands } from "./commands";
@@ -88,6 +89,7 @@ export function createChatRuntime(options: ChatRuntimeOptions): ChatRuntime {
 		dedupe: new CommandDedupe(options.dedupeCapacity),
 		subagentItems,
 		selections: new SelectionMemory(db),
+		historyDir: join(options.dataDir, "conversation-history"),
 	});
 
 	return {

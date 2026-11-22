@@ -144,6 +144,7 @@ export function ChatPane({
 					ctx.actions.updateData(rest);
 				}}
 				draftId={data.draftId}
+				continuation={data.continuation}
 				isActive={ctx.isActive}
 				onPendingPromptsSent={clearPendingPrompts}
 				onLaunchPromptDelivered={clearLaunchPrompt}
@@ -169,14 +170,21 @@ export function ChatPane({
 					latest.current = next;
 					ctx.actions.updateData(next);
 				}}
-				onSwitchAgent={({ presetId, label, model, modeId, handoffPrompt }) => {
-					ctx.actions.setTitle(label);
+				onSwitchAgent={({
+					presetId,
+					model,
+					modeId,
+					handoffPrompt,
+					sourceSessionId,
+				}) => {
 					ctx.actions.updateData(
 						restartedChatPaneData(data, {
 							agent: { id: presetId },
 							...(model ? { chatModelId: model.id } : {}),
 							...(modeId ? { chatModeId: modeId } : {}),
-							...(handoffPrompt ? { pendingPrompt: handoffPrompt } : {}),
+							...(handoffPrompt && sourceSessionId
+								? { continuation: { sessionId: sourceSessionId } }
+								: {}),
 						}),
 					);
 				}}
@@ -228,13 +236,14 @@ export function ChatPane({
 					latest.current = { ...latest.current, chatModeId };
 					ctx.actions.updateData(latest.current);
 				}}
-				onSessionCreated={(sessionId, pendingPrompt) =>
+				onSessionCreated={(sessionId, pendingPrompt) => {
+					const { continuation: _consumed, ...current } = latest.current;
 					ctx.actions.updateData({
-						...latest.current,
+						...current,
 						sessionId,
 						...(pendingPrompt ? { pendingPrompt } : {}),
-					})
-				}
+					});
+				}}
 				onOpenDiff={openDiff}
 				onOpenFile={onOpenFile}
 				onOpenPage={openPage}

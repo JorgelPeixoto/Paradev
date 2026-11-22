@@ -108,6 +108,7 @@ export interface PendingCloudLaunchPaneData {
 
 export interface ChatPaneData {
 	terminalId: string;
+	continuation?: { sessionId: string };
 	/** Set on a pane opened onto a chat that is still moving to this host. */
 	awaitingMove?: boolean;
 	draftId?: string;

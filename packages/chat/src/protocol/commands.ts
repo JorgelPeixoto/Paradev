@@ -33,6 +33,25 @@ export const createSessionInputSchema = z.object({
 		})
 		.optional(),
 	terminalId: z.string().min(1).optional(),
+	continuation: z
+		.object({
+			sessionId: z.string().min(1),
+		})
+		.optional(),
+	historyImport: z
+		.object({
+			title: z.string().min(1),
+			messages: z.array(
+				z.object({
+					id: z.string().min(1),
+					turnId: z.string().min(1),
+					role: z.enum(["user", "assistant"]),
+					text: z.string(),
+					at: z.number(),
+				}),
+			),
+		})
+		.optional(),
 });
 export type CreateSessionInput = z.infer<typeof createSessionInputSchema>;
 
