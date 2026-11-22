@@ -33,7 +33,7 @@ asar.extractAll(resolve(original, "Contents/Resources/app.asar"), extracted);
 cpSync(dist, resolve(extracted, "dist"), { recursive: true });
 const pkg = resolve(extracted, "package.json");
 const metadata = JSON.parse(readFileSync(pkg, "utf8"));
-metadata.version = "2.0.11-peixoto.4";
+metadata.version = "2.0.11-peixoto.5";
 writeFileSync(pkg, JSON.stringify(metadata, null, 2));
 const mark = resolve(root, "apps/desktop/src/renderer/assets/peixoto-mark.png");
 for (const name of ["icon.png", "icon-dev.png", "icon-canary.png"])
@@ -74,7 +74,7 @@ const edit = (command) =>
 edit("Set :CFBundleDisplayName Peixoto IA");
 edit("Set :CFBundleIconFile peixoto.icns");
 edit("Set :CFBundleIdentifier com.peixoto.paradev.personal");
-edit("Set :CFBundleShortVersionString 2.0.11-peixoto.4");
+edit("Set :CFBundleShortVersionString 2.0.11-peixoto.5");
 edit(`Set :ElectronAsarIntegrity:Resources/app.asar:hash ${hash}`);
 edit("Add :LSEnvironment:DISABLE_UPDATE_CHECK string 1");
 const resources = resolve(application, "Contents/Resources");

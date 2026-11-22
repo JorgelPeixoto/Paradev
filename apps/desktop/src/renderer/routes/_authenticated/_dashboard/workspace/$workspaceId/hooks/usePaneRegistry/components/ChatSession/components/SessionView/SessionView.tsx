@@ -878,6 +878,15 @@ export function SessionView({
 					ref={drawerRef}
 				/>
 				<Composer
+					onSwitchAccount={onSwitchAccount}
+					compactionCount={
+						[...snapshotItems.values()].filter(
+							({ item }) =>
+								item.kind === "notice" &&
+								item.noticeKind === "compaction" &&
+								item.completedAtMs !== undefined,
+						).length
+					}
 					presetId={presetId}
 					sessionId={client.sessionId}
 					agentSwitcher={agentSwitcher}
