@@ -588,6 +588,10 @@
 		"./automation-group": {
 			"types": "./src/automation-group.ts",
 			"default": "./src/automation-group.ts"
+		},
+		"./attachment-media-type": {
+			"types": "./src/attachment-media-type.ts",
+			"default": "./src/attachment-media-type.ts"
 		}
 	},
 	"scripts": {

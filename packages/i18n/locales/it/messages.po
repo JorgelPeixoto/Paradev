@@ -12967,6 +12967,9 @@ msgstr "Nessuna icona"
 msgid "No icons match."
 msgstr "Nessuna icona corrisponde."
 
+msgid "No image on the clipboard."
+msgstr "Nessuna immagine negli appunti."
+
 msgid "No installed agent can be opened as a chat"
 msgstr "Nessun agente installato può essere aperto come chat"
 
@@ -14926,6 +14929,9 @@ msgstr "Incolla"
 
 msgid "Paste a link"
 msgstr "Incolla un link"
+
+msgid "Paste a screenshot or drag files here."
+msgstr "Incolla uno screenshot o trascina qui i file."
 
 msgid "Paste an API key instead"
 msgstr "Incolla invece una chiave API"
@@ -22171,6 +22177,9 @@ msgstr "Vedi le posizioni aperte"
 
 msgid "View open roles on Y Combinator"
 msgstr "Vedi le posizioni aperte su Y Combinator"
+
+msgid "View page"
+msgstr "Visualizza pagina"
 
 msgid "View Paradev repository on GitHub"
 msgstr "Vedi il repository Paradev su GitHub"

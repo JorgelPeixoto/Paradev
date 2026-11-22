@@ -87,6 +87,7 @@ export const sessionStateSchema = z.looseObject({
 	availableModes: z.array(selectOptionSchema).optional(),
 	availableModels: z.array(selectOptionSchema).optional(),
 	availableCommands: z.array(availableCommandSchema).optional(),
+	attachmentCapabilities: z.object({ images: z.boolean() }).optional(),
 	configOptions: z.array(sessionConfigOptionSchema).optional(),
 	/**
 	 * The agent-side session this chat is bound to. It is not always the id the

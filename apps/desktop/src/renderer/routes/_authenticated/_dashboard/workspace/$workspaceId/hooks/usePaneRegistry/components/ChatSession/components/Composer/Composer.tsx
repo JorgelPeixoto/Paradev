@@ -101,6 +101,7 @@ export type ComposerHandle = Pick<
 };
 
 export type ComposerProps = {
+	imageInput?: boolean;
 	onSwitchAccount?: SwitchAccount;
 	compactionCount?: number;
 	workspaceId: string;
@@ -184,6 +185,7 @@ const SEND_NOW_KEYS = formatHotkeyDisplay(
 let focusHandoff: { draftKey: string; at: number } | null = null;
 
 export const Composer = memo(function Composer({
+	imageInput,
 	onSwitchAccount,
 	compactionCount = 0,
 	presetId,
@@ -303,11 +305,27 @@ export const Composer = memo(function Composer({
 	);
 	const rootRef = useRef<HTMLDivElement>(null);
 	const footerTier = useFooterTier(rootRef);
+	const requestPreview = useRef<() => boolean>(() => false);
+	requestPreview.current = () => {
+		if (blocked || readOnly || target) return false;
+		void onSend(
+			[
+				{
+					type: "text",
+					text: `Inicie a prévia local deste projeto usando o comando de desenvolvimento adequado, sem publicar em produção. Confira as instruções do projeto. Quando o servidor estiver pronto, abra a página no painel lateral desta área de trabalho com: paradev panes open browser --workspace ${workspaceId} --url URL_LOCAL. Use o endereço local real do servidor. Se faltar uma dependência ou configuração, explique o que falta.`,
+				},
+			],
+			{ steer: false, draft: { segments: [], attachments: [] } },
+		);
+		return true;
+	};
+
 	const composerId = useId();
 	useEffect(() => {
 		const { register, unregister } = useChatComposerStore.getState();
 		register(composerId, workspaceId, {
 			addFiles: (files) => promptInputRef.current?.addFiles(files),
+			startPreview: () => requestPreview.current(),
 		});
 		return () => unregister(composerId);
 	}, [composerId, workspaceId]);
@@ -693,17 +711,6 @@ export const Composer = memo(function Composer({
 						compactDisabled={!!blocked || turnRunning || promptPending}
 						compacted={compactionCount > 0}
 						onStatus={status.open}
-						onStartPreview={() =>
-							onSend(
-								[
-									{
-										type: "text",
-										text: `Inicie a prévia local deste projeto usando o comando de desenvolvimento adequado, sem publicar em produção. Confira as instruções do projeto. Quando o servidor estiver pronto, abra a página no painel lateral desta área de trabalho com: paradev panes open browser --workspace ${workspaceId} --url URL_LOCAL. Use o endereço local real do servidor. Se faltar uma dependência ou configuração, explique o que falta.`,
-									},
-								],
-								{ steer: false, draft: { segments: [], attachments: [] } },
-							)
-						}
 					/>
 				</div>
 			)}
@@ -723,6 +730,7 @@ export const Composer = memo(function Composer({
 			)}
 			<div className={cn(readOnly && "opacity-50")} inert={readOnly}>
 				<AgentComposer
+					imageInput={imageInput}
 					className={CHAT_COLUMN_CLASSNAME}
 					commands={commands}
 					draft={storedDraft}

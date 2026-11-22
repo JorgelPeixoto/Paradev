@@ -878,6 +878,7 @@ export function SessionView({
 					ref={drawerRef}
 				/>
 				<Composer
+					imageInput={sessionState?.attachmentCapabilities?.images}
 					onSwitchAccount={onSwitchAccount}
 					compactionCount={
 						[...snapshotItems.values()].filter(

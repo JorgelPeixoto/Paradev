@@ -12967,6 +12967,9 @@ msgstr "Không có biểu tượng"
 msgid "No icons match."
 msgstr "Không có biểu tượng phù hợp."
 
+msgid "No image on the clipboard."
+msgstr "Không có hình ảnh trong bộ nhớ tạm."
+
 msgid "No installed agent can be opened as a chat"
 msgstr "Không có tác tử nào đã cài có thể mở dưới dạng chat"
 
@@ -14926,6 +14929,9 @@ msgstr "Dán"
 
 msgid "Paste a link"
 msgstr "Dán liên kết"
+
+msgid "Paste a screenshot or drag files here."
+msgstr "Dán ảnh chụp màn hình hoặc kéo tệp vào đây."
 
 msgid "Paste an API key instead"
 msgstr "Dán khóa API thay thế"
@@ -22171,6 +22177,9 @@ msgstr "Xem vị trí đang tuyển"
 
 msgid "View open roles on Y Combinator"
 msgstr "Xem các vị trí đang tuyển trên Y Combinator"
+
+msgid "View page"
+msgstr "Xem trang"
 
 msgid "View Paradev repository on GitHub"
 msgstr "Xem repository Paradev trên GitHub"

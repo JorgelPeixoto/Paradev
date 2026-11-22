@@ -6566,12 +6566,17 @@ describe("AcpAdapter attachments", () => {
 
 	it("sends an image as content when the agent reads images", async () => {
 		const agent = new FakeAcpAgent();
-		const { adapter } = startWith(agent, async () => ({
+		const { adapter, events } = startWith(agent, async () => ({
 			path: "/tmp/shot.png",
 			mimeType: "image/png",
 			data: "YmFzZTY0",
 		}));
 		await flush();
+		expect(
+			sessionsOf(events).some(
+				(session) => session.attachmentCapabilities?.images === true,
+			),
+		).toBe(true);
 		adapter.prompt([
 			{ type: "text", text: "what is this" },
 			{

@@ -2,12 +2,9 @@ import { Trans, useLingui } from "@lingui/react/macro";
 import type { SessionConfigOption } from "@superset/chat/protocol";
 import { formatPercent } from "@superset/i18n/format";
 import { Button } from "@superset/ui/button";
-import { toast } from "@superset/ui/sonner";
-import { Check, Globe, Minimize2, Gauge } from "lucide-react";
-import { useState } from "react";
+import { Check, Minimize2, Gauge } from "lucide-react";
 import { useHostProjects } from "renderer/hooks/host-projects/useHostProjects";
 import { useHostUsageQuota } from "renderer/hooks/host-service/useHostUsageQuota";
-import { getHostServiceClientByUrl } from "renderer/lib/host-service-client";
 import { configOptionLabels } from "renderer/routes/_authenticated/components/AgentComposer/utils/configOptionLabels";
 import { useHostWorkspaces } from "renderer/routes/_authenticated/providers/HostWorkspacesProvider";
 import { useAccountUsage } from "../../../../../../hooks/useAccountUsage";
@@ -26,7 +23,6 @@ export function SessionControlBar({
 	onCompact,
 	compactDisabled,
 	compacted,
-	onStartPreview,
 	onStatus,
 }: {
 	workspaceId: string;
@@ -38,7 +34,6 @@ export function SessionControlBar({
 	onCompact?: () => void;
 	compactDisabled: boolean;
 	compacted: boolean;
-	onStartPreview: () => void;
 	onStatus: () => void;
 }) {
 	const { t } = useLingui();
@@ -50,35 +45,9 @@ export function SessionControlBar({
 	const workspace = workspaces.find((row) => row.id === workspaceId);
 	const project = projects.find((row) => row.id === workspace?.projectId);
 	const { model, effort } = configOptionLabels(configOptions);
-	const [opening, setOpening] = useState(false);
 	const agent =
 		presetId === "claude" || presetId === "codex" ? presetId : undefined;
 	const accounts = (quota.data ?? []).filter((row) => row.agent === agent);
-	async function preview() {
-		if (!hostUrl) return;
-		setOpening(true);
-		try {
-			const client = getHostServiceClientByUrl(hostUrl);
-			const ports = await client.ports.getAll.query({
-				workspaceIds: [workspaceId],
-			});
-			const port =
-				ports.find(
-					(row) => row.port === 5173 || row.port === 3000 || row.port === 8080,
-				) ?? ports[0];
-			if (port)
-				await client.panes.open.mutate({
-					workspaceId,
-					tool: "browser",
-					url: `http://127.0.0.1:${port.port}`,
-				});
-			else onStartPreview();
-		} catch (error) {
-			toast.error(error instanceof Error ? error.message : String(error));
-		} finally {
-			setOpening(false);
-		}
-	}
 	return (
 		<section
 			className="mb-2 flex flex-wrap items-center gap-x-3 gap-y-2 rounded-xl border border-border/60 bg-muted/30 px-3 py-2 text-xs"
@@ -139,16 +108,6 @@ export function SessionControlBar({
 						<Trans>Compact now</Trans>
 					</Button>
 				) : null}
-				<Button
-					type="button"
-					variant="outline"
-					size="xs"
-					onClick={() => void preview()}
-					disabled={opening || compactDisabled}
-				>
-					<Globe className="size-3.5" />
-					<Trans>Preview</Trans>
-				</Button>
 			</div>
 		</section>
 	);

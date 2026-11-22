@@ -1,6 +1,7 @@
 import { create } from "zustand";
 
 export interface ChatComposerTarget {
+	startPreview?: () => boolean;
 	addFiles(files: File[]): void;
 }
 

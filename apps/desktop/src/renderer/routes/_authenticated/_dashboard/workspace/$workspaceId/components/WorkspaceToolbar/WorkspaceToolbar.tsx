@@ -4,6 +4,8 @@ import { useWorkspace } from "../../../providers/WorkspaceProvider";
 import type { useWorkspaceRun } from "../../hooks/useWorkspaceRun";
 import { WorkspaceMoreMenu } from "../WorkspaceMoreMenu";
 
+import { WorkspacePreviewButton } from "../WorkspacePreviewButton";
+
 interface WorkspaceToolbarProps {
 	run: ReturnType<typeof useWorkspaceRun>;
 	isRightPaneOpen: boolean;
@@ -21,6 +23,7 @@ export function WorkspaceToolbar({
 
 	return (
 		<>
+			<WorkspacePreviewButton run={run} />
 			<WorkspaceMoreMenu
 				projectId={workspace.projectId}
 				runDefinition={run.definition}

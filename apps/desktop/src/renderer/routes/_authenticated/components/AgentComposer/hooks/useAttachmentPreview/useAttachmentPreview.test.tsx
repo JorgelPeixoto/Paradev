@@ -92,9 +92,10 @@ describe("useAttachmentPreview", () => {
 		expect(view.getByText("2 of 2")).toBeTruthy();
 	});
 
-	test("a pill that is not an image opens nothing", () => {
+	test("a document pill opens a safe text preview instead of doing nothing", async () => {
 		const view = renderPills();
 		fireEvent.click(view.getByRole("button", { name: "notes.md" }));
-		expect(view.queryByRole("button", { name: "Close preview" })).toBeNull();
+		expect(view.getByRole("dialog")).toBeTruthy();
+		expect(await view.findByText("md", { selector: "pre" })).toBeTruthy();
 	});
 });

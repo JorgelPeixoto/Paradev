@@ -1,5 +1,7 @@
 "use client";
 
+import { attachmentMediaType } from "@superset/shared/attachment-media-type";
+
 import { AttachmentFileCard } from "../../../AttachmentFileCard";
 import { PastedTextCard } from "../../../PastedTextCard";
 import type { PromptInputAttachment } from "../../types";
@@ -51,7 +53,7 @@ export function AttachmentPills({
 								className="group/attachment relative block size-16 cursor-pointer overflow-hidden rounded-xl border-[0.5px] border-border bg-foreground/[0.04]"
 								onClick={() => onAttachmentClick?.(attachment, attachments)}
 							>
-								{attachment.file.type.startsWith("video/") ? (
+								{attachmentMediaType(attachment.file).startsWith("video/") ? (
 									<video
 										src={attachment.previewUrl}
 										muted
