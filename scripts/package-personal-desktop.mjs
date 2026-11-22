@@ -4,6 +4,7 @@ import {
 	existsSync,
 	mkdirSync,
 	readFileSync,
+	readdirSync,
 	rmSync,
 	writeFileSync,
 } from "node:fs";
@@ -76,6 +77,20 @@ edit("Set :CFBundleIdentifier com.peixoto.paradev.personal");
 edit("Set :CFBundleShortVersionString 2.0.11-peixoto.4");
 edit(`Set :ElectronAsarIntegrity:Resources/app.asar:hash ${hash}`);
 edit("Add :LSEnvironment:DISABLE_UPDATE_CHECK string 1");
+const resources = resolve(application, "Contents/Resources");
+for (const name of readdirSync(resources).filter((name) =>
+	name.endsWith(".lproj"),
+)) {
+	const localizedName = resolve(resources, name, "InfoPlist.strings");
+	if (existsSync(localizedName))
+		writeFileSync(
+			localizedName,
+			readFileSync(localizedName, "utf8").replace(
+				/("CFBundle(?:DisplayName|Name)"\s*=\s*")[^"]+(";)/g,
+				"$1Peixoto IA$2",
+			),
+		);
+}
 execFileSync("codesign", ["--force", "--deep", "--sign", "-", application], {
 	stdio: "inherit",
 });
