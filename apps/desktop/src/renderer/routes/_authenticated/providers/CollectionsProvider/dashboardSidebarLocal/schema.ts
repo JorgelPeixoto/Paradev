@@ -203,6 +203,8 @@ export const workspaceLocalStateSchema = z.object({
 		// Epoch ms when the user pinned this workspace to the sidebar's Pinned
 		// section; null = not pinned. Ordering is pinnedAt ascending.
 		pinnedAt: z.number().int().nullable().default(null),
+		// One-time import placement; kept with the owning row so a later unpin is respected.
+		importPinMigrated: z.boolean().optional(),
 		// "Remove PR link" for cloud-sourced chips: that PR stays hidden, a
 		// different PR still shows.
 		suppressedPullRequestUrl: z.string().nullable().default(null),

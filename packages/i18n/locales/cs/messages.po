@@ -567,6 +567,10 @@ msgstr "{0} za GB-hodinu"
 msgid "{0} projects"
 msgstr "{0} projektů"
 
+#. placeholder {0}: formatPercent(quotaRemaining(tightest.usedPercent) / 100)
+msgid "{0} remaining"
+msgstr "{0} zbývá"
+
 #. placeholder {0}: tally.running
 msgid "{0} Running"
 msgstr "Běží {0}"
@@ -1116,8 +1120,8 @@ msgstr "{label} se vrátí do nenastaveného stavu. V pracovních prostorech se 
 msgid "{label} is set to manual"
 msgstr "{label} nyní používá ruční přihlášení"
 
-msgid "{label} quota used: {summary}. Open usage settings"
-msgstr "Využitá kvóta {label}: {summary}. Otevřít nastavení využití"
+msgid "{label} quota remaining: {summary}. Open usage settings"
+msgstr "Zbývající kvóta {label}: {summary}. Otevřít nastavení využití"
 
 msgid "{level} · {gate} · {statusLabel}"
 msgstr "{level} · {gate} · {statusLabel}"
@@ -1368,6 +1372,9 @@ msgstr "{reason}"
 
 msgid "{received} of {total}"
 msgstr "{received} z {total}"
+
+msgid "{remaining} remaining"
+msgstr "{remaining} zbývá"
 
 msgid "{remaining} tokens left"
 msgstr "Zbývající tokeny: {remaining}"
@@ -16312,6 +16319,9 @@ msgstr "Přesouvám…"
 msgid "Remaining"
 msgstr "Zbývá"
 
+msgid "Remaining quota"
+msgstr "Zbývající kvóta"
+
 msgid "rematch"
 msgstr "odveta"
 
@@ -18117,6 +18127,9 @@ msgstr "Dostupnost služby zveřejňujeme na <0>{statusHost}</0> a dokumentaci k
 
 msgid "Session"
 msgstr "Relace"
+
+msgid "Session (5h)"
+msgstr "Relace (5h)"
 
 #. placeholder {0}: session.id.slice(0, 8)
 msgid "Session {0}"

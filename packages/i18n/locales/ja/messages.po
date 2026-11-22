@@ -567,6 +567,10 @@ msgstr "GB 時間あたり {0}"
 msgid "{0} projects"
 msgstr "{0}件のプロジェクト"
 
+#. placeholder {0}: formatPercent(quotaRemaining(tightest.usedPercent) / 100)
+msgid "{0} remaining"
+msgstr "{0} 残り"
+
 #. placeholder {0}: tally.running
 msgid "{0} Running"
 msgstr "{0}件実行中"
@@ -1116,8 +1120,8 @@ msgstr "{label} は未設定の状態に戻ります。ワークスペース内�
 msgid "{label} is set to manual"
 msgstr "{label} を手動サインインに設定しました"
 
-msgid "{label} quota used: {summary}. Open usage settings"
-msgstr "{label} の使用済みクォータ: {summary}。使用量の設定を開く"
+msgid "{label} quota remaining: {summary}. Open usage settings"
+msgstr "{label} の残りの割り当て: {summary}。使用状況の設定を開く"
 
 msgid "{level} · {gate} · {statusLabel}"
 msgstr "{level} · {gate} · {statusLabel}"
@@ -1368,6 +1372,9 @@ msgstr "{reason}"
 
 msgid "{received} of {total}"
 msgstr "{received}/{total}"
+
+msgid "{remaining} remaining"
+msgstr "{remaining} 残り"
 
 msgid "{remaining} tokens left"
 msgstr "残り {remaining} トークン"
@@ -16312,6 +16319,9 @@ msgstr "移動中…"
 msgid "Remaining"
 msgstr "残り"
 
+msgid "Remaining quota"
+msgstr "残りの割り当て"
+
 msgid "rematch"
 msgstr "再戦"
 
@@ -18117,6 +18127,9 @@ msgstr "サービスの稼働状況は<0>{statusHost}</0>で、セキュリテ�
 
 msgid "Session"
 msgstr "セッション"
+
+msgid "Session (5h)"
+msgstr "セッション (5時間)"
 
 #. placeholder {0}: session.id.slice(0, 8)
 msgid "Session {0}"
