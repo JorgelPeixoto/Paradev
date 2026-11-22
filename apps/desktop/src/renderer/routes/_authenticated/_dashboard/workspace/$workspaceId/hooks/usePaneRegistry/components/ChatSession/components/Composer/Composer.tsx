@@ -64,6 +64,8 @@ import {
 import { fileMentionChip, fileMentionMatches } from "../../utils/fileMentions";
 import { mcpContextLine } from "../../utils/mcpServerChips";
 import { elementsForChips } from "../../utils/messageElements";
+import { SessionControlBar } from "./components/SessionControlBar";
+import type { SwitchAccount } from "../SessionView/components/UsageLimitNotice/UsageLimitNotice";
 import { AccountLimitNotice } from "./components/AccountLimitNotice";
 import { ContextWindowRing } from "./components/ContextWindowRing";
 import { EnvironmentSetupNotice } from "./components/EnvironmentSetupNotice";
@@ -99,6 +101,8 @@ export type ComposerHandle = Pick<
 };
 
 export type ComposerProps = {
+	onSwitchAccount?: SwitchAccount;
+	compactionCount?: number;
 	workspaceId: string;
 	/** This chat's own session, left out of the chats it can mention. */
 	sessionId?: string;
@@ -180,6 +184,8 @@ const SEND_NOW_KEYS = formatHotkeyDisplay(
 let focusHandoff: { draftKey: string; at: number } | null = null;
 
 export const Composer = memo(function Composer({
+	onSwitchAccount,
+	compactionCount = 0,
 	presetId,
 	agentLabel,
 	agentSwitcher,
@@ -492,17 +498,26 @@ export const Composer = memo(function Composer({
 	const canCompact = availableCommands.some(
 		(command) => command.name === "compact",
 	);
-	const compact = useCallback(
-		() =>
-			onSend([{ type: "text", text: "/compact" }], {
-				steer: false,
-				draft: {
-					segments: [{ type: "text", text: "/compact" }],
-					attachments: [],
-				},
-			}),
-		[onSend],
-	);
+	const requestedCompaction = useRef<number | null>(null);
+	useEffect(() => {
+		if (
+			requestedCompaction.current !== null &&
+			compactionCount > requestedCompaction.current
+		) {
+			requestedCompaction.current = null;
+			toast.success(t({ message: "Completed" }));
+		}
+	}, [compactionCount, t]);
+	const compact = useCallback(() => {
+		requestedCompaction.current = compactionCount;
+		return onSend([{ type: "text", text: "/compact" }], {
+			steer: false,
+			draft: {
+				segments: [{ type: "text", text: "/compact" }],
+				attachments: [],
+			},
+		});
+	}, [onSend, compactionCount]);
 	const hasModelPicker =
 		!target &&
 		onSetConfigOption !== undefined &&
@@ -665,6 +680,33 @@ export const Composer = memo(function Composer({
 				useChatComposerStore.getState().markActive(composerId)
 			}
 		>
+			{!target && terminalId && (
+				<div className={CHAT_COLUMN_CLASSNAME}>
+					<SessionControlBar
+						workspaceId={workspaceId}
+						terminalId={terminalId}
+						presetId={presetId}
+						agentLabel={agentLabel}
+						configOptions={configOptions ?? []}
+						onSwitchAccount={onSwitchAccount}
+						onCompact={canCompact ? compact : undefined}
+						compactDisabled={!!blocked || turnRunning || promptPending}
+						compacted={compactionCount > 0}
+						onStatus={status.open}
+						onStartPreview={() =>
+							onSend(
+								[
+									{
+										type: "text",
+										text: `Inicie a prévia local deste projeto usando o comando de desenvolvimento adequado, sem publicar em produção. Confira as instruções do projeto. Quando o servidor estiver pronto, abra a página no painel lateral desta área de trabalho com: paradev panes open browser --workspace ${workspaceId} --url URL_LOCAL. Use o endereço local real do servidor. Se faltar uma dependência ou configuração, explique o que falta.`,
+									},
+								],
+								{ steer: false, draft: { segments: [], attachments: [] } },
+							)
+						}
+					/>
+				</div>
+			)}
 			{!usageLimited && terminalId && (
 				<AccountLimitNotice
 					className={CHAT_COLUMN_CLASSNAME}

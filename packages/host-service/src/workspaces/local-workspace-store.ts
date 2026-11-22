@@ -300,6 +300,8 @@ export function insertLocalWorkspace(
 }
 
 export interface UpdateLocalWorkspacePatch {
+	type?: HostWorkspaceRow["type"];
+	headSha?: string;
 	name?: string;
 	branch?: string;
 	/**

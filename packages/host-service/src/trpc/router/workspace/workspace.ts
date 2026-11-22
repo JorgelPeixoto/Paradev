@@ -4,7 +4,11 @@ import { TRPCError } from "@trpc/server";
 import { eq, isNotNull, isNull } from "drizzle-orm";
 import { z } from "zod";
 import { projects, workspaces } from "../../../db/schema";
-import { getProjectIncludingDeleted } from "../../../projects/local-project-store";
+import { inspectProjectWorktree } from "./project-worktree/project-worktree";
+import {
+	getLocalProject,
+	getProjectIncludingDeleted,
+} from "../../../projects/local-project-store";
 import { isMissingPath } from "../../../runtime/path-state";
 import {
 	getWorkspaceTags,
@@ -13,11 +17,99 @@ import {
 	updateLocalWorkspace,
 } from "../../../workspaces/local-workspace-store";
 import { cancelAndWaitWorkspaceTitleCommit } from "../../../workspaces/workspace-title-jobs";
-import { protectedProcedure, router } from "../../index";
+import { machineOnlyProcedure, protectedProcedure, router } from "../../index";
 import { resolveWorktreePath } from "../git/utils/resolve-worktree";
 import { destroyWorkspace } from "../workspace-cleanup";
 
 export const workspaceRouter = router({
+	connectProject: machineOnlyProcedure
+		.input(
+			z.object({
+				id: z.string().uuid(),
+				projectId: z.string().uuid(),
+				worktreePath: z.string().min(1),
+			}),
+		)
+		.mutation(async ({ ctx, input }) => {
+			const current = ctx.db.query.workspaces
+				.findFirst({ where: eq(workspaces.id, input.id) })
+				.sync();
+			const project = getLocalProject(ctx.db, input.projectId);
+			if (!current || !project)
+				throw new TRPCError({
+					code: "NOT_FOUND",
+					message: "Workspace or project not found.",
+				});
+			if (current.projectId && current.projectId !== project.id)
+				throw new TRPCError({
+					code: "CONFLICT",
+					message: "This chat already belongs to another project.",
+				});
+			const target = await inspectProjectWorktree(
+				project.repoPath,
+				input.worktreePath,
+				(path) => ctx.git(path),
+			);
+			if (
+				current.projectId === project.id &&
+				current.worktreePath === target.worktreePath
+			)
+				return {
+					workspace: toCloudShape(current, ctx.organizationId),
+					previousPath: current.worktreePath,
+				};
+			const conflict = ctx.db.query.workspaces
+				.findMany()
+				.sync()
+				.find(
+					(row) =>
+						row.id !== current.id &&
+						row.archivedAt === null &&
+						row.worktreePath === target.worktreePath,
+				);
+			if (conflict)
+				throw new TRPCError({
+					code: "CONFLICT",
+					message: "This worktree is already assigned to another task.",
+				});
+			const chat = ctx.runtime.chat?.();
+			const sessions =
+				chat?.commands.listSessions({ scopeId: current.id, limit: 200 }) ?? [];
+			if (
+				sessions.some(
+					(session) =>
+						session.live &&
+						(session.status !== "idle" || session.queuedCount > 0),
+				)
+			)
+				throw new TRPCError({
+					code: "CONFLICT",
+					message: "Wait for the chat to finish before connecting a project.",
+				});
+			const workspace = updateLocalWorkspace(
+				{ db: ctx.db, eventBus: ctx.eventBus, userId: ctx.userId },
+				current.id,
+				{
+					projectId: project.id,
+					type: "worktree",
+					worktreePath: target.worktreePath,
+					branch: target.branch,
+					headSha: target.headSha,
+				},
+			);
+			for (const session of sessions)
+				if (session.live)
+					await chat?.commands.closeSession({
+						sessionId: session.sessionId,
+						userClosed: false,
+					});
+			return {
+				workspace: workspace
+					? toCloudShape(workspace, ctx.organizationId)
+					: null,
+				previousPath: current.worktreePath,
+			};
+		}),
 	get: protectedProcedure
 		.input(z.object({ id: z.string() }))
 		.query(({ ctx, input }) => {

@@ -221,7 +221,7 @@ function tightest(account: UsageAccount) {
 	);
 }
 
-function AccountMenu({
+export function AccountMenu({
 	accounts,
 	agent,
 	current,
