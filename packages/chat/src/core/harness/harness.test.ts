@@ -45,7 +45,7 @@ describe("presetForAnyHarness", () => {
 
 describe("acpStartModes", () => {
 	test("a start mode's default is one of its modes, and agents without known modes offer none", () => {
-		for (const preset of ["claude", "codex", "pdev"]) {
+		for (const preset of ["claude", "codex", "agy", "pdev"]) {
 			const start = acpStartModes(preset);
 			expect(start?.modes.some((mode) => mode.id === start.defaultModeId)).toBe(
 				true,
@@ -55,3 +55,5 @@ describe("acpStartModes", () => {
 		expect(acpStartModes("omp")).toBeUndefined();
 	});
 });
+
+test("Gemini starts in automatic approval mode", () => { expect(acpStartModes("agy")?.defaultModeId).toBe("auto"); });
