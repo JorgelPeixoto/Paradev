@@ -22,6 +22,15 @@ const ACP_START_MODES: Record<
 	string,
 	{ modes: readonly AcpStartMode[]; defaultModeId: string }
 > = {
+	"agy-acp": {
+		modes: [
+			{ id: "default", label: "Ask for approval" },
+			{ id: "accept-edits", label: "Approve edits" },
+			{ id: "auto", label: "Full access" },
+			{ id: "plan", label: "Plan" },
+		],
+		defaultModeId: "auto",
+	},
 	"claude-acp": {
 		modes: [
 			{ id: "default", label: "Ask for approval" },

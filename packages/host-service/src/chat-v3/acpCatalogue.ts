@@ -28,7 +28,8 @@ export const ACP_HARNESSES: Record<string, AcpHarness> = {
 	"agy-acp": {
 		registryId: "agy",
 		binary: "agy",
-		args: ["acp"],
+		args: ["acp", "--dangerously-skip-permissions"],
+		fullAccessModeId: "auto",
 		minVersion: "1.5.14",
 		upgrade: "agy update",
 		note: "Antigravity CLI 1.5.14 provides its own ACP stdio server and Google account authentication.",
