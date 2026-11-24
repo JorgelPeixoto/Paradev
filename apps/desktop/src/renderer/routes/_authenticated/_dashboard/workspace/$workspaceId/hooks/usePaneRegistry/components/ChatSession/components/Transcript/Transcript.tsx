@@ -50,6 +50,7 @@ import { useTranscriptWindow } from "./hooks/useTranscriptWindow";
 import { ChatImageGalleryProvider } from "./providers/ChatImageGalleryProvider";
 import { useNestedItems } from "./providers/NestedItemsProvider";
 import { useTranscriptPlugins } from "./providers/TranscriptPluginsProvider";
+import { TranscriptContextMenu } from "./components/TranscriptContextMenu";
 import { copySourceText } from "./utils/copySourceText";
 import { galleryImages } from "./utils/galleryImages";
 import { replyFooters } from "./utils/replyFooters";
@@ -419,55 +420,57 @@ export function Transcript({
 					onQueryChange={find.setQuery}
 					query={find.query}
 				/>
-				<MessageScroller.Viewport
-					aria-label={t({ message: "Messages" })}
-					className={cn(
-						"min-h-0 flex-1 overflow-y-auto [scrollbar-gutter:stable_both-edges]",
-						CHAT_SCROLLER_GUTTER_CLASSNAME,
-					)}
-					onCopy={copySourceText}
-					onKeyDown={onViewportKeyDown}
-					onPointerDown={onViewportPointerDown}
-					onTouchMove={markReaderScroll}
-					onWheel={markReaderScroll}
-					ref={viewportRef}
-					style={
-						{ "--scrollbar-gutter": `${scrollbarGutter}px` } as CSSProperties
-					}
-				>
-					{hasOlder && (
-						<div
+				<TranscriptContextMenu selectAllRef={viewportRef}>
+	<MessageScroller.Viewport
+						aria-label={t({ message: "Messages" })}
+						className={cn(
+							"min-h-0 flex-1 overflow-y-auto [scrollbar-gutter:stable_both-edges]",
+							CHAT_SCROLLER_GUTTER_CLASSNAME,
+						)}
+						onCopy={copySourceText}
+						onKeyDown={onViewportKeyDown}
+						onPointerDown={onViewportPointerDown}
+						onTouchMove={markReaderScroll}
+						onWheel={markReaderScroll}
+						ref={viewportRef}
+						style={
+							{ "--scrollbar-gutter": `${scrollbarGutter}px` } as CSSProperties
+						}
+					>
+						{hasOlder && (
+							<div
+								className={cn(
+									CHAT_COLUMN_CLASSNAME,
+									"flex h-10 items-center justify-center",
+								)}
+								ref={olderPages.sentinelRef}
+							>
+								{olderPages.failed ? (
+									<Button onClick={olderPages.retry} size="sm" variant="ghost">
+										<Trans>Couldn't load earlier messages. Retry</Trans>
+									</Button>
+								) : (
+									olderPages.loading && <Spinner className="size-4" />
+								)}
+							</div>
+						)}
+						{transcriptWindow.startIndex > 0 && (
+							<div
+								aria-hidden="true"
+								ref={transcriptWindow.spacerRef}
+								style={{ height: transcriptWindow.spacerHeight }}
+							/>
+						)}
+						<MessageScroller.Content
 							className={cn(
 								CHAT_COLUMN_CLASSNAME,
-								"flex h-10 items-center justify-center",
+								"flex select-text flex-col pt-4 pb-8",
 							)}
-							ref={olderPages.sentinelRef}
 						>
-							{olderPages.failed ? (
-								<Button onClick={olderPages.retry} size="sm" variant="ghost">
-									<Trans>Couldn't load earlier messages. Retry</Trans>
-								</Button>
-							) : (
-								olderPages.loading && <Spinner className="size-4" />
-							)}
-						</div>
-					)}
-					{transcriptWindow.startIndex > 0 && (
-						<div
-							aria-hidden="true"
-							ref={transcriptWindow.spacerRef}
-							style={{ height: transcriptWindow.spacerHeight }}
-						/>
-					)}
-					<MessageScroller.Content
-						className={cn(
-							CHAT_COLUMN_CLASSNAME,
-							"flex select-text flex-col pt-4 pb-8",
-						)}
-					>
-						{contentChildren}
-					</MessageScroller.Content>
-				</MessageScroller.Viewport>
+							{contentChildren}
+						</MessageScroller.Content>
+					</MessageScroller.Viewport>
+				</TranscriptContextMenu>
 				<div className="pointer-events-none absolute inset-x-0 bottom-9 flex justify-center">
 					<ScrollToBottomButton />
 				</div>
