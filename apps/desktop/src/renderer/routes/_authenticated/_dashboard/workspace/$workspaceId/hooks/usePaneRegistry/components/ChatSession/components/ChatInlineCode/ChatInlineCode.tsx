@@ -6,6 +6,7 @@ import { useIsInsideChatLink } from "../../providers/ChatLinkProvider";
 import { useChatPaneActions } from "../../providers/ChatPaneActionsProvider";
 import { isLocalPathText, pathFileName } from "../../utils/pathText";
 import { FileLinkMenu } from "../FileLinkMenu";
+import { ChatLink } from "../ChatLink";
 
 const PlainInlineCode = chatMarkdownComponents.inlineCode;
 const FILE_CHIP_CLASSNAME =
@@ -17,6 +18,12 @@ export function ChatInlineCode(props: ComponentProps<typeof PlainInlineCode>) {
 	const { openLink } = useChatPaneActions();
 	const insideLink = useIsInsideChatLink();
 	const text = typeof props.children === "string" ? props.children.trim() : "";
+	if (!insideLink && /^https?:\/\//i.test(text)) {
+		try {
+			const url = new URL(text);
+			if (!url.username && !url.password) return <ChatLink href={text}><PlainInlineCode {...props} /></ChatLink>;
+		} catch {}
+	}
 	const fileName = pathFileName(text);
 	if (!fileName) return <PlainInlineCode {...props} />;
 	if (insideLink) {

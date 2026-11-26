@@ -59,11 +59,12 @@ test("a path opens with its line position on click, Enter and Space", () => {
 	]);
 });
 
-test("a path on the web shows its icon and stays inert", () => {
+test("a URL in inline code opens on click", () => {
 	const openLink = mock<OpenLink>(() => true);
 	const view = renderProse("`https://example.com/install.sh`", openLink);
-	expect(view.container.querySelector("code img")).not.toBeNull();
-	expect(view.queryByRole("link")).toBeNull();
+	const link = view.getByRole("link");
+	fireEvent.click(link);
+	expect(openLink.mock.calls[0]?.[0]).toBe("https://example.com/install.sh");
 });
 
 test("inline code inside a link leaves navigation to its destination", () => {
