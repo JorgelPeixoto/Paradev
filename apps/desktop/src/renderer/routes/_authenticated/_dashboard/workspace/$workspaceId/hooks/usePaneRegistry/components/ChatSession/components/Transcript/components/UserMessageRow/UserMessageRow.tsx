@@ -198,6 +198,7 @@ export function UserMessageRow({
 					<div
 						className="break-words text-sm"
 						data-find-item={item.id}
+						data-message-source={copyText}
 						ref={textRef}
 					>
 						<UserMessageText commands={commands} segments={segments} />

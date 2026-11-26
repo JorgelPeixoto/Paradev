@@ -21,6 +21,12 @@ const asar = require(
 	),
 );
 const original = "/Applications/Superset.app";
+const installedPlist = "/Applications/Peixoto IA.app/Contents/Info.plist";
+if (existsSync(installedPlist)) {
+ const installed = execFileSync("/usr/libexec/PlistBuddy", ["-c", "Print :CFBundleShortVersionString", installedPlist], { encoding: "utf8" }).trim();
+ const revision = Number(installed.match(/-peixoto\.(\d+)$/)?.[1] ?? 0);
+ if (revision > 11) throw new Error(`Installed release ${installed} is newer; build from the current branch.`);
+}
 const output = resolve(root, ".cache/personal-desktop", String(Date.now()));
 const application = resolve(output, "Peixoto IA.app");
 const extracted = resolve(output, "archive");
@@ -34,7 +40,7 @@ rmSync(resolve(extracted, "dist"), { recursive: true, force: true });
 cpSync(dist, resolve(extracted, "dist"), { recursive: true });
 const pkg = resolve(extracted, "package.json");
 const metadata = JSON.parse(readFileSync(pkg, "utf8"));
-metadata.version = "2.0.11-peixoto.10";
+metadata.version = "2.0.11-peixoto.11";
 writeFileSync(pkg, JSON.stringify(metadata, null, 2));
 const mark = resolve(root, "apps/desktop/src/renderer/assets/peixoto-mark.png");
 for (const name of ["icon.png", "icon-dev.png", "icon-canary.png"])
@@ -75,7 +81,7 @@ const edit = (command) =>
 edit("Set :CFBundleDisplayName Peixoto IA");
 edit("Set :CFBundleIconFile peixoto.icns");
 edit("Set :CFBundleIdentifier com.peixoto.paradev.personal");
-edit("Set :CFBundleShortVersionString 2.0.11-peixoto.10");
+edit("Set :CFBundleShortVersionString 2.0.11-peixoto.11");
 edit(`Set :ElectronAsarIntegrity:Resources/app.asar:hash ${hash}`);
 edit("Add :LSEnvironment:DISABLE_UPDATE_CHECK string 1");
 const resources = resolve(application, "Contents/Resources");

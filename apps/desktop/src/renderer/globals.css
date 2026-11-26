@@ -313,6 +313,12 @@
 		border: 2px solid transparent;
 	}
 
+	.select-text,
+	.select-text :where(*:not(button, summary, [role="button"])) {
+		user-select: text !important;
+		-webkit-user-select: text !important;
+	}
+
 	/* Electron drag region utilities */
 	.drag {
 		-webkit-app-region: drag;
