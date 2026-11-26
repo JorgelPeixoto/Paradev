@@ -420,7 +420,7 @@ export function Transcript({
 					onQueryChange={find.setQuery}
 					query={find.query}
 				/>
-				<TranscriptContextMenu selectAllRef={viewportRef}>
+				<TranscriptContextMenu selectionContainer={viewport}>
 	<MessageScroller.Viewport
 						aria-label={t({ message: "Messages" })}
 						className={cn(

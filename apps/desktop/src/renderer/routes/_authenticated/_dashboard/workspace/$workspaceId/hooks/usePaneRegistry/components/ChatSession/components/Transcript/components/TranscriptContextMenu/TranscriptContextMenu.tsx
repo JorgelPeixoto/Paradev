@@ -10,7 +10,6 @@ import {
 import {
 	type MouseEvent as ReactMouseEvent,
 	type ReactNode,
-	type RefObject,
 	useState,
 } from "react";
 import { LuCopy } from "react-icons/lu";
@@ -24,10 +23,10 @@ function modifierKeyLabel() {
 
 export function TranscriptContextMenu({
 	children,
-	selectAllRef,
+	selectionContainer,
 }: {
 	children: ReactNode;
-	selectAllRef: RefObject<HTMLElement | null>;
+	selectionContainer: HTMLElement | null;
 }) {
 	const { copyToClipboard } = useCopyToClipboard();
 	const [selectionText, setSelectionText] = useState("");
@@ -51,7 +50,7 @@ export function TranscriptContextMenu({
 	};
 
 	const selectAll = () => {
-		const container = selectAllRef.current;
+		const container = selectionContainer;
 		const selection = window.getSelection();
 		if (!container || !selection) return;
 		const range = document.createRange();
