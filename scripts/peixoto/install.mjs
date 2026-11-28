@@ -76,7 +76,7 @@ if (checkOnly) {
 	if (
 		processes
 			.split("\n")
-			.some((line) => line.trim().startsWith(`${destination}/Contents/MacOS/`))
+			.some((line) => line.trim().startsWith(`${destination}/Contents/MacOS/`) && !line.includes("/dist/main/pty-daemon.js "))
 	)
 		throw new Error(
 			"O Peixoto IA está aberto. Preserve os comandos em execução e encerre o aplicativo antes de instalar.",
