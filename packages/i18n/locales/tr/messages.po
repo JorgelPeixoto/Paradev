@@ -12622,9 +12622,6 @@ msgstr "Yeni çalışma alanı"
 msgid "New Workspace"
 msgstr "Yeni çalışma alanı"
 
-msgid "New Workspace ({shortcutText})"
-msgstr "Yeni çalışma alanı ({shortcutText})"
-
 msgid "New workspace in {name}"
 msgstr "{name} içinde yeni çalışma alanı"
 
