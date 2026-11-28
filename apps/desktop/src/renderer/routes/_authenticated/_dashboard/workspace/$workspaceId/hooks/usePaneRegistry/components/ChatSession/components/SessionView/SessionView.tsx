@@ -38,6 +38,7 @@ import { useWorkspaceHostUrl } from "renderer/hooks/host-service/useWorkspaceHos
 import { usePluginMentionOptions } from "renderer/hooks/usePluginMentionOptions";
 import { useStableList } from "renderer/hooks/useStableList";
 import { useChatTurnSnapshotsEnabled } from "renderer/stores/chat-turn-snapshots";
+import { agentOptionLabel } from "../../../../../../../../../components/AgentComposer/utils/configOptionLabels";
 import type { OpenFile } from "../../../../../../types";
 import {
 	ChatPaneActionsProvider,
@@ -297,6 +298,21 @@ export function SessionView({
 	);
 
 	const configOptions = session.snapshot.session?.configOptions;
+	const reportedModel = configOptions?.find(
+		(option) => option.category === "model",
+	);
+	const reportedEffort = configOptions?.find(
+		(option) => option.category === "thought_level",
+	);
+	const reportedModelId =
+		reportedModel?.currentValue ?? session.snapshot.session?.modelId;
+	const reportedModelName =
+		reportedModel?.options.find((option) => option.id === reportedModelId)
+			?.label ?? reportedModelId;
+	const reportedEffortName =
+		reportedEffort?.options.find(
+			(option) => option.id === reportedEffort.currentValue,
+		)?.label ?? reportedEffort?.currentValue;
 
 	usePendingPrompts({
 		held: held !== undefined,
@@ -877,6 +893,12 @@ export function SessionView({
 					queue={drawerQueue}
 					ref={drawerRef}
 				/>
+				<output className="px-4 pb-1 text-[11px] text-muted-foreground select-text">
+					{t`Model`}: {reportedModelName ?? t`Unknown`}
+					{reportedEffortName
+						? ` · ${t`Reasoning`}: ${agentOptionLabel(reportedEffortName)}`
+						: ""}
+				</output>
 				<Composer
 					imageInput={sessionState?.attachmentCapabilities?.images}
 					onSwitchAccount={onSwitchAccount}

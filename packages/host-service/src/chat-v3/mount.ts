@@ -211,6 +211,7 @@ export function createChatV3Mount(options: {
 	const runtime = (): ChatRuntime => {
 		if (built) return built;
 		built = createChatRuntime({
+			enableConversationMemory: true,
 			dataDir: dirname(options.dbPath),
 			migrationsFolder: migrationsFolder(),
 			harnesses: harnessRegistry(

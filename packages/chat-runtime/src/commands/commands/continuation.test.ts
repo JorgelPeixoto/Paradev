@@ -41,6 +41,7 @@ test("changing harness twice preserves earlier messages without displaying the b
 		});
 	};
 	const runtime = createTestRuntime({
+		enableConversationMemory: true,
 		harnesses: new Map([
 			["claude", factory],
 			["codex", factory],
@@ -102,17 +103,40 @@ test("changing harness twice preserves earlier messages without displaying the b
 				.filter(Boolean),
 		).toEqual([text]);
 		expect(JSON.stringify(sent[2])).toContain("Keep this beginning.");
+		expect((sent[0] as { text: string }[])[0]?.text).toBe(text);
+		expect(JSON.stringify(sent[0])).toContain("Memória durável desta conversa");
 		expect(JSON.stringify(sent[2]).length).toBeGreaterThan(text.length);
 		await runtime.commands.closeSession({ sessionId: third.sessionId });
 		const resumed = runtime.commands.createSession({
-			commandId: randomUUID(), scopeId: "one", cwd: "/tmp", harness: "claude",
-			resume: { harnessSessionId: "native-session", replacesSessionId: third.sessionId },
+			commandId: randomUUID(),
+			scopeId: "one",
+			cwd: "/tmp",
+			harness: "claude",
+			resume: {
+				harnessSessionId: "native-session",
+				replacesSessionId: third.sessionId,
+			},
 		});
-		await waitFor(() => runtime.sessions.get(resumed.sessionId)?.status === "idle");
-		const restored = reduceMany(emptySnapshot(), journalEnvelopes(runtime, resumed.sessionId));
+		await waitFor(
+			() => runtime.sessions.get(resumed.sessionId)?.status === "idle",
+		);
+		const restored = reduceMany(
+			emptySnapshot(),
+			journalEnvelopes(runtime, resumed.sessionId),
+		);
 		expect(restored.items.has("a1")).toBe(true);
 		expect(restored.items.has("a2")).toBe(true);
 		expect(restored.items.has("a3")).toBe(true);
+		expect(
+			[...snapshot.items.keys()].filter((id) =>
+				id.startsWith("conversation-memory-"),
+			),
+		).toEqual([`conversation-memory-${first.sessionId}`]);
+		expect(
+			[...restored.items.keys()].filter((id) =>
+				id.startsWith("conversation-memory-"),
+			),
+		).toEqual([`conversation-memory-${first.sessionId}`]);
 	} finally {
 		await runtime.dispose();
 	}
