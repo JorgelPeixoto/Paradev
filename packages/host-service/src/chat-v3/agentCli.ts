@@ -1,5 +1,6 @@
 import { execFile } from "node:child_process";
 import { accessSync, constants, statSync } from "node:fs";
+import { homedir } from "node:os";
 import { delimiter, join } from "node:path";
 import { promisify } from "node:util";
 import { getBinDir } from "@superset/agent-setup";
@@ -69,7 +70,13 @@ async function probeVersion(
 	command: string,
 	env: NodeJS.ProcessEnv,
 ): Promise<string | null> {
-	const hit = cache.get(command);
+	const key = JSON.stringify([
+		command,
+		env.PATH,
+		env.CODEX_HOME,
+		env.CLAUDE_CONFIG_DIR,
+	]);
+	const hit = cache.get(key);
 	if (hit && Date.now() - hit.at < CACHE_TTL_MS) return hit.version;
 	let version: string | null = null;
 	try {
@@ -81,7 +88,7 @@ async function probeVersion(
 	} catch {
 		version = null;
 	}
-	cache.set(command, { at: Date.now(), version });
+	if (version) cache.set(key, { at: Date.now(), version });
 	return version;
 }
 
@@ -121,7 +128,20 @@ export async function resolveAgentCli(options: {
 	upgrade?: string;
 	env: () => Promise<NodeJS.ProcessEnv>;
 }): Promise<AgentCli> {
-	const env = await options.env();
+	const supplied = await options.env();
+	const env = {
+		...supplied,
+		PATH: [
+			supplied.PATH,
+			join(homedir(), ".local", "bin"),
+			"/opt/homebrew/bin",
+			"/usr/local/bin",
+			"/usr/bin",
+			"/bin",
+		]
+			.filter(Boolean)
+			.join(delimiter),
+	};
 	const command = agentCliCommand(options.binary, env);
 	const found = await probeVersion(command, env);
 	if (!found || !meetsFloor(found, options.minVersion)) {

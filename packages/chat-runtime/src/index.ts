@@ -38,6 +38,7 @@ export type ChatRuntimeOptions = {
 	onSessionChanged?: ChatJournalOptions["onSessionChanged"];
 	onAppend?: ChatJournalOptions["onAppend"];
 	usageLimitGraceMs?: number;
+	enableConversationMemory?: boolean;
 };
 
 export type ChatRuntime = {
@@ -90,6 +91,7 @@ export function createChatRuntime(options: ChatRuntimeOptions): ChatRuntime {
 		subagentItems,
 		selections: new SelectionMemory(db),
 		historyDir: join(options.dataDir, "conversation-history"),
+		enableConversationMemory: options.enableConversationMemory,
 	});
 
 	return {

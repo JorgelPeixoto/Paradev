@@ -18,8 +18,8 @@ import {
 	selectionCategoryOf,
 	selectionKey,
 	sessionSelections,
-	userStopOf,
 	userMessageText,
+	userStopOf,
 } from "@superset/chat/core";
 import type {
 	AgentMessage,
@@ -97,7 +97,10 @@ import type {
 } from "../../sessions";
 import { replayKey } from "../../sessions";
 import { SubagentItems } from "../../stream";
-import { conversationContext } from "./conversationContext/conversationContext";
+import {
+	conversationContext,
+	conversationMemory,
+} from "./conversationContext/conversationContext";
 
 export const createSessionCommandSchema = createSessionInputSchema
 	.omit({ workspaceId: true })
@@ -348,6 +351,7 @@ export type ItemBodiesResult =
 
 export type CommandsOptions = {
 	historyDir?: string;
+	enableConversationMemory?: boolean;
 	journal: ChatJournal;
 	db: ChatDb;
 	sessions: ChatSessionStore;
@@ -619,8 +623,13 @@ export function createCommands(options: CommandsOptions): ChatCommands {
 			const parsed = createSessionCommandSchema.parse(input);
 			return options.dedupe.run(`createSession:${parsed.commandId}`, () => {
 				const resumedSourceId = parsed.resume?.replacesSessionId;
-				const resumedSource = resumedSourceId ? replaySession(resumedSourceId) : null;
-				if (resumedSource?.ok && resumedSource.snapshot.items.has("conversation-history")) {
+				const resumedSource = resumedSourceId
+					? replaySession(resumedSourceId)
+					: null;
+				if (
+					resumedSource?.ok &&
+					resumedSource.snapshot.items.has("conversation-history")
+				) {
 					parsed.continuation = { sessionId: resumedSourceId! };
 					parsed.resume = undefined;
 				}
@@ -707,6 +716,27 @@ export function createCommands(options: CommandsOptions): ChatCommands {
 						resume: parsed.resume,
 						terminalId: parsed.terminalId,
 					});
+					if (
+						options.enableConversationMemory &&
+						(!continuationReplay?.ok ||
+							![...continuationReplay.snapshot.items.keys()].some((id) =>
+								id.startsWith("conversation-memory-"),
+							))
+					) {
+						const live = options.live.require(sessionId);
+						live.seed([
+							{
+								type: "item",
+								turnId: "conversation-memory",
+								item: {
+									id: `conversation-memory-${sessionId}`,
+									kind: "user_message",
+									startedAtMs: 0,
+									content: [],
+								},
+							},
+						]);
+					}
 					if (parsed.historyImport) {
 						const live = options.live.require(sessionId);
 						const events: DurableEvent[] = [];
@@ -766,7 +796,18 @@ export function createCommands(options: CommandsOptions): ChatCommands {
 							session: { ...live.state, title: parsed.historyImport.title },
 						});
 						live.seed(events);
-						live.seed([{ type: "item", turnId: "conversation-history", item: { id: "conversation-history", kind: "user_message", startedAtMs: 0, content: [] } }]);
+						live.seed([
+							{
+								type: "item",
+								turnId: "conversation-history",
+								item: {
+									id: "conversation-history",
+									kind: "user_message",
+									startedAtMs: 0,
+									content: [],
+								},
+							},
+						]);
 					}
 					if (continuationReplay?.ok && parsed.continuation) {
 						const live = options.live.require(sessionId);
@@ -788,12 +829,28 @@ export function createCommands(options: CommandsOptions): ChatCommands {
 							}
 						}
 						live.seed(events);
-						live.seed([{ type: "item", turnId: "conversation-history", item: { id: "conversation-history", kind: "user_message", startedAtMs: 0, content: [] } }]);
+						live.seed([
+							{
+								type: "item",
+								turnId: "conversation-history",
+								item: {
+									id: "conversation-history",
+									kind: "user_message",
+									startedAtMs: 0,
+									content: [],
+								},
+							},
+						]);
 						const messages = [
 							...continuationReplay.snapshot.items.values(),
 						].flatMap(({ item }) => {
 							if (item.kind === "user_message") {
-								const text = userMessageText(item as UserMessage).trim();
+								const text = userMessageText({
+									...item,
+									content: (item as UserMessage).content.filter(
+										(part) => !("hidden" in part && part.hidden),
+									),
+								} as UserMessage).trim();
 								return text ? [{ role: "user", text }] : [];
 							}
 							if (item.kind === "agent_message") {
@@ -939,8 +996,42 @@ export function createCommands(options: CommandsOptions): ChatCommands {
 					marker?.kind === "user_message"
 						? (marker as UserMessage).content
 						: [];
+				const memoryId = replay.ok
+					? ([...replay.snapshot.items.keys()]
+							.find((id) => id.startsWith("conversation-memory-"))
+							?.slice("conversation-memory-".length) ?? parsed.sessionId)
+					: parsed.sessionId;
+				if (
+					options.enableConversationMemory &&
+					replay.ok &&
+					![...replay.snapshot.items.keys()].some((id) =>
+						id.startsWith("conversation-memory-"),
+					)
+				) {
+					live.seed([
+						{
+							type: "item",
+							turnId: "conversation-memory",
+							item: {
+								id: `conversation-memory-${memoryId}`,
+								kind: "user_message",
+								startedAtMs: 0,
+								content: [],
+							},
+						},
+					]);
+				}
+				const memory = options.enableConversationMemory
+					? conversationMemory(options.historyDir, memoryId)
+					: "";
 				const result = live.prompt(
-					[...imported, ...parsed.content],
+					[
+						...imported,
+						...parsed.content,
+						...(memory
+							? [{ type: "text" as const, text: memory, hidden: true }]
+							: []),
+					],
 					parsed.clientId,
 					{
 						steerTurnId: parsed.steer?.expectedTurnId,
